@@ -1,30 +1,19 @@
-ESTA ES LA VERSIÓN SEO DE TU WEB
+VERSIÓN SEO AUDITADA
 
-He mejorado el SEO sin cambiar el diseño visual:
+Incluye:
+- Títulos y descripciones diferenciados por página e idioma.
+- URL canónica en todas las páginas.
+- hreflang recíproco ES / EN / FR.
+- Sitemap XML actualizado con las 12 URLs canónicas.
+- robots.txt.
+- Datos estructurados de autor, libro, artículo, FAQ y breadcrumbs donde corresponde.
+- SEO específico para “origen del Ratoncito Pérez”.
+- Enlaces internos entre el cuento y la página del origen.
+- Metadatos para redes sociales.
 
-- Título y descripción optimizados para "origen del Ratoncito Pérez".
-- URL canónica.
-- Vista previa para Google y redes sociales.
-- Datos estructurados de autor y libro.
-- FAQ sobre el origen del Ratoncito Pérez.
-- sitemap.xml corregido para TU dirección real de GitHub Pages.
-- robots.txt con el sitemap.
+Después de subirla:
+1. Comprueba que la web se ha actualizado.
+2. Envía sitemap.xml en Google Search Console.
+3. Solicita indexación de las páginas nuevas si quieres acelerar el descubrimiento.
 
-PARA SUBIRLA:
-1. En GitHub entra en jackikun11406JMVV.github.io.
-2. Add file > Upload files.
-3. Extrae este ZIP.
-4. Sube el contenido completo.
-5. Reemplaza los archivos existentes.
-6. Commit changes.
-
-DESPUÉS:
-Entra en Google Search Console y añade:
-https://jackikun11406JMVV.github.io
-
-Después añade el sitemap:
-sitemap.xml
-
-
-NUEVA PÁGINA SEO: origen-ratoncito-perez.html
-Esta página está dedicada a la búsqueda "origen del Ratoncito Pérez" y está enlazada desde la página del libro.
+No es necesario tocar más el SEO técnico ahora.

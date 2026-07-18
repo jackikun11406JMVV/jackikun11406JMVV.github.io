@@ -1,8 +1,16 @@
-WEB DE JUAN MANUEL VELA VACAS - V7
+WEB DE JUAN MANUEL VELA VACAS · VERSIÓN ES / EN / FR
 
-1. Descomprime la carpeta.
-2. Abre index.html con doble clic.
-3. Las portadas utilizadas son las tres imágenes EXACTAS que Juan Manuel envió en el último mensaje.
-4. Para publicar la web, sube todo el contenido de esta carpeta a tu hosting.
+Versión auditada de la web de autor.
 
-La web es completamente local: no depende de Google Fonts ni de archivos externos para el diseño.
+1. Descomprime el ZIP.
+2. Sube TODO el contenido a tu repositorio de GitHub Pages.
+3. Reemplaza los archivos existentes.
+4. Pulsa Commit changes.
+
+La web incluye:
+- Página de autor en español, inglés y francés.
+- El origen del Ratoncito Pérez en los tres idiomas.
+- Página SEO dedicada al origen del Ratoncito Pérez.
+- Jara, la noble PPP con aviso de que el libro está disponible únicamente en español.
+- Sitemap y robots.txt.
+- SEO técnico, canonical, hreflang y datos estructurados.
