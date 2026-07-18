@@ -195,3 +195,10 @@ footer{background:var(--dark);color:#f2ddb5;padding:48px 0}
 .faq-author-title{margin-top:3.2rem;}
 
 .lang-switch{display:flex;gap:7px;align-items:center;margin-left:16px;font-size:.78rem;letter-spacing:.08em;white-space:nowrap}.lang-switch a{color:inherit;text-decoration:none;opacity:.65}.lang-switch a:hover{opacity:1}.lang-switch strong{color:var(--wine,#7d321e)}@media (max-width:800px){.lang-switch{margin-left:8px;font-size:.7rem}.navlinks{gap:10px}}
+
+
+.social-links{display:flex;gap:14px;align-items:center;margin-top:14px;flex-wrap:wrap}
+.social-links a{color:#efc878;font-size:13px;letter-spacing:.5px;border-bottom:1px solid transparent;transition:.2s}
+.social-links a:hover{color:#fff0be;border-color:#efc878}
+.contact-email{display:inline-block;margin-top:4px}
+@media(max-width:850px){.social-links{margin-bottom:8px}}
