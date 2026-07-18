@@ -191,3 +191,5 @@ footer{background:var(--dark);color:#f2ddb5;padding:48px 0}
 /* SEO FAQ */
 .faq h3{font-family:var(--serif, Georgia, serif);font-size:1.35rem;margin:28px 0 8px;color:#4b2b1a}
 .faq p{max-width:820px}
+
+.faq-author-title{margin-top:3.2rem;}
