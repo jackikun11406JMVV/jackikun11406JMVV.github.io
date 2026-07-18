@@ -1,0 +1,16 @@
+VERSIÓN PARA GITHUB
+
+Esta es la versión visual original de la web de Juan Manuel Vela Vacas.
+
+Para actualizar tu web:
+1. Sube TODO el contenido de esta carpeta a tu repositorio.
+2. Reemplaza los archivos existentes.
+3. Pulsa Commit changes.
+
+Incluye:
+- Diseño visual original con imágenes.
+- Pérez con galería de 5 imágenes.
+- Español / Inglés / Francés en los enlaces de Pérez.
+- Diferenciación 40 / 80 páginas.
+- Enlace de compra de Jara.
+- Sección original de Próximamente: San Nicolás.

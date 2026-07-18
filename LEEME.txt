@@ -1,0 +1,8 @@
+WEB DE JUAN MANUEL VELA VACAS - V7
+
+1. Descomprime la carpeta.
+2. Abre index.html con doble clic.
+3. Las portadas utilizadas son las tres imágenes EXACTAS que Juan Manuel envió en el último mensaje.
+4. Para publicar la web, sube todo el contenido de esta carpeta a tu hosting.
+
+La web es completamente local: no depende de Google Fonts ni de archivos externos para el diseño.
