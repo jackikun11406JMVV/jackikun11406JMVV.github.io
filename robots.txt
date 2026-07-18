@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://jackikun11406JMVV.github.io/sitemap.xml

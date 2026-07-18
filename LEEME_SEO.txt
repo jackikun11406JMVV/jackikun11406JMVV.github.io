@@ -1,0 +1,26 @@
+ESTA ES LA VERSIÓN SEO DE TU WEB
+
+He mejorado el SEO sin cambiar el diseño visual:
+
+- Título y descripción optimizados para "origen del Ratoncito Pérez".
+- URL canónica.
+- Vista previa para Google y redes sociales.
+- Datos estructurados de autor y libro.
+- FAQ sobre el origen del Ratoncito Pérez.
+- sitemap.xml corregido para TU dirección real de GitHub Pages.
+- robots.txt con el sitemap.
+
+PARA SUBIRLA:
+1. En GitHub entra en jackikun11406JMVV.github.io.
+2. Add file > Upload files.
+3. Extrae este ZIP.
+4. Sube el contenido completo.
+5. Reemplaza los archivos existentes.
+6. Commit changes.
+
+DESPUÉS:
+Entra en Google Search Console y añade:
+https://jackikun11406JMVV.github.io
+
+Después añade el sitemap:
+sitemap.xml
