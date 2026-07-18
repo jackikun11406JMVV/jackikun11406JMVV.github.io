@@ -24,3 +24,7 @@ https://jackikun11406JMVV.github.io
 
 Después añade el sitemap:
 sitemap.xml
+
+
+NUEVA PÁGINA SEO: origen-ratoncito-perez.html
+Esta página está dedicada a la búsqueda "origen del Ratoncito Pérez" y está enlazada desde la página del libro.
