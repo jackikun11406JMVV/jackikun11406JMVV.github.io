@@ -6,14 +6,16 @@ Incluye:
 - hreflang recíproco ES / EN / FR.
 - Sitemap XML actualizado con las 12 URLs canónicas.
 - robots.txt.
-- Datos estructurados de autor, libro, artículo, FAQ y breadcrumbs donde corresponde.
+- Datos estructurados de autor, libro, artículo y breadcrumbs.
 - SEO específico para “origen del Ratoncito Pérez”.
 - Enlaces internos entre el cuento y la página del origen.
 - Metadatos para redes sociales.
+- Optimización visual y de carga para dispositivos móviles.
 
 Después de subirla:
 1. Comprueba que la web se ha actualizado.
-2. Envía sitemap.xml en Google Search Console.
-3. Solicita indexación de las páginas nuevas si quieres acelerar el descubrimiento.
+2. El sitemap sigue siendo el mismo: sitemap.xml.
+3. No necesitas rehacer toda la configuración de Search Console.
+4. Si quieres, puedes solicitar de nuevo la indexación de la portada y de las páginas que hayas cambiado.
 
 No es necesario tocar más el SEO técnico ahora.

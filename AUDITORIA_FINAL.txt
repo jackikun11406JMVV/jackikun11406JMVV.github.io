@@ -1,0 +1,9 @@
+AUDITORÍA FINAL DE LA WEB
+
+Páginas HTML revisadas: 12
+Archivos locales ausentes: 0
+Anclajes rotos: 0
+Páginas sin título: 0
+Páginas sin descripción: 0
+
+Mejoras aplicadas: navegación móvil horizontal, espaciado móvil reducido, imágenes optimizadas para carga, metadatos sociales y de autor revisados, locales Open Graph corregidos, textos SEO revisados y carga inicial de la portada optimizada.
