@@ -151,8 +151,6 @@ footer{background:var(--dark);color:#f2ddb5;padding:48px 0}
 .edition-label{display:inline-block;margin-top:18px;font-size:11px;letter-spacing:2px;color:var(--wine);font-weight:bold}
 .inside-grid.expanded{grid-template-columns:repeat(3,1fr)}
 .inside-card.tall img{height:520px;object-fit:contain}
-.inside-card.coloring{grid-column:span 2}
-.inside-card.coloring img{object-fit:contain}
 .coming-copy h2 span{color:#fff0be}
 .secret-note{font-style:italic;color:#f2d18d!important}
 .coming-stars{margin-top:28px;font-size:25px;color:#e8c474;letter-spacing:12px}
@@ -160,8 +158,7 @@ footer{background:var(--dark);color:#f2ddb5;padding:48px 0}
  .edition-grid{grid-template-columns:1fr}
  .edition-card.featured{transform:none}
  .inside-grid.expanded{grid-template-columns:1fr}
- .inside-card.coloring{grid-column:auto}
-}
+ }
 
 /* Galería de Jara */
 .jara-gallery{background:#efe0d6;padding:105px 0}
