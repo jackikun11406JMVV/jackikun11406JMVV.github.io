@@ -291,3 +291,10 @@ a:focus-visible,.btn:focus-visible,.social-icon:focus-visible{outline:3px solid 
   .coming-card h3{font-size:48px}
   .footer strong{font-size:24px}
 }
+
+/* Ajustes finales de rendimiento y móvil */
+.inside-card .inside-tag{line-height:1.35}
+@media(max-width:560px){
+  .inside-card .inside-tag{max-width:100%;white-space:normal}
+  .lang-switch{flex-shrink:0}
+}
