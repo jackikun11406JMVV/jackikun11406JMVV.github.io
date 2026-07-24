@@ -75,7 +75,7 @@ footer{background:var(--dark);color:#f2ddb5;padding:48px 0}
 .cover img{display:block;width:100%;height:680px;object-fit:contain;background:#f3e4c5}
 .inner h1{font-size:86px;line-height:.78;margin:18px 0 25px}
 .inner p{font-size:18px;line-height:1.9;color:var(--muted)}
-.language{display:flex;gap:10px;flex-wrap:wrap}
+{display:flex;gap:10px;flex-wrap:wra.languagep}
 .language .btn{margin-top:18px}
 .inside{background:var(--cream)}
 .inside h2{text-align:center;font-size:70px;line-height:.8;margin:0 0 45px}
@@ -294,4 +294,31 @@ a:focus-visible,.btn:focus-visible,.social-icon:focus-visible{outline:3px solid 
 @media(max-width:560px){
   .inside-card .inside-tag{max-width:100%;white-space:normal}
   .lang-switch{flex-shrink:0}
+}
+/* ===== Bloque de compra por idiomas ===== */
+
+.edition-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:24px;
+margin-top:25px;
+}
+
+#comprar .edition-card{
+background:#fff;
+border:1px solid #e7d8bf;
+border-radius:18px;
+padding:20px;
+box-shadow:0 8px 22px rgba(0,0,0,.08);
+text-align:center;
+}
+
+#comprar .edition-card h3{
+margin-bottom:18px;
+font-size:1.2rem;
+}
+
+#comprar .edition-card .btn{
+display:block;
+margin:10px 0;
 }
