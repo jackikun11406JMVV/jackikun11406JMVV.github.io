@@ -1,34 +1,66 @@
 document.addEventListener("DOMContentLoaded", () => {
+    document.documentElement.classList.add("js");
 
-    /* ===========================================
-       SCROLL REVEAL
-    =========================================== */
+/* ===========================================
+   SCROLL REVEAL (Safari compatible)
+=========================================== */
+
+const revealElements = document.querySelectorAll(
+    ".cover, .buy-accordion, .inside, .press-section, .author-story, .seo, .jara-gallery, .jara-mission"
+);
+
+if ("IntersectionObserver" in window) {
 
     const observer = new IntersectionObserver((entries) => {
 
         entries.forEach(entry => {
 
-            if (!entry.isIntersecting) return;
+            if (entry.isIntersecting) {
 
-            entry.target.classList.add("visible");
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
 
-            observer.unobserve(entry.target);
+            }
 
         });
 
     }, {
-        threshold: 0.15,
-        rootMargin: "0px 0px -60px 0px"
+
+        threshold: 0.10,
+        rootMargin: "0px 0px -40px 0px"
+
     });
 
-    document.querySelectorAll(
-        ".cover, .buy-accordion, .inside, .press-section, .author-story, .seo, .jara-gallery, .jara-mission"
-    ).forEach(el => {
+    revealElements.forEach(el => {
 
         el.classList.add("reveal");
         observer.observe(el);
 
     });
+
+    // Si Safari falla por cualquier motivo, mostrar todo tras 1 segundo
+
+    setTimeout(() => {
+
+        revealElements.forEach(el => {
+
+            el.classList.add("visible");
+
+        });
+
+    }, 1000);
+
+} else {
+
+    // Navegador sin soporte
+
+    revealElements.forEach(el => {
+
+        el.classList.add("visible");
+
+    });
+
+}
 
 
     /* ===========================================

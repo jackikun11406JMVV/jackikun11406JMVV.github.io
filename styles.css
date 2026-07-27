@@ -401,15 +401,9 @@ font-size:.68rem;color:var(--wine)}
 
 .reveal{
 
-    opacity:0;
+opacity:1;
 
-    transform:translateY(28px);
-
-    transition:
-
-        opacity .75s ease,
-
-        transform .75s ease;
+transform:none;
 
 }
 
