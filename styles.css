@@ -37,11 +37,29 @@ section{padding:105px 0}
 .section-title h2{font-size:72px;line-height:.8;margin:0}
 .section-title p{max-width:420px;color:var(--muted);line-height:1.7}
 .books{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.book-card{position:relative;background:var(--paper);padding:22px;box-shadow:0 18px 40px #43231114;border:1px solid var(--line);transition:.25s}
+.book-card{position:relative;overflow:visible;background:var(--paper);padding:22px;padding-top:48px;box-shadow:0 18px 40px #43231114;border:1px solid var(--line);transition:.25s}
 .book-card:hover{transform:translateY(-6px);box-shadow:0 25px 50px #43231122}
 .book-card:before{content:"";position:absolute;inset:9px;border:1px solid #b7863840;pointer-events:none}
-.book-img{height:470px;display:flex;align-items:center;justify-content:center;background:#f3e4c5;overflow:hidden}
-.book-img img{width:100%;height:100%;object-fit:contain;display:block}
+.book-img{
+height:470px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:transparent;
+overflow:visible;
+margin-top:-34px;
+position:relative;
+z-index:5;
+}
+.book-img img{
+width:100%;
+height:100%;
+object-fit:contain;
+display:block;
+transition:
+transform .35s ease,
+filter .35s ease;
+}
 .book-info{padding:25px 10px 8px}
 .book-info h3{font-size:43px;line-height:.88;margin:10px 0 13px;font-weight:normal}
 .book-info p{color:var(--muted);line-height:1.7}
@@ -563,7 +581,11 @@ transform .45s ease;
 
 .book-card:hover .book-img img{
 
-transform:scale(1.04);
+transform:
+translateY(-14px)
+scale(1.03);
+
+filter:drop-shadow(0 18px 30px rgba(0,0,0,.22));
 
 }
 
@@ -615,4 +637,117 @@ transform:
 
 translateY(-3px);
 
+}
+
+
+/* ===================================== */
+/* INDEX 2.1 - Libro protagonista */
+/* ===================================== */
+
+.books{
+    overflow:visible;
+    align-items:start;
+}
+
+.book-card{
+    padding-top:64px;
+}
+
+.book-card::before{
+    z-index:1;
+}
+
+.book-img{
+    margin-top:-56px;
+    margin-bottom:12px;
+}
+
+.book-img img{
+    position:relative;
+    z-index:3;
+    transform-origin:center bottom;
+}
+
+.book-info{
+    position:relative;
+    z-index:2;
+}
+
+.book-card:hover{
+    transform:none;
+    box-shadow:0 26px 52px rgba(66,35,17,.20);
+}
+
+.book-card:hover .book-img img{
+    transform:translateY(-18px) scale(1.045);
+    filter:drop-shadow(0 24px 34px rgba(0,0,0,.28));
+}
+
+.book-card .btn{
+    background:none;
+    box-shadow:none;
+    color:var(--wine);
+    padding:0;
+    margin-top:18px;
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:.04em;
+}
+
+.book-card .btn::after{
+    content:" →";
+    transition:margin-left .25s ease;
+}
+
+.book-card:hover .btn::after{
+    margin-left:8px;
+}
+
+
+
+/* ===================================== */
+/* INDEX 2.2 - Libros de editorial */
+/* ===================================== */
+
+.book-img img{
+    transform:rotate(-1deg);
+}
+
+.book-card:nth-child(2) .book-img img{
+    transform:rotate(1deg);
+}
+
+.book-card:hover .book-img img{
+    transform:translateY(-22px) scale(1.05) rotate(0deg);
+    filter:drop-shadow(0 28px 40px rgba(0,0,0,.30));
+}
+
+.book-card::after{
+    content:"";
+    position:absolute;
+    top:26px;
+    left:50%;
+    width:72%;
+    height:14px;
+    transform:translateX(-50%);
+    border-radius:50%;
+    background:radial-gradient(ellipse at center,
+        rgba(0,0,0,.14) 0%,
+        rgba(0,0,0,.08) 45%,
+        transparent 100%);
+    z-index:0;
+    opacity:.75;
+}
+
+.book-info{
+    padding-top:12px;
+}
+
+.book-card .btn{
+    font-size:16px;
+    text-transform:none;
+}
+
+.book-card .btn:hover{
+    letter-spacing:.08em;
 }
