@@ -380,3 +380,17 @@ position:absolute;top:-12px;right:18px;
 background:#fff8e9;border:1px solid var(--gold);
 padding:3px 10px;border-radius:999px;
 font-size:.68rem;color:var(--wine)}
+
+
+/* Premium buy section */
+.buy-language{display:flex;flex-direction:column;gap:6px;padding:4px 0}
+.buy-language-title{font-size:1.35rem;font-weight:600}
+.buy-language-subtitle{font-size:.92rem;color:var(--muted)}
+.buy-links{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:22px}
+.buy-card{background:var(--paper);border:1px solid var(--line);padding:28px;border-radius:18px;display:flex;flex-direction:column}
+.buy-card.featured{grid-column:1/-1}
+.buy-info h4{margin:0;font-size:2rem;font-weight:400;text-transform:uppercase}
+.buy-info p{margin:.4rem 0 1rem}
+.exclusive-tag{display:inline-block;padding:.45rem 1rem;border-radius:999px;background:#efe6cf;border:1px solid #d8c79b;color:#5d4525;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:.4rem 0 1rem}
+.buy-amazon{margin-top:auto;display:block;text-align:center;background:var(--wine);color:#fff;padding:14px;border-radius:12px}
+@media(max-width:800px){.buy-links{grid-template-columns:1fr}.buy-card.featured{grid-column:auto}}
