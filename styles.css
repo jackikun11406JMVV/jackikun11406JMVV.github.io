@@ -486,3 +486,133 @@ transform:none;
 }
 
 }
+/* ===================================== */
+/* INDEX 2.0 */
+/* ===================================== */
+
+.hero-content>*{
+
+    opacity:0;
+
+    transform:translateY(18px);
+
+}
+
+.hero-content.show>*{
+
+    animation:heroFade .8s forwards;
+
+}
+
+.hero-content.show>*:nth-child(1){animation-delay:.05s;}
+.hero-content.show>*:nth-child(2){animation-delay:.15s;}
+.hero-content.show>*:nth-child(3){animation-delay:.30s;}
+.hero-content.show>*:nth-child(4){animation-delay:.45s;}
+.hero-content.show>*:nth-child(5){animation-delay:.60s;}
+
+@keyframes heroFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(22px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+
+/* =========================== */
+/* BOOKS */
+/* =========================== */
+
+.book-card{
+
+transition:
+
+transform .30s ease,
+
+box-shadow .30s ease;
+
+}
+
+.book-card:hover{
+
+transform:
+
+translateY(-8px);
+
+}
+
+.book-img img{
+
+transition:
+
+transform .45s ease;
+
+}
+
+.book-card:hover .book-img img{
+
+transform:scale(1.04);
+
+}
+
+
+/* =========================== */
+/* BOTONES */
+/* =========================== */
+
+.btn{
+
+transition:
+
+all .25s ease;
+
+}
+
+.btn:hover{
+
+transform:
+
+translateY(-2px);
+
+}
+
+.btn:active{
+
+transform:
+
+scale(.98);
+
+}
+
+
+/* =========================== */
+/* FOOTER */
+/* =========================== */
+
+.social-icon{
+
+transition:
+
+transform .25s ease;
+
+}
+
+.social-icon:hover{
+
+transform:
+
+translateY(-3px);
+
+}
