@@ -42,24 +42,45 @@ a{text-decoration:none;color:inherit}
 }
 
 /* Imagen del hero */
-.hero-art{
-    background-image:url("images/hero-2026.png");
-    background-repeat:no-repeat;
-    background-position:center center;
-    background-size:100% auto;
+.hero{
+    position:relative;
+    min-height:560px;
+    overflow:hidden;
+    background:#f2dfb7;
 }
 
-/* Capa suave para integrar imagen y fondo */
-.hero-art:after{
+.hero:before{
     content:"";
     position:absolute;
     inset:0;
+    z-index:1;
 
+    /* Muy suave para no tapar la ilustración */
     background:linear-gradient(
         90deg,
-        rgba(248,237,207,.18) 0%,
-        transparent 42%
+        rgba(248,237,207,.88) 0%,
+        rgba(248,237,207,.45) 26%,
+        rgba(248,237,207,.12) 45%,
+        transparent 62%
     );
+}
+
+.hero-art{
+    position:absolute;
+    inset:0;
+
+    background-image:url("images/hero-2026.png");
+    background-repeat:no-repeat;
+
+    /* Enseña prácticamente toda la ilustración */
+    background-size:contain;
+
+    /* Centrada */
+    background-position:center center;
+}
+
+.hero-art:after{
+    content:none;
 }
 .hero-content{position:relative;z-index:2;padding:120px 0}
 .scribble{display:inline-block;font-size:24px;color:var(--wine);font-style:italic;transform:rotate(-2deg)}
@@ -170,7 +191,11 @@ footer{background:var(--dark);color:#f2ddb5;padding:48px 0}
 
 @media(max-width:850px){
  .nav{height:65px}.brand{font-size:24px}.navlinks{gap:14px;font-size:10px}
- .hero{min-height:700px}.hero-art{background-position:72% center}.hero-content{padding:100px 0}
+ .hero{min-height:700px}.hero-art{
+    opacity:.55;
+    background-position:center center;
+    background-size:contain;
+}.hero-content{padding:100px 0}
  .hero h1{font-size:72px}.books,.feature,.about-grid,.inner-grid{grid-template-columns:1fr}
  .section-title{display:block}.section-title h2{margin-bottom:18px}
  .feature h2,.about h2,.inner h1{font-size:65px}.feature-art{margin-top:20px}
