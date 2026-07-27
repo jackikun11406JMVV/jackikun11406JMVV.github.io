@@ -43,7 +43,10 @@ a{text-decoration:none;color:inherit}
 
 /* Imagen del hero */
 .hero-art{
-   background:url('images/hero-2026.png') center center/contain no-repeat;
+    background-image:url("images/hero-2026.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:100% auto;
 }
 
 /* Capa suave para integrar imagen y fondo */
