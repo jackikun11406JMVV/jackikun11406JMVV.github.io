@@ -43,7 +43,7 @@ a{text-decoration:none;color:inherit}
 
 /* Imagen del hero */
 .hero-art{
-    background:url("images/hero-2026.png") 82% center/110% auto no-repeat;
+    background:url('images/juan-manuel-retrato.jpg') center center/cover no-repeat;
 }
 
 /* Capa suave para integrar imagen y fondo */
