@@ -369,3 +369,5 @@ transform:translateY(0);
 .buy-links .btn{display:flex;justify-content:center;align-items:center;min-height:50px;border-radius:12px;font-weight:700;margin:0;transition:.25s ease}
 .buy-links .btn:hover{transform:translateY(-2px)}
 @media(max-width:700px){.buy-item summary{padding:18px;font-size:1.05rem}.buy-links{padding:16px}}
+
+.buy-language{display:flex;flex-direction:column;gap:6px}.buy-language-title{font-size:1.28rem;font-weight:700;line-height:1.1}.buy-language-subtitle{font-size:.88rem;color:var(--muted);font-weight:400}.exclusive-tag{display:inline-flex;padding:6px 14px;margin-top:10px;border-radius:999px;background:linear-gradient(180deg,#f8e8b8,#ecd081);border:1px solid #b88737;color:#5b3a12;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 4px 12px rgba(184,135,55,.25)}
