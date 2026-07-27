@@ -19,70 +19,33 @@ a{text-decoration:none;color:inherit}
 
 .hero{
     position:relative;
-    min-height:680px;
-    overflow:hidden;
-    background:#f2dfb7;
-}
-
-/* Degradado para dejar sitio al texto */
-.hero:before{
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:1;
-
-    background:linear-gradient(
-        90deg,
-        #f8edcf 0%,
-        rgba(248,237,207,.98) 40%,
-        rgba(248,237,207,.85) 55%,
-        rgba(248,237,207,.40) 68%,
-        transparent 84%
-    );
-}
-
-/* Imagen del hero */
-.hero{
-    position:relative;
+    height:64vw;
     min-height:560px;
+    max-height:760px;
     overflow:hidden;
     background:#f2dfb7;
 }
-
 .hero:before{
     content:"";
     position:absolute;
     inset:0;
     z-index:1;
-
-    /* Muy suave para no tapar la ilustración */
-    background:linear-gradient(
-        90deg,
+    background:linear-gradient(90deg,
         rgba(248,237,207,.88) 0%,
-        rgba(248,237,207,.45) 26%,
-        rgba(248,237,207,.12) 45%,
-        transparent 62%
-    );
+        rgba(248,237,207,.70) 28%,
+        rgba(248,237,207,.28) 48%,
+        rgba(248,237,207,.05) 60%,
+        transparent 72%);
 }
-
 .hero-art{
     position:absolute;
     inset:0;
-
-    background-image:url("images/hero-2026.png");
-    background-repeat:no-repeat;
-
-    /* Enseña prácticamente toda la ilustración */
-    background-size:contain;
-
-    /* Centrada */
-    background-position:center center;
+    background:url("images/hero-2026.png") no-repeat;
+    background-size:cover;
+    background-position:72% 58%;
 }
-
-.hero-art:after{
-    content:none;
-}
-.hero-content{position:relative;z-index:2;padding:120px 0}
+.hero-art:after{content:none}
+.hero-content{position:relative;z-index:2;padding:96px 0}
 .scribble{display:inline-block;font-size:24px;color:var(--wine);font-style:italic;transform:rotate(-2deg)}
 .hero h1{font-size:clamp(64px,8vw,112px);line-height:.82;font-weight:normal;max-width:650px;margin:20px 0}
 .hero h1 span{color:var(--wine)}
