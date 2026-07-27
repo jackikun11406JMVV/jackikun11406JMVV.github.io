@@ -468,11 +468,9 @@ transform:translateY(0);
 
 .buy-card{
 
-opacity:0;
+    opacity:1;
 
-transform:
-translateY(18px)
-scale(.98);
+    transform:none;
 
 }
 

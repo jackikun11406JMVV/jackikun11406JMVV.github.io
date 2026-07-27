@@ -1,58 +1,119 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Solo una vez por sesión
-    if (!sessionStorage.getItem("bookIntro")) {
+    const cover = document.querySelector(".cover");
+    const info = document.querySelector(".inner-grid > div:last-child");
+    const buy = document.querySelector(".buy-accordion");
 
-        sessionStorage.setItem("bookIntro", "true");
+    function reveal(element, className = "intro-show") {
+        if (element) {
+            element.classList.add(className);
+        }
+    }
 
-        const cover = document.querySelector(".cover");
-        const info = document.querySelector(".inner-grid > div:last-child");
-        const buy = document.querySelector(".buy-accordion");
+    // ==========================
+    // INTRO (solo la primera vez)
+    // ==========================
 
-        if (cover) cover.classList.add("intro-cover");
+    if (!localStorage.getItem("bookIntroPlayed")) {
+
+        localStorage.setItem("bookIntroPlayed", "true");
+
+        reveal(cover, "intro-cover");
 
         setTimeout(() => {
-            if (info) info.classList.add("intro-show");
+            reveal(info);
         }, 220);
 
         setTimeout(() => {
-            if (buy) buy.classList.add("intro-show");
+            reveal(buy);
         }, 520);
 
     } else {
 
-        document.querySelector(".cover")?.classList.add("intro-show");
-        document.querySelector(".inner-grid > div:last-child")?.classList.add("intro-show");
-        document.querySelector(".buy-accordion")?.classList.add("intro-show");
+        reveal(cover);
+        reveal(info);
+        reveal(buy);
 
     }
 
+    // ==========================
+    // ANIMACIÓN DE TARJETAS
+    // ==========================
 
-    // Animación de las tarjetas al abrir un acordeón
+    function animateCards(details) {
 
-    document.querySelectorAll(".buy-item").forEach(details => {
+        const cards = details.querySelectorAll(".buy-card");
 
-        details.addEventListener("toggle", () => {
+        cards.forEach((card, index) => {
 
-            if (!details.open) return;
+            card.style.animation = "none";
+            card.style.opacity = "0";
+            card.style.transform = "translateY(18px) scale(.98)";
 
-            const cards = details.querySelectorAll(".buy-card");
+            requestAnimationFrame(() => {
 
-            cards.forEach((card, i) => {
-
-                card.style.animation = "none";
-
-                requestAnimationFrame(() => {
-
-                    card.style.animation =
-                        `cardReveal .45s ease ${i * 70}ms forwards`;
-
-                });
+                card.style.animation =
+                    `cardReveal .45s ease ${index * 70}ms forwards`;
 
             });
 
         });
 
+    }
+
+    // Si un acordeón ya viene abierto al cargar
+
+    document.querySelectorAll(".buy-item[open]").forEach(details => {
+
+        animateCards(details);
+
     });
+
+    // Al abrir un acordeón
+
+    document.querySelectorAll(".buy-item").forEach(details => {
+
+        details.addEventListener("toggle", () => {
+
+            if (details.open) {
+
+                animateCards(details);
+
+            }
+
+        });
+
+    });
+
+    // ==========================
+    // EFECTO 3D PORTADA
+    // ==========================
+
+    if (cover) {
+
+        cover.addEventListener("mousemove", e => {
+
+            const rect = cover.getBoundingClientRect();
+
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+            cover.style.transform = `
+                perspective(900px)
+                rotateY(${x * 4}deg)
+                rotateX(${-y * 4}deg)
+                translateY(-6px)
+                scale(1.02)
+            `;
+
+        });
+
+        cover.addEventListener("mouseleave", () => {
+
+            cover.style.transform = "";
+
+        });
+
+    }
 
 });
