@@ -364,19 +364,79 @@ transform:translateY(0);
 .buy-links{padding:0 18px 18px}
 .buy-links .btn{display:flex;justify-content:center;margin:10px 0}
 
-.buy-amazon{
-display:inline-flex;align-items:center;justify-content:center;
-padding:14px 22px;border-radius:14px;
-background:linear-gradient(180deg,#b88934,#8f5d1d);
-color:#fff;text-decoration:none;font-weight:700;
-box-shadow:0 10px 22px rgba(66,35,17,.18);
-transition:.25s}
-.buy-amazon:hover{transform:translateY(-3px);filter:brightness(1.05)}
-.buy-amazon::before{content:"🛒 ";margin-right:6px}
-.buy-card.featured{border:2px solid var(--gold);position:relative}
-.buy-card.featured::after{
+.buy-language{display:flex;flex-direction:column;gap:6px}.buy-language-title{font-size:1.3rem;font-weight:700}.buy-language-subtitle{font-size:.9rem;color:var(--muted)}
+.buy-links{display:flex;flex-direction:column;gap:16px;padding:8px 0}
+.buy-card{display:flex;justify-content:space-between;align-items:center;background:#fffaf0;border:1px solid #e3cfaa;border-radius:18px;padding:20px;box-shadow:0 10px 24px rgba(0,0,0,.08)}
+.buy-card.featured{border:2px solid var(--gold)}
+.buy-card h4{margin:0;font-size:1.35rem}.buy-card p{margin:4px 0 8px}.buy-card ul{margin:0;padding-left:18px;color:var(--muted)}
+.exclusive-tag{display:inline-block;background:linear-gradient(#f7e6b4,#e4c16b);padding:6px 12px;border-radius:999px;border:1px solid #b88737;font-size:.72rem;font-weight:700;letter-spacing:.08em;margin:6px 0}
+.buy-amazon{display:inline-block;background:linear-gradient(#9a3b26,#7b2a19);color:#fff;padding:14px 18px;border-radius:12px;font-weight:700;white-space:nowrap}
+.buy-amazon:hover{transform:translateY(-2px)}
+@media(max-width:760px){.buy-card{flex-direction:column;align-items:flex-start}.buy-amazon{width:100%;text-align:center;margin-top:14px}}
+
+
+/* --- Compra refinada --- */
+.buy-links{display:flex;flex-direction:column;gap:22px;padding:16px 0}
+.buy-card{
+display:grid;
+grid-template-columns:1fr auto;
+gap:24px;
+align-items:center;
+padding:24px;
+background:linear-gradient(180deg,#fffdf9,#fff7eb);
+border:1px solid #e6d3b2;
+border-radius:22px;
+box-shadow:0 14px 30px rgba(66,35,17,.10);
+transition:.25s;
+}
+.buy-card:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(66,35,17,.16)}
+.buy-card.featured{
+border:2px solid #b88737;
+background:linear-gradient(180deg,#fffdf8,#fdf2d8);
+}
+.buy-card.featured::before{
 content:"Nuestra edición más completa";
-position:absolute;top:-12px;right:18px;
-background:#fff8e9;border:1px solid var(--gold);
-padding:3px 10px;border-radius:999px;
-font-size:.68rem;color:var(--wine)}
+grid-column:1/-1;
+display:inline-block;
+justify-self:start;
+padding:5px 12px;
+border-radius:999px;
+background:#fff4d8;
+border:1px solid #b88737;
+color:#7d2e20;
+font-size:.72rem;
+font-weight:700;
+letter-spacing:.08em;
+}
+.buy-info h4{font-size:1.55rem;margin:0}
+.buy-info p{margin:6px 0 10px}
+.buy-info ul{margin:12px 0 0 18px;line-height:1.8}
+.exclusive-tag{
+display:inline-flex;
+padding:7px 14px;
+border-radius:999px;
+background:linear-gradient(180deg,#f8e7b6,#e7c874);
+border:1px solid #b88737;
+font-size:.72rem;
+font-weight:700;
+letter-spacing:.08em;
+}
+.buy-amazon{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+min-width:230px;
+padding:16px 20px;
+border-radius:14px;
+background:linear-gradient(180deg,#a43e28,#7b2919);
+color:#fff;
+font-weight:700;
+box-shadow:0 10px 20px rgba(66,35,17,.18);
+transition:.25s;
+}
+.buy-amazon:hover{transform:translateY(-3px)}
+.buy-amazon::before{content:"🛒 ";margin-right:6px}
+@media(max-width:760px){
+.buy-card{grid-template-columns:1fr}
+.buy-amazon{width:100%}
+}
