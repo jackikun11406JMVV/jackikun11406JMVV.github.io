@@ -394,3 +394,132 @@ font-size:.68rem;color:var(--wine)}
 .exclusive-tag{display:inline-block;padding:.45rem 1rem;border-radius:999px;background:#efe6cf;border:1px solid #d8c79b;color:#5d4525;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:.4rem 0 1rem}
 .buy-amazon{margin-top:auto;display:block;text-align:center;background:var(--wine);color:#fff;padding:14px;border-radius:12px}
 @media(max-width:800px){.buy-links{grid-template-columns:1fr}.buy-card.featured{grid-column:auto}}
+/* INTRO */
+
+.cover,
+.inner-grid > div:last-child,
+.buy-accordion{
+
+opacity:0;
+
+transform:translateY(18px);
+
+}
+
+.intro-cover{
+
+animation:coverIntro .85s cubic-bezier(.22,.61,.36,1) forwards;
+
+}
+
+.intro-show{
+
+animation:fadeUp .65s ease forwards;
+
+}
+
+@keyframes coverIntro{
+
+0%{
+
+opacity:0;
+
+transform:
+translateY(30px)
+rotate(-3deg)
+scale(.96);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:
+translateY(0)
+rotate(-1.5deg)
+scale(1);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* TARJETAS */
+
+.buy-card{
+
+opacity:0;
+
+transform:
+translateY(18px)
+scale(.98);
+
+}
+
+@keyframes cardReveal{
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0)
+scale(1);
+
+}
+
+}
+
+/* PORTADA */
+
+.cover{
+
+transition:
+transform .45s cubic-bezier(.22,.61,.36,1),
+box-shadow .45s ease;
+
+}
+
+.cover:hover{
+
+transform:
+rotate(-1deg)
+translateY(-8px)
+scale(1.02);
+
+box-shadow:
+0 40px 80px rgba(46,26,15,.24);
+
+}
+
+.cover img{
+
+transition:transform .45s ease;
+
+}
+
+.cover:hover img{
+
+transform:scale(1.015);
+
+}
