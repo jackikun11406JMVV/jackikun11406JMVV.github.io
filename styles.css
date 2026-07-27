@@ -17,10 +17,52 @@ a{text-decoration:none;color:inherit}
 .navlinks a{padding:28px 0;border-bottom:2px solid transparent}
 .navlinks a:hover{color:#f5cc72;border-color:#f5cc72}
 
-.hero{position:relative;min-height:680px;overflow:hidden;background:#f2dfb7}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#f8edcf 0%,#f8edcfe8 32%,#f8edcf55 62%,transparent 100%);z-index:1}
-.hero-art{position:absolute;inset:0;background:url('images/hero-2026.png') 77% center/cover no-repeat}
-.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#f8edcf 0%,transparent 58%)}
+.hero{
+    position:relative;
+    min-height:680px;
+    overflow:hidden;
+    background:#f2dfb7;
+}
+
+/* Degradado para dejar sitio al texto */
+.hero:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:1;
+
+    background:linear-gradient(
+        90deg,
+        #f8edcf 0%,
+        rgba(248,237,207,.98) 40%,
+        rgba(248,237,207,.85) 55%,
+        rgba(248,237,207,.40) 68%,
+        transparent 84%
+    );
+}
+
+/* Imagen del hero */
+.hero-art{
+    position:absolute;
+    inset:0;
+    background:
+        url("images/hero-2026.png")
+        83% center / cover
+        no-repeat;
+}
+
+/* Capa suave para integrar imagen y fondo */
+.hero-art:after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        rgba(248,237,207,.18) 0%,
+        transparent 42%
+    );
+}
 .hero-content{position:relative;z-index:2;padding:120px 0}
 .scribble{display:inline-block;font-size:24px;color:var(--wine);font-style:italic;transform:rotate(-2deg)}
 .hero h1{font-size:clamp(64px,8vw,112px);line-height:.82;font-weight:normal;max-width:650px;margin:20px 0}
