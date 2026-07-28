@@ -815,3 +815,28 @@ translateY(-3px);
     display:none!important;
 }
 }
+
+
+/* ===== Ajuste móvil Hero v2 ===== */
+@media (max-width:560px){
+  .hero .btn{display:none!important;}
+  .hero-content{
+    padding:20px 0 260px!important;
+  }
+  .hero:before{
+    background:linear-gradient(
+      180deg,
+      rgba(248,237,207,.82) 0%,
+      rgba(248,237,207,.55) 28%,
+      rgba(248,237,207,.18) 52%,
+      rgba(248,237,207,.08) 72%,
+      transparent 100%)!important;
+  }
+  .hero h1,
+  .hero .eyebrow,
+  .hero p{
+    text-shadow:
+      0 1px 2px rgba(248,237,207,.85),
+      0 0 10px rgba(248,237,207,.75);
+  }
+}
