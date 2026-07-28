@@ -817,26 +817,73 @@ translateY(-3px);
 }
 
 
-/* ===== Ajuste móvil Hero v2 ===== */
+/* ===== Ajuste móvil Hero v3 ===== */
 @media (max-width:560px){
+
+  /* Ocultamos botones en móvil */
   .hero .btn{display:none!important;}
+
+  /* El texto queda arriba para no tapar a Pérez ni a Jara */
   .hero-content{
-    padding:20px 0 260px!important;
+    padding:28px 0 340px!important;
+    max-width:320px;
   }
+
+  /* Más contraste arriba y transparencia abajo */
   .hero:before{
     background:linear-gradient(
       180deg,
-      rgba(248,237,207,.82) 0%,
-      rgba(248,237,207,.55) 28%,
-      rgba(248,237,207,.18) 52%,
-      rgba(248,237,207,.08) 72%,
-      transparent 100%)!important;
+      rgba(248,237,207,.92) 0%,
+      rgba(248,237,207,.82) 18%,
+      rgba(248,237,207,.62) 36%,
+      rgba(248,237,207,.28) 52%,
+      rgba(248,237,207,.08) 64%,
+      transparent 76%)!important;
   }
+
+  /* La composición favorece Catedral, trineo, Pérez y Jara */
+  .hero-art{
+    background-position:72% 82%!important;
+  }
+
+  .hero .eyebrow{
+    max-width:260px;
+    color:#7d2e20;
+  }
+
+  .hero h1{
+    max-width:310px;
+  }
+
+  .hero p{
+    max-width:300px;
+    color:#3b281d;
+    font-weight:600;
+    line-height:1.75;
+  }
+
+  /* Sombra elegante para mejorar lectura */
   .hero h1,
   .hero .eyebrow,
   .hero p{
     text-shadow:
-      0 1px 2px rgba(248,237,207,.85),
-      0 0 10px rgba(248,237,207,.75);
+      0 2px 3px rgba(255,248,232,.95),
+      0 0 18px rgba(255,248,232,.90),
+      0 0 32px rgba(255,248,232,.65);
   }
+}
+
+
+/* ===== HERO MÓVIL DEFINITIVO ===== */
+@media (max-width:560px){
+.hero{min-height:840px!important;}
+.hero-art{opacity:1!important;background-size:cover!important;background-position:72% 82%!important;}
+.hero:before{background:linear-gradient(180deg,rgba(248,237,207,.94) 0%,rgba(248,237,207,.88) 18%,rgba(248,237,207,.72) 35%,rgba(248,237,207,.34) 55%,rgba(248,237,207,.10) 72%,transparent 100%)!important;}
+.hero-content{padding:34px 0 340px!important;max-width:305px;}
+.hero h1{max-width:305px;font-size:54px!important;line-height:.9;margin:12px 0 20px;}
+.hero .scribble{font-size:22px;display:block;margin-bottom:8px;}
+.hero-lead{max-width:290px;font-size:1.18rem;line-height:1.55;color:#2b1a10;font-weight:700;margin-bottom:0;}
+.hero-description{display:none;}
+.hero .btn{display:none!important;}
+.hero h1,.hero .scribble,.hero-lead{text-shadow:0 2px 6px rgba(255,249,238,.98),0 0 18px rgba(255,248,236,.96),0 0 42px rgba(255,248,236,.85);}
 }
