@@ -784,27 +784,34 @@ translateY(-3px);
 /* ===== HERO MÓVIL 3.0 ===== */
 @media (max-width:560px){
 .hero{
-    min-height:760px!important;
+    min-height:840px!important;
 }
 .hero-art{
     opacity:1!important;
     background-size:cover!important;
-    background-position:72% bottom!important;
+    background-position:73% 78%!important;
 }
 .hero:before{
     background:linear-gradient(180deg,
-        rgba(248,237,207,.90) 0%,
-        rgba(248,237,207,.52) 36%,
-        rgba(248,237,207,.08) 60%,
+        rgba(248,237,207,.72) 0%,
+        rgba(248,237,207,.34) 34%,
+        rgba(248,237,207,.06) 55%,
         transparent 100%)!important;
 }
 .hero-content{
     position:relative;
     z-index:2;
-    padding:42px 0 340px!important;
+    padding:24px 0 360px!important;
 }
 .hero h1{
     font-size:54px!important;
     line-height:.9!important;
+}
+.hero p{
+    max-width:340px;
+    line-height:1.7;
+}
+.hero .btn.secondary{
+    display:none!important;
 }
 }
