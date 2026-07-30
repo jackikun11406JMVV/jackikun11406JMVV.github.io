@@ -25,9 +25,45 @@
       ]
     },
     {
-      "@type": "Book",
-      "@id": "https://jackikun11406jmvv.github.io/jara-la-noble-ppp.html#book",
+      "@type": "Organization",
+      "@id": "https://jackikun11406jmvv.github.io/#publisher",
+      "name": "Juan Manuel Vela Vacas Independent Publishing",
+      "url": "https://jackikun11406jmvv.github.io/",
+      "founder": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      }
+    },
+    {
+      "@type": "BookPage",
+      "@id": "https://jackikun11406jmvv.github.io/jara-la-noble-ppp.html#webpage",
+      "url": "https://jackikun11406jmvv.github.io/jara-la-noble-ppp.html",
+      "mainEntity": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work"
+      },
       "name": "Jara, la noble PPP",
+      "headline": "Jara, la noble PPP",
+      "abstract": "Cuento infantil ilustrado basado en una historia real sobre empatía, respeto y perros PPP.",
+      "isPartOf": {
+        "@id": "https://jackikun11406jmvv.github.io/#website"
+      },
+      "about": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work"
+      }
+    },
+    {
+      "@type": "Book",
+      "@id": "https://jackikun11406jmvv.github.io/#jara-work",
+      "name": "Jara, la noble PPP",
+      "illustrator": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "copyrightHolder": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "copyrightNotice": "© 2026 Juan Manuel Vela Vacas",
+      "mainEntityOfPage": {
+        "@id": "https://jackikun11406jmvv.github.io/jara-la-noble-ppp.html#webpage"
+      },
       "alternateName": "No juzgues por la raza, conoce el corazón.",
       "url": "https://jackikun11406jmvv.github.io/jara-la-noble-ppp.html",
       "image": "https://jackikun11406jmvv.github.io/images/jara-portada.jpg",
@@ -36,23 +72,390 @@
         "@id": "https://jackikun11406jmvv.github.io/#author"
       },
       "publisher": {
-        "@id": "https://jackikun11406jmvv.github.io/#author"
+        "@id": "https://jackikun11406jmvv.github.io/#publisher"
       },
       "isPartOf": {
         "@id": "https://jackikun11406jmvv.github.io/#series"
       },
+      "headline": "Jara, la noble PPP",
+      "abstract": "Cuento infantil ilustrado basado en una historia real sobre empatía, respeto y perros PPP.",
+      "creator": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "thumbnailUrl": "https://jackikun11406jmvv.github.io/images/jara-portada.jpg",
+      "genre": [
+        "Children's literature",
+        "Animal fiction",
+        "Educational fiction"
+      ],
+      "keywords": "PPP,dogs,empathy,respect",
+      "creativeWorkStatus": "Published",
+      "typicalAgeRange": "4-10",
+      "isFamilyFriendly": true,
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4,
+        "suggestedMaxAge": 10
+      },
+      "about": [
+        "Perros PPP",
+        "Empatía",
+        "Respeto",
+        "Educación",
+        "Bienestar animal"
+      ],
       "workExample": [
         {
-          "@type": "Book",
-          "bookFormat": "https://schema.org/Paperback",
-          "asin": "B0H6KVFH2P"
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-es"
         },
         {
-          "@type": "Book",
-          "bookFormat": "https://schema.org/EBook",
-          "asin": "B0H6NPP9KH"
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-en"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-fr"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-es"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-en"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-fr"
         }
       ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-es",
+      "name": "Jara, la noble PPP (Español)",
+      "inLanguage": "es",
+      "translationOfWork": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work"
+      },
+      "exampleOfWork": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work"
+      },
+      "hasPart": [
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-es/paperback"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-es/kindle"
+        }
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-en",
+      "name": "Jara, la noble PPP (English)",
+      "inLanguage": "en",
+      "translationOfWork": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work"
+      },
+      "exampleOfWork": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work"
+      },
+      "hasPart": [
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-en/paperback"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-en/kindle"
+        }
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-fr",
+      "name": "Jara, la noble PPP (Français)",
+      "inLanguage": "fr",
+      "translationOfWork": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work"
+      },
+      "exampleOfWork": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work"
+      },
+      "hasPart": [
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-fr/paperback"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-fr/kindle"
+        }
+      ]
+    },
+    {
+      "@type": "Book",
+      "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-es/paperback",
+      "isPartOf": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-es"
+      },
+      "bookEdition": "Paperback Classic Edition",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.letraminuscula.com/amz/B0H6KVFH2P",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@id": "https://jackikun11406jmvv.github.io/#publisher"
+        }
+      },
+      "bookFormat": "https://schema.org/Paperback",
+      "author": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "publisher": {
+        "@id": "https://jackikun11406jmvv.github.io/#publisher"
+      },
+      "inLanguage": "es",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ASIN",
+        "value": "B0H6KVFH2P"
+      },
+      "datePublished":"2026-07-24",
+      "copyrightHolder": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "copyrightYear": 2026,
+      "typicalAgeRange": "4-10",
+      "isFamilyFriendly": true,
+      "encodingFormat": "application/pdf",
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4,
+        "suggestedMaxAge": 10
+      },
+      "image": "https://jackikun11406jmvv.github.io/images/jara-portada.jpg",
+      "thumbnailUrl": "https://jackikun11406jmvv.github.io/images/jara-portada.jpg",
+      "numberOfPages": 40
+    },
+    {
+      "@type": "Book",
+      "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-es/kindle",
+      "isPartOf": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-es"
+      },
+      "bookEdition": "Extended Kindle Edition",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.letraminuscula.com/amz/B0H6NPP9KH",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@id": "https://jackikun11406jmvv.github.io/#publisher"
+        }
+      },
+      "bookFormat": "https://schema.org/EBook",
+      "author": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "publisher": {
+        "@id": "https://jackikun11406jmvv.github.io/#publisher"
+      },
+      "inLanguage": "es",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ASIN",
+        "value": "B0H6NPP9KH"
+      },
+      "datePublished":"2026-07-25",
+      "copyrightHolder": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "copyrightYear": 2026,
+      "typicalAgeRange": "4-10",
+      "isFamilyFriendly": true,
+      "encodingFormat": "application/epub+zip",
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4,
+        "suggestedMaxAge": 10
+      },
+      "image": "https://jackikun11406jmvv.github.io/images/jara-portada.jpg",
+      "thumbnailUrl": "https://jackikun11406jmvv.github.io/images/jara-portada.jpg",
+      "numberOfPages": 40
+    },
+    {
+      "@type": "Book",
+      "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-en/paperback",
+      "isPartOf": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-en"
+      },
+      "bookEdition": "Paperback Classic Edition",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.letraminuscula.com/amz/B0HBCZKTS2",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@id": "https://jackikun11406jmvv.github.io/#publisher"
+        }
+      },
+      "bookFormat": "https://schema.org/Paperback",
+      "author": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "publisher": {
+        "@id": "https://jackikun11406jmvv.github.io/#publisher"
+      },
+      "inLanguage": "en",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ASIN",
+        "value": "B0HBCZKTS2"
+      },
+      "datePublished":"2026-07-25",
+      "copyrightHolder": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "copyrightYear": 2026,
+      "typicalAgeRange": "4-10",
+      "isFamilyFriendly": true,
+      "encodingFormat": "application/pdf",
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4,
+        "suggestedMaxAge": 10
+      },
+      "image": "https://jackikun11406jmvv.github.io/en/images/jara-portada.jpg",
+      "thumbnailUrl": "https://jackikun11406jmvv.github.io/en/images/jara-portada.jpg",
+      "numberOfPages": 40
+    },
+    {
+      "@type": "Book",
+      "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-en/kindle",
+      "isPartOf": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-en"
+      },
+      "bookEdition": "Extended Kindle Edition",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.letraminuscula.com/amz/B0HB9VHXXD",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@id": "https://jackikun11406jmvv.github.io/#publisher"
+        }
+      },
+      "bookFormat": "https://schema.org/EBook",
+      "author": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "publisher": {
+        "@id": "https://jackikun11406jmvv.github.io/#publisher"
+      },
+      "inLanguage": "en",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ASIN",
+        "value": "B0HB9VHXXD"
+      },
+      "datePublished":"2026-07-26",
+      "copyrightHolder": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "copyrightYear": 2026,
+      "typicalAgeRange": "4-10",
+      "isFamilyFriendly": true,
+      "encodingFormat": "application/epub+zip",
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4,
+        "suggestedMaxAge": 10
+      },
+      "image": "https://jackikun11406jmvv.github.io/en/images/jara-portada.jpg",
+      "thumbnailUrl": "https://jackikun11406jmvv.github.io/en/images/jara-portada.jpg",
+      "numberOfPages": 40
+    },
+    {
+      "@type": "Book",
+      "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-fr/paperback",
+      "isPartOf": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-fr"
+      },
+      "bookEdition": "Paperback Classic Edition",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.letraminuscula.com/amz/B0HBRW2QFQ",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@id": "https://jackikun11406jmvv.github.io/#publisher"
+        }
+      },
+      "bookFormat": "https://schema.org/Paperback",
+      "author": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "publisher": {
+        "@id": "https://jackikun11406jmvv.github.io/#publisher"
+      },
+      "inLanguage": "fr",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ASIN",
+        "value": "B0HBRW2QFQ"
+      },
+      "datePublished":"2026-07-26",
+      "copyrightHolder": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "copyrightYear": 2026,
+      "typicalAgeRange": "4-10",
+      "isFamilyFriendly": true,
+      "encodingFormat": "application/pdf",
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4,
+        "suggestedMaxAge": 10
+      },
+      "image": "https://jackikun11406jmvv.github.io/fr/images/jara-portada.jpg",
+      "thumbnailUrl": "https://jackikun11406jmvv.github.io/fr/images/jara-portada.jpg",
+      "numberOfPages": 40
+    },
+    {
+      "@type": "Book",
+      "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-fr/kindle",
+      "isPartOf": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-fr"
+      },
+      "bookEdition": "Extended Kindle Edition",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.letraminuscula.com/amz/B0HBBZ1M5L",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@id": "https://jackikun11406jmvv.github.io/#publisher"
+        }
+      },
+      "bookFormat": "https://schema.org/EBook",
+      "author": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "publisher": {
+        "@id": "https://jackikun11406jmvv.github.io/#publisher"
+      },
+      "inLanguage": "fr",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ASIN",
+        "value": "B0HBBZ1M5L"
+      },
+      "datePublished":"2026-07-26",
+      "copyrightHolder": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "copyrightYear": 2026,
+      "typicalAgeRange": "4-10",
+      "isFamilyFriendly": true,
+      "encodingFormat": "application/epub+zip",
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": 4,
+        "suggestedMaxAge": 10
+      },
+      "image": "https://jackikun11406jmvv.github.io/fr/images/jara-portada.jpg",
+      "thumbnailUrl": "https://jackikun11406jmvv.github.io/fr/images/jara-portada.jpg",
+      "numberOfPages": 40
     },
     {
       "@type": "BreadcrumbList",
