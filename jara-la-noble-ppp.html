@@ -21,22 +21,30 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-  "@type": "Organization",
-  "@id": "https://jackikun11406jmvv.github.io/#publisher",
-  "name": "Juan Manuel Vela Vacas Independent Publishing",
-  "url": "https://jackikun11406jmvv.github.io/",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://jackikun11406jmvv.github.io/images/logo.svg"
-  },
-      "image": "https://jackikun11406jmvv.github.io/images/juan-manuel-autor.jpg",
-      "jobTitle": "Autor de cuentos infantiles",
-      "description": "Autor de cuentos infantiles ilustrados.",
-      "sameAs": [
+      "@type":"WebSite",
+      "@id":"https://jackikun11406jmvv.github.io/#website",
+      "url":"https://jackikun11406jmvv.github.io/",
+      "name":"Juan Manuel Vela Vacas",
+      "creator":{"@id":"https://jackikun11406jmvv.github.io/#author"},
+      "publisher":{"@id":"https://jackikun11406jmvv.github.io/#publisher"},
+      "inLanguage":"es",
+      "potentialAction":{"@type":"SearchAction","target":"https://jackikun11406jmvv.github.io/?q={search_term_string}","query-input":"required name=search_term_string"}
+    },
+
+    {
+      "@type":"Person",
+      "@id":"https://jackikun11406jmvv.github.io/#author",
+      "name":"Juan Manuel Vela Vacas",
+      "url":"https://jackikun11406jmvv.github.io/",
+      "image":"https://jackikun11406jmvv.github.io/images/juan-manuel-autor.jpg",
+      "description":"Autor español de cuentos infantiles ilustrados.",
+      "jobTitle":"Autor de cuentos infantiles",
+      "sameAs":[
         "https://www.amazon.es/stores/Don-Juan-Manuel-Vela-Vacas-JMVV/author/B0H26BPH89",
         "https://www.instagram.com/jackikun/",
         "https://www.facebook.com/Jackikun/",
-        "https://www.tiktok.com/@jackiikun"
+        "https://www.tiktok.com/@jackiikun",
+        "https://jackikun11406jmvv.github.io/"
       ]
     },
     {
@@ -44,9 +52,16 @@
       "@id": "https://jackikun11406jmvv.github.io/#publisher",
       "name": "Juan Manuel Vela Vacas Independent Publishing",
       "url": "https://jackikun11406jmvv.github.io/",
+      "logo":{"@type":"ImageObject","@id":"https://jackikun11406jmvv.github.io/#logo","url":"https://jackikun11406jmvv.github.io/images/logo.svg"},
       "founder": {
         "@id": "https://jackikun11406jmvv.github.io/#author"
-      }
+      },
+      "image":"https://jackikun11406jmvv.github.io/images/logo.svg",
+      "sameAs":[
+"https://www.amazon.es/stores/Don-Juan-Manuel-Vela-Vacas-JMVV/author/B0H26BPH89",
+"https://www.instagram.com/jackikun/",
+"https://www.facebook.com/Jackikun/",
+"https://www.tiktok.com/@jackiikun"]
     },
     {
       "@type": "BookPage",
@@ -63,7 +78,30 @@
       },
       "about": {
         "@id": "https://jackikun11406jmvv.github.io/#jara-work"
-      }
+      },
+      "breadcrumb":{"@id":"https://jackikun11406jmvv.github.io/jara-la-noble-ppp.html#breadcrumb"},
+      "primaryImageOfPage":{"@id":"https://jackikun11406jmvv.github.io/#jara-cover"},
+      "description":"Página oficial del cuento infantil Jara, la noble PPP.",
+      "inLanguage":"es",
+      "speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".eyebrow"]},"isAccessibleForFree":true,
+      "lastReviewed":"2026-08-01"
+    },
+    
+
+    {
+      "@type":"CreativeWorkSeries",
+      "@id":"https://jackikun11406jmvv.github.io/#series",
+      "name":"Juan Manuel Vela Vacas Children's Books",
+      "creator":{"@id":"https://jackikun11406jmvv.github.io/#author"},
+      "publisher":{"@id":"https://jackikun11406jmvv.github.io/#publisher"},
+      "inLanguage":"es"
+    },
+    {
+      "@type":"ImageObject",
+      "@id":"https://jackikun11406jmvv.github.io/#jara-cover",
+      "url":"https://jackikun11406jmvv.github.io/images/jara-portada.jpg",
+      "contentUrl":"https://jackikun11406jmvv.github.io/images/jara-portada.jpg",
+      "caption":"Portada de Jara, la noble PPP","inLanguage":"es","representativeOfPage":true,"width":1200,"height":1200,"encodingFormat":"image/jpeg","thumbnail":"https://jackikun11406jmvv.github.io/images/jara-portada.jpg"
     },
     {
       "@type": "Book",
@@ -76,13 +114,15 @@
         "@id": "https://jackikun11406jmvv.github.io/#author"
       },
       "copyrightNotice": "© 2026 Juan Manuel Vela Vacas",
-      "mainEntityOfPage": {
-        "@id": "https://jackikun11406jmvv.github.io/jara-la-noble-ppp.html#webpage"
-      },
+      "mainEntityOfPage":{"@id":"https://jackikun11406jmvv.github.io/jara-la-noble-ppp.html#webpage"},
+      "mainEntity":{"@id":"https://jackikun11406jmvv.github.io/#jara-work"},
       "alternateName": "No juzgues por la raza, conoce el corazón.",
       "url": "https://jackikun11406jmvv.github.io/jara-la-noble-ppp.html",
-      "image": "https://jackikun11406jmvv.github.io/images/jara-portada.jpg",
-      "inLanguage": "es",
+      "image":{"@id":"https://jackikun11406jmvv.github.io/#jara-cover"},
+      "datePublished":"2026-07-24",
+      "dateModified":"2026-08-01",
+      "mentions":[{"@type":"Thing","name":"Perros PPP"},{"@type":"Place","name":"Jerez de la Frontera"}],
+      "inLanguage":"es",
       "author": {
         "@id": "https://jackikun11406jmvv.github.io/#author"
       },
@@ -104,7 +144,7 @@
         "Educational fiction"
       ],
       "keywords": "PPP,dogs,empathy,respect",
-      "creativeWorkStatus": "Published",
+      "creativeWorkStatus":"Published","accessMode":["textual","visual"],"accessModeSufficient":["textual","visual"],
       "typicalAgeRange": "4-10",
       "isFamilyFriendly": true,
       "audience": {
@@ -130,6 +170,14 @@
           "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-fr"
         }
       ],
+      "relatedLink":"https://jackikun11406jmvv.github.io/el-origen-del-ratoncito-perez.html",
+      "isBasedOn":{"@type":"Thing","name":"Historia real"},
+      "teaches":["Empatía","Respeto","Bienestar animal"],
+      "educationalUse":"Empathy education",
+      "learningResourceType":"Children\u0027s story",
+      "license":"https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "subjectOf":{"@id":"https://jackikun11406jmvv.github.io/jara-la-noble-ppp.html#webpage"},
+      "translation":[{"@id":"https://jackikun11406jmvv.github.io/#jara-work/lang-en"},{"@id":"https://jackikun11406jmvv.github.io/#jara-work/lang-fr"}],
       "hasPart": [
         {
           "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-es"
@@ -147,9 +195,8 @@
       "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-es",
       "name": "Jara, la noble PPP (Español)",
       "inLanguage": "es",
-      "translationOfWork": {
-        "@id": "https://jackikun11406jmvv.github.io/#jara-work"
-      },
+      "translationOfWork":{"@id":"https://jackikun11406jmvv.github.io/#jara-work"},
+      "translator":{"@id":"https://jackikun11406jmvv.github.io/#author"},
       "exampleOfWork": {
         "@id": "https://jackikun11406jmvv.github.io/#jara-work"
       },
@@ -167,9 +214,8 @@
       "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-en",
       "name": "Jara, la noble PPP (English)",
       "inLanguage": "en",
-      "translationOfWork": {
-        "@id": "https://jackikun11406jmvv.github.io/#jara-work"
-      },
+      "translationOfWork":{"@id":"https://jackikun11406jmvv.github.io/#jara-work"},
+      "translator":{"@id":"https://jackikun11406jmvv.github.io/#author"},
       "exampleOfWork": {
         "@id": "https://jackikun11406jmvv.github.io/#jara-work"
       },
@@ -187,9 +233,8 @@
       "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-fr",
       "name": "Jara, la noble PPP (Français)",
       "inLanguage": "fr",
-      "translationOfWork": {
-        "@id": "https://jackikun11406jmvv.github.io/#jara-work"
-      },
+      "translationOfWork":{"@id":"https://jackikun11406jmvv.github.io/#jara-work"},
+      "translator":{"@id":"https://jackikun11406jmvv.github.io/#author"},
       "exampleOfWork": {
         "@id": "https://jackikun11406jmvv.github.io/#jara-work"
       },
@@ -230,6 +275,7 @@
         "propertyID": "ASIN",
         "value": "B0H6KVFH2P"
       },
+      "isbn":"9798319156679",
       "datePublished":"2026-07-24",
       "copyrightHolder": {
         "@id": "https://jackikun11406jmvv.github.io/#author"
@@ -320,6 +366,7 @@
         "propertyID": "ASIN",
         "value": "B0HBCZKTS2"
       },
+      "isbn":"9798319156730",
       "datePublished":"2026-07-25",
       "copyrightHolder": {
         "@id": "https://jackikun11406jmvv.github.io/#author"
@@ -410,6 +457,7 @@
         "propertyID": "ASIN",
         "value": "B0HBRW2QFQ"
       },
+      "isbn":"9798319156792",
       "datePublished":"2026-07-26",
       "copyrightHolder": {
         "@id": "https://jackikun11406jmvv.github.io/#author"
@@ -474,7 +522,8 @@
     },
     {
       "@type": "BreadcrumbList",
-      "itemListElement": [
+      "@id":"https://jackikun11406jmvv.github.io/jara-la-noble-ppp.html#breadcrumb",
+      "inLanguage":"es","itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
