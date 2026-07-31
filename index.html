@@ -79,6 +79,44 @@
       "email": "mailto:jvv_11406@live.com",
       "identifier": "JMVV-AUTHOR"
     },
+
+    {
+      "@type":"ImageObject",
+      "@id":"https://jackikun11406jmvv.github.io/#author-photo",
+      "url":"https://jackikun11406jmvv.github.io/images/juan-manuel-autor.jpg",
+      "contentUrl":"https://jackikun11406jmvv.github.io/images/juan-manuel-autor.jpg",
+      "caption":"Juan Manuel Vela Vacas",
+      "author":{"@id":"https://jackikun11406jmvv.github.io/#author"}
+    },
+    {
+      "@type":"ImageObject",
+      "@id":"https://jackikun11406jmvv.github.io/#logo-image",
+      "url":"https://jackikun11406jmvv.github.io/images/logo.svg",
+      "contentUrl":"https://jackikun11406jmvv.github.io/images/logo.svg",
+      "caption":"Logotipo oficial"
+    },
+
+    {
+      "@type":"ImageObject",
+      "@id":"https://jackikun11406jmvv.github.io/#perez-cover",
+      "url":"https://jackikun11406jmvv.github.io/images/perez-portada.jpg",
+      "contentUrl":"https://jackikun11406jmvv.github.io/images/perez-portada.jpg",
+      "caption":"Portada de El origen del Ratoncito Pérez"
+    },
+    {
+      "@type":"ImageObject",
+      "@id":"https://jackikun11406jmvv.github.io/#jara-cover",
+      "url":"https://jackikun11406jmvv.github.io/images/jara-portada.jpg",
+      "contentUrl":"https://jackikun11406jmvv.github.io/images/jara-portada.jpg",
+      "caption":"Portada de Jara, la noble PPP"
+    },
+    {
+      "@type":"ImageObject",
+      "@id":"https://jackikun11406jmvv.github.io/#san-cover",
+      "url":"https://jackikun11406jmvv.github.io/images/san-nicolas-portada.jpg",
+      "contentUrl":"https://jackikun11406jmvv.github.io/images/san-nicolas-portada.jpg",
+      "caption":"Portada de El origen de Papá Noel"
+    },
     {
       "@type": "Organization",
       "@id": "https://jackikun11406jmvv.github.io/#publisher",
@@ -86,7 +124,7 @@
       "url": "https://jackikun11406jmvv.github.io/",
        "logo": {
     "@type": "ImageObject",
-    "url": "https://jackikun11406jmvv.github.io/images/logo.svg"
+    "@id":"https://jackikun11406jmvv.github.io/#logo-image"
   },
       "founder": {
         "@id": "https://jackikun11406jmvv.github.io/#author"
@@ -122,7 +160,21 @@
         "es",
         "en",
         "fr"
-      ]
+      ],
+      "mainEntityOfPage":{"@id":"https://jackikun11406jmvv.github.io/#webpage"}
+    },
+    {
+      "@type":"WebPage",
+      "@id":"https://jackikun11406jmvv.github.io/#webpage",
+      "url":"https://jackikun11406jmvv.github.io/",
+      "name":"Juan Manuel Vela Vacas | Cuentos infantiles ilustrados",
+      "description":"Web oficial de Juan Manuel Vela Vacas. Descubre cuentos infantiles ilustrados como El origen del Ratoncito Pérez, Jara, la noble PPP y la próxima historia sobre San Nicolás.",
+      "isPartOf":{"@id":"https://jackikun11406jmvv.github.io/#website"},
+      "about":{"@id":"https://jackikun11406jmvv.github.io/#series"},
+      "mainEntity":{"@id":"https://jackikun11406jmvv.github.io/#collection"},
+      "primaryImageOfPage":{"@id":"https://jackikun11406jmvv.github.io/#author-photo"},
+      "inLanguage":"es",
+      "copyrightHolder":{"@id":"https://jackikun11406jmvv.github.io/#author"}
     },
     {
       "@type": "CollectionPage",
@@ -157,7 +209,7 @@
       "numberOfItems": 3
     },
     {
-      "@type": "CreativeWork",
+      "@type": ["Book","CreativeWork"],
       "@id": "https://jackikun11406jmvv.github.io/#perez-work",
       "name": "El origen del Ratoncito Pérez",
       "description": "Cuento infantil ilustrado inspirado en el origen del Ratoncito Pérez.",
@@ -193,10 +245,19 @@
       ],
       "keywords": "Ratoncito Pérez,Jerez,Luis Coloma,Tooth Fairy",
       "creativeWorkStatus": "Published",
+      "image":{"@id":"https://jackikun11406jmvv.github.io/#perez-cover"},
+      "illustrator":{"@id":"https://jackikun11406jmvv.github.io/#author"},
+      "audience":{"@type":"PeopleAudience","suggestedMinAge":4,"suggestedMaxAge":99},
+      "typicalAgeRange":"4-99",
+      "isFamilyFriendly":true,
+      "about":["Ratoncito Pérez","Jerez de la Frontera","Tradiciones españolas"],
+      "copyrightHolder":{"@id":"https://jackikun11406jmvv.github.io/#author"},
+      "copyrightNotice":"© 2026 Juan Manuel Vela Vacas. Todos los derechos reservados.",
+      "license":"https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "url": "https://jackikun11406jmvv.github.io/el-origen-del-ratoncito-perez.html"
     },
     {
-      "@type": "CreativeWork",
+      "@type": ["Book","CreativeWork"],
       "@id": "https://jackikun11406jmvv.github.io/#jara-work",
       "name": "Jara, la noble PPP",
       "description": "Cuento infantil ilustrado basado en una historia real.",
@@ -232,10 +293,19 @@
       ],
       "keywords": "PPP,dogs,empathy,respect",
       "creativeWorkStatus": "Published",
+      "image":{"@id":"https://jackikun11406jmvv.github.io/#jara-cover"},
+      "illustrator":{"@id":"https://jackikun11406jmvv.github.io/#author"},
+      "audience":{"@type":"PeopleAudience","suggestedMinAge":4,"suggestedMaxAge":99},
+      "typicalAgeRange":"4-99",
+      "isFamilyFriendly":true,
+      "about":["Perros PPP","Empatía","Respeto animal"],
+      "copyrightHolder":{"@id":"https://jackikun11406jmvv.github.io/#author"},
+      "copyrightNotice":"© 2026 Juan Manuel Vela Vacas. Todos los derechos reservados.",
+      "license":"https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "url": "https://jackikun11406jmvv.github.io/jara-la-noble-ppp.html"
     },
     {
-      "@type": "CreativeWork",
+      "@type": ["Book","CreativeWork"],
       "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work",
       "name": "El origen de Papá Noel",
       "description": "Próxima obra sobre San Nicolás.",
@@ -265,6 +335,15 @@
         }
       ],
       "creativeWorkStatus": "InProgress",
+      "image":{"@id":"https://jackikun11406jmvv.github.io/#san-cover"},
+      "illustrator":{"@id":"https://jackikun11406jmvv.github.io/#author"},
+      "audience":{"@type":"PeopleAudience","suggestedMinAge":4,"suggestedMaxAge":99},
+      "typicalAgeRange":"4-99",
+      "isFamilyFriendly":true,
+      "about":["San Nicolás","Papá Noel","Tradiciones navideñas"],
+      "copyrightHolder":{"@id":"https://jackikun11406jmvv.github.io/#author"},
+      "copyrightNotice":"© 2026 Juan Manuel Vela Vacas. Todos los derechos reservados.",
+      "license":"https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "url": "https://jackikun11406jmvv.github.io/san-nicolas.html"
     },
     {
