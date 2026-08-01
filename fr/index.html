@@ -55,15 +55,40 @@
       "email": "mailto:jvv_11406@live.com",
       "identifier": "JMVV-AUTHOR"
     },
+
+    {
+      "@type":"ImageObject",
+      "@id":"https://jackikun11406jmvv.github.io/fr/#author-photo",
+      "url":"https://jackikun11406jmvv.github.io/images/juan-manuel-autor.jpg",
+      "contentUrl":"https://jackikun11406jmvv.github.io/images/juan-manuel-autor.jpg",
+      "caption":"Juan Manuel Vela Vacas",
+      "author":{"@id":"https://jackikun11406jmvv.github.io/fr/#author"}
+    },
+    {
+      "@type":"ImageObject",
+      "@id":"https://jackikun11406jmvv.github.io/fr/#logo-image",
+      "url":"https://jackikun11406jmvv.github.io/images/logo.svg",
+      "contentUrl":"https://jackikun11406jmvv.github.io/images/logo.svg",
+      "caption":"Logo officiel"
+    },
+    {
+      "@type":"ImageObject","@id":"https://jackikun11406jmvv.github.io/fr/#perez-cover",
+      "url":"https://jackikun11406jmvv.github.io/fr/images/perez-portada.jpg"
+    },
+    {
+      "@type":"ImageObject","@id":"https://jackikun11406jmvv.github.io/fr/#jara-cover",
+      "url":"https://jackikun11406jmvv.github.io/fr/images/jara-portada.jpg"
+    },
+    {
+      "@type":"ImageObject","@id":"https://jackikun11406jmvv.github.io/fr/#san-cover",
+      "url":"https://jackikun11406jmvv.github.io/fr/images/san-nicolas-portada.jpg"
+    },
     {
       "@type": "Organization",
       "@id": "https://jackikun11406jmvv.github.io/fr/#publisher",
       "name": "Juan Manuel Vela Vacas Independent Publishing",
       "url": "https://jackikun11406jmvv.github.io/fr/",
-       "logo": {
-    "@type": "ImageObject",
-    "url": "https://jackikun11406jmvv.github.io/fr/images/logo.svg"
-  },
+       "logo":{"@id":"https://jackikun11406jmvv.github.io/fr/#logo-image"},
       "founder": {
         "@id": "https://jackikun11406jmvv.github.io/fr/#author"
       },
@@ -76,6 +101,7 @@
       "@id": "https://jackikun11406jmvv.github.io/fr/#website",
       "url": "https://jackikun11406jmvv.github.io/fr/",
       "name": "Juan Manuel Vela Vacas",
+      "mainEntityOfPage":{"@id":"https://jackikun11406jmvv.github.io/fr/#webpage"},
       "description": "Site officiel de Juan Manuel Vela Vacas présentant des contes illustrés pour enfants inspirés des traditions espagnoles.",
       "inLanguage": [
   "es",
@@ -135,8 +161,8 @@
       "numberOfItems": 3
     },
     {
-      "@type": "CreativeWork",
-      "@id": "https://jackikun11406jmvv.github.io/fr/#perez-work",
+      "@type":["Book","CreativeWork"],
+      "@id":"https://jackikun11406jmvv.github.io/fr/#perez-work",
       "name": "L'origine de la Petite Souris",
       "description": "Conte illustré inspiré de l'origine de la Petite Souris.",
       "creator": {
@@ -171,11 +197,19 @@
       ],
       "keywords": "Petite Souris,Jerez,Luis Coloma,souris des dents,folklore espagnol",
       "creativeWorkStatus": "Published",
+      "image":{"@id":"https://jackikun11406jmvv.github.io/fr/#perez-cover"},
+      "illustrator":{"@id":"https://jackikun11406jmvv.github.io/fr/#author"},
+      "audience":{"@type":"PeopleAudience","suggestedMinAge":4,"suggestedMaxAge":99},
+      "typicalAgeRange":"4-99","isFamilyFriendly":true,
+      "about":["La Petite Souris","Jerez de la Frontera","Traditions espagnoles"],
+      "copyrightHolder":{"@id":"https://jackikun11406jmvv.github.io/fr/#author"},
+      "copyrightNotice":"© 2026 Juan Manuel Vela Vacas. Tous droits réservés.",
+      "license":"https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "url": "https://jackikun11406jmvv.github.io/fr/el-origen-del-ratoncito-perez.html"
     },
     {
-      "@type": "CreativeWork",
-      "@id": "https://jackikun11406jmvv.github.io/fr/#jara-work",
+      "@type":["Book","CreativeWork"],
+      "@id":"https://jackikun11406jmvv.github.io/fr/#jara-work",
       "name": "Jara, le noble CPD",
       "description": "Conte illustré basé sur une histoire vraie.",
       "creator": {
@@ -210,11 +244,19 @@
       ],
       "keywords": "CPD,chiens,empathie,respect",
       "creativeWorkStatus": "Published",
+      "image":{"@id":"https://jackikun11406jmvv.github.io/fr/#jara-cover"},
+      "illustrator":{"@id":"https://jackikun11406jmvv.github.io/fr/#author"},
+      "audience":{"@type":"PeopleAudience","suggestedMinAge":4,"suggestedMaxAge":99},
+      "typicalAgeRange":"4-99","isFamilyFriendly":true,
+      "about":["Chiens CPD","Empathie","Respect des animaux"],
+      "copyrightHolder":{"@id":"https://jackikun11406jmvv.github.io/fr/#author"},
+      "copyrightNotice":"© 2026 Juan Manuel Vela Vacas. Tous droits réservés.",
+      "license":"https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "url": "https://jackikun11406jmvv.github.io/fr/jara-la-noble-ppp.html"
     },
     {
-      "@type": "CreativeWork",
-      "@id": "https://jackikun11406jmvv.github.io/fr/#san-nicolas-work",
+      "@type":["Book","CreativeWork"],
+      "@id":"https://jackikun11406jmvv.github.io/fr/#san-nicolas-work",
       "name": "L'origine du Père Noël",
       "description": "Prochaine œuvre consacrée à Saint Nicolas.",
       "creator": {
@@ -243,6 +285,14 @@
         }
       ],
       "creativeWorkStatus": "InProgress",
+      "image":{"@id":"https://jackikun11406jmvv.github.io/fr/#san-cover"},
+      "illustrator":{"@id":"https://jackikun11406jmvv.github.io/fr/#author"},
+      "audience":{"@type":"PeopleAudience","suggestedMinAge":4,"suggestedMaxAge":99},
+      "typicalAgeRange":"4-99","isFamilyFriendly":true,
+      "about":["Saint Nicolas","Père Noël","Traditions de Noël"],
+      "copyrightHolder":{"@id":"https://jackikun11406jmvv.github.io/fr/#author"},
+      "copyrightNotice":"© 2026 Juan Manuel Vela Vacas. Tous droits réservés.",
+      "license":"https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "url": "https://jackikun11406jmvv.github.io/fr/san-nicolas.html"
     },
     {
@@ -326,7 +376,11 @@
         "@id": "https://jackikun11406jmvv.github.io/fr/#san-nicolas-work"
       }
     }
-  ]
+  
+,{
+"@type":"ImageObject","@id":"https://jackikun11406jmvv.github.io/fr/#author-photo","url":"https://jackikun11406jmvv.github.io/images/juan-manuel-autor.jpg"},
+{"@type":"WebPage","@id":"https://jackikun11406jmvv.github.io/fr/#webpage","url":"https://jackikun11406jmvv.github.io/fr/","name":"Juan Manuel Vela Vacas | Contes illustrés pour enfants","isPartOf":{"@id":"https://jackikun11406jmvv.github.io/fr/#website"},"mainEntity":{"@id":"https://jackikun11406jmvv.github.io/fr/#collection"},"primaryImageOfPage":{"@id":"https://jackikun11406jmvv.github.io/fr/#author-photo"},"description":"Site officiel de Juan Manuel Vela Vacas. Découvrez des contes illustrés pour enfants.","about":{"@id":"https://jackikun11406jmvv.github.io/fr/#series"},"copyrightHolder":{"@id":"https://jackikun11406jmvv.github.io/fr/#author"},"inLanguage":"fr"}
+ ]
 }
 </script></head><body><header class="topbar"><div class="container nav">
 <a class="brand" href="../fr/index.html">
@@ -334,15 +388,15 @@
 <span class="brand-text">Juan Manuel Vela Vacas <em>Des histoires qui laissent une empreinte</em></span>
 </a>
 <nav class="navlinks"><a href="#libros">MES LIVRES</a><a href="#proximamente">BIENTÔT</a><a href="#autor">À PROPOS DE MOI</a><a href="#contacto">CONTACT</a></nav><div class="lang-switch"><a href="../index.html">ES</a><span>·</span><a href="../en/index.html">EN</a><span>·</span><strong>FR</strong></div></div></header>
-<main><section class="hero"><div class="hero-art"></div><div class="container hero-content"><span class="scribble">Bienvenue dans mon petit univers...</span><h1>Juan Manuel <span>Vela Vacas</span></h1>
-<p><strong>Auteur de contes pour enfants originaire de Jerez.</strong> Ici, vous trouverez mes histoires, mes personnages et les mondes que je crée page après page.</p><a class="btn" href="#libros">DÉCOUVRIR MES LIVRES</a><a class="btn secondary" href="#autor">ME DÉCOUVRIR</a></div></section>
-<section class="paper" id="libros"><div class="container"><div class="section-title"><div><div class="eyebrow">Mes histoires</div><h2>Mes livres</h2></div><p>Des histoires très différentes, nées de l'imagination, de la tradition et de ces petites choses qui méritent de devenir un conte.</p></div><div class="books">
-<a class="book-card" href="../fr/el-origen-del-ratoncito-perez.html"><div class="book-img"><img alt="L'origine de la Petite Souris" decoding="async" height="1200" src="../frances/portada frances.png" width="893"/></div><div class="book-info"><div class="mini">Une histoire née à Jerez</div><h3>L'origine de la Petite Souris</h3><p>Avant de devenir la souris la plus célèbre du monde, Pérez n'était qu'une petite souris qui vivait à Jerez.</p><span class="btn">ENTRER DANS L'HISTOIRE →</span></div></a>
+<main><section class="hero"><div class="hero-art"></div><div class="container hero-content"><span class="scribble">Des histoires qui laissent une empreinte</span><h1>Juan Manuel <span>Vela Vacas</span></h1>
+<p><strong>Des histoires pour enfants où la tradition, l'imagination et Jerez prennent vie.</strong><br>Découvrez des histoires pleines de magie, de tradition et d'émotion, créées pour les petits comme pour les grands.</p><a class="btn" href="#libros">DÉCOUVRIR LES HISTOIRES</a><a class="btn secondary" href="#autor">DÉCOUVRIR L'AUTEUR</a></div></section>
+<section class="paper" id="libros"><div class="container"><div class="section-title"><div><div class="eyebrow">Mes histoires</div><h2>Chaque histoire commence par une question</h2></div><p>Des histoires très différentes, nées de l'imagination, de la tradition et de ces petites choses qui méritent de devenir un conte.</p></div><div class="books">
+<a class="book-card" href="../fr/el-origen-del-ratoncito-perez.html"><div class="book-img"><img alt="L'origine de la Petite Souris" decoding="async" height="1200" src="../frances/portada frances.png" width="893"/></div><div class="book-info"><div class="mini">Une histoire née à Jerez</div><h3>L'origine de la Petite Souris</h3><p>Avant de devenir la souris la plus célèbre du monde, Pérez n'était qu'une petite souris qui vivait à Jerez.</p><span class="btn">DÉCOUVRIR L'HISTOIRE →</span></div></a>
 <a class="book-card" href="../fr/jara-la-noble-ppp.html"><div class="book-img"><img alt="Jara, le noble CPD" decoding="async" height="1200" loading="lazy" src="../frances/portada jara frances.png" width="1200"/></div><div class="book-info"><div class="mini">Une histoire inspirée de faits réels</div><h3>Jara, le noble CPD</h3><p>Une histoire d'amour, de respect et d'éducation. Car ce n'est pas son apparence qui compte, mais son cœur.</p><p class="mini">📖 Disponible uniquement en espagnol</p><span class="btn">RENCONTRER JARA →</span></div></a>
 </div></div></section>
 <section class="coming-soon" id="proximamente"><div class="container coming-grid"><div class="coming-copy"><div class="eyebrow">Bientôt...</div><h2>Saviez-vous que le Père Noël<br/><span>a une histoire espagnole ?</span></h2><p>Une nouvelle histoire prend forme. Avant de devenir le personnage que nous connaissons tous, il y eut un homme, une légende et un voyage qui allait tout changer.</p><p class="secret-note">La prochaine histoire de Juan Manuel Vela Vacas.</p></div><div class="coming-card"><div class="coming-card-inner"><div class="small">PROCHAIN LIVRE</div><h3>Saint Nicolas</h3><p>Une nouvelle histoire est sur le point de commencer...</p><div class="coming-stars">✦ ✧ ✦</div></div></div></div></section>
-<section class="about" id="autor"><div class="container about-grid"><div class="portrait"><img alt="Juan Manuel Vela Vacas tenant son livre El origen del Ratoncito Pérez à Jerez" decoding="async" height="1200" loading="lazy" src="../images/juan-manuel-autor.jpg" width="900"/></div><div><div class="eyebrow">À propos de l'auteur</div><h2>Bonjour, moi c'est Juan Manuel.</h2><p>Je suis originaire de Jerez et j'aime transformer des idées, des souvenirs et de petites histoires en contes que les enfants comme les adultes peuvent apprécier.</p><p>Je m'inspire de la tradition, des animaux et de cette magie qui apparaît lorsqu'une histoire parvient à rester dans la mémoire.</p><div class="quote">« Et si la Petite Souris était née à Jerez ? »</div><div class="author-story"><h3>D'une idée à un conte 📖</h3><p>Lorsque j'ai découvert que le père Luis Coloma, l'auteur de la première description littéraire du Ratoncito Pérez, était né à Jerez, j'ai commencé à imaginer...</p><p><em>Et si tout avait commencé ici ?</em></p><p>C'est ainsi qu'est né <strong>El origen del Ratoncito Pérez</strong>, une histoire de caves, de petites souris et de tradition.</p><a class="btn" href="../fr/origen-ratoncito-perez.html">DÉCOUVRIR L'ORIGINE DE PÉREZ →</a></div></div></div></section><section class="paper"><div class="container"><h2>Découvrez d'autres histoires</h2><p>Explorez les autres contes de l'auteur.</p><ul><li><a href="../fr/el-origen-del-ratoncito-perez.html">L'origine de la Petite Souris</a></li><li><a href="../fr/jara-la-noble-ppp.html">Jara, le noble CPD</a></li><li><a href="../fr/san-nicolas.html">L'origine du Père Noël (bientôt)</a></li></ul></div></section></main>
-<footer id="contacto"><div class="container footer"><div><strong>Juan Manuel Vela Vacas</strong><br/><small>Auteur de contes pour enfants · Depuis Jerez</small><br/><div aria-label="Social media and contact" class="social-links">
+<section class="about" id="autor"><div class="container about-grid"><div class="portrait"><img alt="Juan Manuel Vela Vacas tenant son livre El origen del Ratoncito Pérez à Jerez" decoding="async" height="1200" loading="lazy" src="../images/juan-manuel-autor.jpg" width="900"/></div><div><div class="eyebrow">À propos de l'auteur</div><h2>Bonjour, moi c'est Juan Manuel.</h2><p>Je suis originaire de Jerez et j'aime transformer des idées, des souvenirs et de petites histoires en contes que les enfants comme les adultes peuvent apprécier.</p><p>Je m'inspire de la tradition, des animaux et de cette magie qui apparaît lorsqu'une histoire parvient à rester dans la mémoire.</p><div class="quote">« Et si la Petite Souris était née à Jerez ? »</div><div class="author-story"><h3>D'une idée à un conte 📖</h3><p>Lorsque j'ai découvert que le père Luis Coloma, l'auteur de la première description littéraire du Ratoncito Pérez, était né à Jerez, j'ai commencé à imaginer...</p><p><em>Et si tout avait commencé ici ?</em></p><p>C'est ainsi qu'est né <strong>El origen del Ratoncito Pérez</strong>, une histoire de caves, de petites souris et de tradition.</p><a class="btn" href="../fr/origen-ratoncito-perez.html">DÉCOUVRIR L'ORIGINE DE PÉREZ →</a></div></div></div></section><section class="paper"><div class="container"><h2>Explorez d'autres histoires</h2><p>Si une histoire vous a plu, découvrez également les autres contes de l'auteur.</p><ul><li><a href="../fr/el-origen-del-ratoncito-perez.html">L'origine de la Petite Souris</a></li><li><a href="../fr/jara-la-noble-ppp.html">Jara, le noble CPD</a></li><li><a href="../fr/san-nicolas.html">L'origine du Père Noël (bientôt)</a></li></ul></div></section></main>
+<footer id="contacto"><div class="container footer"><div><strong>Juan Manuel Vela Vacas</strong><br/><small>Auteur de contes pour enfants · De Jerez</small><br/><div aria-label="Social media and contact" class="social-links">
 <a aria-label="Email" class="social-icon email-icon" href="mailto:jvv_11406@live.com" title="Email"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="14" rx="1.5" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg></a>
 <a aria-label="Instagram" class="social-icon" href="https://www.instagram.com/jackikun/" rel="noopener noreferrer" target="_blank" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="17" rx="5" width="17" x="3.5" y="3.5"></rect><circle cx="12" cy="12" r="4"></circle><circle class="fill" cx="17.4" cy="6.7" r="1"></circle></svg></a>
 <a aria-label="TikTok" class="social-icon" href="https://www.tiktok.com/@jackiikun" rel="noopener noreferrer" target="_blank" title="TikTok"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M14.5 4v10.1a4.4 4.4 0 1 1-3.4-4.3v3.2a1.5 1.5 0 1 0 .8 1.3V4h2.6a4.6 4.6 0 0 0 3.9 3.9V10a7.2 7.2 0 0 1-3.9-1.2V14a4.4 4.4 0 1 1-4.4-4.4"></path></svg></a>
