@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jackikun11406jmvv.github.io/sitemap.xml
