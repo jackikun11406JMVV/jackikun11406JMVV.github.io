@@ -1,0 +1,25 @@
+name: Comprobar la web
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Enlaces, SEO y código
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v7
+
+      - name: Comprobar páginas, enlaces, imágenes y SEO
+        run: python3 scripts/check_site.py
+
+      - name: Comprobar JavaScript
+        run: |
+          node --check index.js
+          node --check animations.js

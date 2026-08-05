@@ -9,6 +9,10 @@ Incluye:
 - Metadatos Open Graph y Twitter.
 - Rutas internas, imágenes y favicons comprobados.
 - Páginas antiguas marcadas como noindex y redirigidas a su URL canónica.
+- Página 404 marcada como noindex,follow.
+- Dimensiones reales declaradas en las imágenes para evitar saltos de diseño.
+- Preload limitado a la imagen principal de la portada y carga diferida para las imágenes inferiores.
+- Validación automática de enlaces, JSON-LD, canonical, hreflang y sitemap.
 
 Después de publicar:
 1. Comprueba que GitHub Pages ha terminado de actualizarse.

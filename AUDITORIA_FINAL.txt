@@ -1,4 +1,4 @@
-AUDITORÍA INTEGRAL DE LA WEB · 5 DE AGOSTO DE 2026
+AUDITORÍA Y MEJORA INTEGRAL DE LA WEB · 5 DE AGOSTO DE 2026
 
 Páginas indexables revisadas: 15
 Páginas antiguas redirigidas: 3
@@ -9,6 +9,9 @@ Rutas locales rotas dentro del JSON-LD: 0
 Páginas indexables sin título: 0
 Páginas indexables sin descripción: 0
 Páginas indexables sin H1 único: 0
+Páginas con estructura distinta entre ES / EN / FR: 0
+Peso final de la carpeta images: 10,46 MB
+Presupuesto máximo automático: 13 MB
 
 Correcciones principales:
 - Restaurados los hreflang recíprocos de las portadas ES / EN / FR.
@@ -20,3 +23,11 @@ Correcciones principales:
 - Sustituidas las páginas antiguas rotas por redirecciones a sus URL actuales.
 - Eliminadas referencias a favicons inexistentes y reparadas rutas antiguas del CSS.
 - Actualizado sitemap.xml con 15 URL y fecha 2026-08-05.
+- Optimizadas 33 imágenes WebP manteniendo sus nombres y rutas.
+- Reducidos el logotipo SVG y el favicon SVG conservando su apariencia.
+- Mejoradas la navegación móvil, la accesibilidad por teclado y la jerarquía visual.
+- Mejorados los acordeones y las tarjetas de compra en los tres idiomas.
+- Corregido el bloque español de compra que aparecía mal enlazado en la página francesa de Pérez.
+- Rediseñadas las tres páginas de San Nicolás para integrarlas con la identidad editorial de la web.
+- Añadida una página 404 personalizada y multilingüe.
+- Añadido un control automático que revisa enlaces, imágenes, JSON-LD, canonical, hreflang, sitemap y presupuesto de peso con cada subida a GitHub.

@@ -3,7 +3,7 @@ VERSIÓN PARA GITHUB PAGES
 La web está preparada para publicarse desde la rama principal del repositorio.
 
 Incluye:
-- Diseño visual preservado.
+- Diseño visual preservado y pulido.
 - Español, inglés y francés.
 - Selector de idioma y enlaces internos funcionales.
 - Imágenes WebP correctas en cada idioma.
@@ -12,5 +12,10 @@ Incluye:
 - Sección de prensa de Diario de Jerez.
 - Redirecciones desde las URL antiguas para evitar páginas rotas.
 - Sitemap y robots.txt actualizados.
+- Página 404 personalizada.
+- Imágenes reducidas de aproximadamente 21 MB a 10,46 MB.
+- Control automático en .github/workflows/quality-checks.yml.
 
-Tras publicar, conviene comprobar la portada, las páginas de Jara y San Nicolás y volver a enviar sitemap.xml en Google Search Console.
+Al subir los archivos, GitHub ejecutará “Comprobar la web”. Si aparece en verde, los enlaces locales, el SEO técnico y las imágenes han pasado la validación.
+
+Tras publicar, conviene comprobar la portada, las páginas de Pérez, Jara y San Nicolás en móvil y ordenador, y volver a enviar sitemap.xml en Google Search Console.
