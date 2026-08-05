@@ -55,192 +55,349 @@
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@graph":[
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@type":"Person",
-      "@id":"https://jackikun11406jmvv.github.io/#author",
-      "name":"Juan Manuel Vela Vacas",
-      "url":"https://jackikun11406jmvv.github.io/",
-      "image":"https://jackikun11406jmvv.github.io/images/juan-manuel-autor.webp",
-      "description":"Spanish children's author creating illustrated stories inspired by traditions, folklore and Jerez de la Frontera.",
-      "jobTitle":"Children's author",
-      "homeLocation":{"@type":"Place","name":"Jerez de la Frontera"},
-      "knowsAbout":["Children's literature","Illustrated books","Spanish traditions","Little Mouse Pérez","Saint Nicholas","Jerez de la Frontera"],
-      "sameAs":[
+      "@type": "Person",
+      "@id": "https://jackikun11406jmvv.github.io/#author",
+      "name": "Juan Manuel Vela Vacas",
+      "url": "https://jackikun11406jmvv.github.io/",
+      "image": "https://jackikun11406jmvv.github.io/images/juan-manuel-autor.webp",
+      "description": "Spanish children's author creating illustrated stories inspired by traditions, folklore and Jerez de la Frontera.",
+      "jobTitle": "Children's author",
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Jerez de la Frontera"
+      },
+      "knowsAbout": [
+        "Children's literature",
+        "Illustrated books",
+        "Spanish traditions",
+        "Little Mouse Pérez",
+        "Saint Nicholas",
+        "Jerez de la Frontera"
+      ],
+      "sameAs": [
         "https://www.instagram.com/jackikun/",
         "https://www.facebook.com/Jackikun/",
         "https://www.tiktok.com/@jackiikun",
         "https://www.amazon.es/stores/Don-Juan-Manuel-Vela-Vacas-JMVV/author/B0H26BPH89"
       ],
-      "mainEntityOfPage":{"@id":"https://jackikun11406jmvv.github.io/#website"},
-      "authorOf":[
-        {"@id":"https://jackikun11406jmvv.github.io/en/el-origen-del-ratoncito-perez.html#book"},
-        {"@id":"https://jackikun11406jmvv.github.io/en/jara-la-noble-ppp.html#book"},
-        {"@id":"https://jackikun11406jmvv.github.io/en/san-nicolas.html#book"}
+      "mainEntityOfPage": {
+        "@id": "https://jackikun11406jmvv.github.io/#website"
+      },
+      "authorOf": [
+        {
+          "@id": "https://jackikun11406jmvv.github.io/en/el-origen-del-ratoncito-perez.html#book"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/en/jara-la-noble-ppp.html#book"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/en/san-nicolas.html#book"
+        }
       ],
-
-      "knowsLanguage":["es","en","fr"],
-      "email":"mailto:jvv_11406@live.com",
-      "identifier":"JMVV-AUTHOR"
-    },
-    {
-      "@type":"Organization",
-      "@id":"https://jackikun11406jmvv.github.io/#publisher",
-      "name":"Juan Manuel Vela Vacas",
-      "url":"https://jackikun11406jmvv.github.io/",
-      "logo":{"@type":"ImageObject","url":"https://jackikun11406jmvv.github.io/images/logo.svg"},
-      "founder":{"@id":"https://jackikun11406jmvv.github.io/#author"},
-      "publisher":{"@id":"https://jackikun11406jmvv.github.io/#author"}
-    },
-    {
-      "@type":"WebSite",
-      "@id":"https://jackikun11406jmvv.github.io/#website",
-      "url":"https://jackikun11406jmvv.github.io/en/",
-      "name":"Juan Manuel Vela Vacas",
-      "description":"Official website of Juan Manuel Vela Vacas featuring illustrated children's books inspired by Spanish traditions.",
-      "inLanguage":["es","en","fr"],
-      "creator":{"@id":"https://jackikun11406jmvv.github.io/#author"},
-      "publisher":{"@id":"https://jackikun11406jmvv.github.io/#publisher"},
-      "copyrightHolder":{"@id":"https://jackikun11406jmvv.github.io/#author"},
-      "mainEntity":{"@id":"https://jackikun11406jmvv.github.io/#collection"},
-      "availableLanguage":["es","en","fr"]
-    },
-    {
-      "@type":"CollectionPage",
-      "@id":"https://jackikun11406jmvv.github.io/#collection",
-      "name":"Books by Juan Manuel Vela Vacas",
-      "author":{"@id":"https://jackikun11406jmvv.github.io/#author"},
-      "about":{"@id":"https://jackikun11406jmvv.github.io/#series"},"inLanguage":"en","url":"https://jackikun11406jmvv.github.io/en/"
-    },
-    {
-      "@type":"CreativeWorkSeries",
-      "@id":"https://jackikun11406jmvv.github.io/#series",
-      "name":"Illustrated Children's Books by Juan Manuel Vela Vacas",
-      "creator":{"@id":"https://jackikun11406jmvv.github.io/#author"},
-      "hasPart":[
-        {"@id":"https://jackikun11406jmvv.github.io/#perez-work"},
-        {"@id":"https://jackikun11406jmvv.github.io/#jara-work"},
-        {"@id":"https://jackikun11406jmvv.github.io/#san-nicolas-work"}
+      "knowsLanguage": [
+        "es",
+        "en",
+        "fr"
       ],
-      "description":"Official collection of illustrated children's books by Juan Manuel Vela Vacas.",
-      "numberOfItems":3
+      "email": "mailto:jvv_11406@live.com",
+      "identifier": "JMVV-AUTHOR"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://jackikun11406jmvv.github.io/#publisher",
+      "name": "Juan Manuel Vela Vacas",
+      "url": "https://jackikun11406jmvv.github.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://jackikun11406jmvv.github.io/images/logo.svg"
+      },
+      "founder": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "publisher": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://jackikun11406jmvv.github.io/#website",
+      "url": "https://jackikun11406jmvv.github.io/en/",
+      "name": "Juan Manuel Vela Vacas",
+      "description": "Official website of Juan Manuel Vela Vacas featuring illustrated children's books inspired by Spanish traditions.",
+      "inLanguage": [
+        "es",
+        "en",
+        "fr"
+      ],
+      "creator": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "publisher": {
+        "@id": "https://jackikun11406jmvv.github.io/#publisher"
+      },
+      "copyrightHolder": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "mainEntity": {
+        "@id": "https://jackikun11406jmvv.github.io/#collection"
+      },
+      "availableLanguage": [
+        "es",
+        "en",
+        "fr"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://jackikun11406jmvv.github.io/en/#webpage",
+      "url": "https://jackikun11406jmvv.github.io/en/",
+      "name": "Juan Manuel Vela Vacas | Children's Book Author",
+      "description": "Official website of Juan Manuel Vela Vacas, author of illustrated children's books inspired by tradition, empathy and imagination.",
+      "isPartOf": {
+        "@id": "https://jackikun11406jmvv.github.io/#website"
+      },
+      "about": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "mainEntity": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://jackikun11406jmvv.github.io/#collection",
+      "name": "Books by Juan Manuel Vela Vacas",
+      "author": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "about": {
+        "@id": "https://jackikun11406jmvv.github.io/#series"
+      },
+      "inLanguage": "en",
+      "url": "https://jackikun11406jmvv.github.io/en/"
+    },
+    {
+      "@type": "CreativeWorkSeries",
+      "@id": "https://jackikun11406jmvv.github.io/#series",
+      "name": "Illustrated Children's Books by Juan Manuel Vela Vacas",
+      "creator": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "hasPart": [
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#perez-work"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work"
+        }
+      ],
+      "description": "Official collection of illustrated children's books by Juan Manuel Vela Vacas.",
+      "numberOfItems": 3
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://jackikun11406jmvv.github.io/#perez-work",
+      "name": "The Origin of the Little Mouse Pérez",
+      "description": "Illustrated children's book inspired by the origin of Little Mouse Pérez.",
+      "creator": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "publisher": {
+        "@id": "https://jackikun11406jmvv.github.io/#publisher"
+      },
+      "isPartOf": {
+        "@id": "https://jackikun11406jmvv.github.io/#series"
+      },
+      "inLanguage": [
+        "es",
+        "en",
+        "fr"
+      ],
+      "genre": [
+        "Children's literature",
+        "Picture book",
+        "Spanish folklore"
+      ],
+      "keywords": "Little Mouse Pérez,Jerez,Luis Coloma,Tooth Fairy",
+      "creativeWorkStatus": "Published",
+      "hasPart": [
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#perez-work/lang-es"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#perez-work/lang-en"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#perez-work/lang-fr"
+        }
+      ],
+      "url": "https://jackikun11406jmvv.github.io/en/el-origen-del-ratoncito-perez.html"
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://jackikun11406jmvv.github.io/#jara-work",
+      "name": "Jara, the Noble PDD",
+      "description": "Illustrated children's book based on a true story.",
+      "creator": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "publisher": {
+        "@id": "https://jackikun11406jmvv.github.io/#publisher"
+      },
+      "isPartOf": {
+        "@id": "https://jackikun11406jmvv.github.io/#series"
+      },
+      "inLanguage": [
+        "es",
+        "en",
+        "fr"
+      ],
+      "genre": [
+        "Children's literature",
+        "Animal fiction",
+        "Educational fiction"
+      ],
+      "keywords": "dogs,PDD,empathy,respect",
+      "creativeWorkStatus": "Published",
+      "hasPart": [
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-es"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-en"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-fr"
+        }
+      ],
+      "url": "https://jackikun11406jmvv.github.io/en/jara-la-noble-ppp.html"
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work",
+      "name": "The Origin of Santa Claus",
+      "description": "Upcoming illustrated children's book about Saint Nicholas.",
+      "creator": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "publisher": {
+        "@id": "https://jackikun11406jmvv.github.io/#publisher"
+      },
+      "isPartOf": {
+        "@id": "https://jackikun11406jmvv.github.io/#series"
+      },
+      "inLanguage": [
+        "es",
+        "en",
+        "fr"
+      ],
+      "creativeWorkStatus": "InProgress",
+      "hasPart": [
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-es"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-en"
+        },
+        {
+          "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-fr"
+        }
+      ],
+      "url": "https://jackikun11406jmvv.github.io/en/san-nicolas.html"
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://jackikun11406jmvv.github.io/#perez-work/lang-es",
+      "name": "The Origin of the Little Mouse Pérez (Español)",
+      "inLanguage": "es",
+      "translationOfWork": {
+        "@id": "https://jackikun11406jmvv.github.io/#perez-work"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://jackikun11406jmvv.github.io/#perez-work/lang-en",
+      "name": "The Origin of the Little Mouse Pérez (English)",
+      "inLanguage": "en",
+      "translationOfWork": {
+        "@id": "https://jackikun11406jmvv.github.io/#perez-work"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://jackikun11406jmvv.github.io/#perez-work/lang-fr",
+      "name": "The Origin of the Little Mouse Pérez (Français)",
+      "inLanguage": "fr",
+      "translationOfWork": {
+        "@id": "https://jackikun11406jmvv.github.io/#perez-work"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-es",
+      "name": "Jara, la noble PPP (Español)",
+      "inLanguage": "es",
+      "translationOfWork": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-en",
+      "name": "Jara, the Noble PDD (English)",
+      "inLanguage": "en",
+      "translationOfWork": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://jackikun11406jmvv.github.io/#jara-work/lang-fr",
+      "name": "Jara, la noble CPD (Français)",
+      "inLanguage": "fr",
+      "translationOfWork": {
+        "@id": "https://jackikun11406jmvv.github.io/#jara-work"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-es",
+      "name": "The Origin of Santa Claus (Español)",
+      "inLanguage": "es",
+      "translationOfWork": {
+        "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-en",
+      "name": "The Origin of Santa Claus (English)",
+      "inLanguage": "en",
+      "translationOfWork": {
+        "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-fr",
+      "name": "The Origin of Santa Claus (Français)",
+      "inLanguage": "fr",
+      "translationOfWork": {
+        "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work"
+      }
     }
-,
-    {
-      "@type":"CreativeWork",
-      "@id":"https://jackikun11406jmvv.github.io/#perez-work",
-      "name":"The Origin of the Little Mouse Pérez",
-      "description":"Illustrated children's book inspired by the origin of Little Mouse Pérez.",
-      "creator":{"@id":"https://jackikun11406jmvv.github.io/#author"},
-      "publisher":{"@id":"https://jackikun11406jmvv.github.io/#publisher"},
-      "isPartOf":{"@id":"https://jackikun11406jmvv.github.io/#series"},
-      "inLanguage":["es","en","fr"],
-      "genre":["Children's literature","Picture book","Spanish folklore"],
-      "keywords":"Little Mouse Pérez,Jerez,Luis Coloma,Tooth Fairy",
-      "creativeWorkStatus":"Published",
-      "hasPart":[{"@id":"https://jackikun11406jmvv.github.io/#perez-work/lang-es"},{"@id":"https://jackikun11406jmvv.github.io/#perez-work/lang-en"},{"@id":"https://jackikun11406jmvv.github.io/#perez-work/lang-fr"}],
-      "url":"https://jackikun11406jmvv.github.io/en/el-origen-del-ratoncito-perez.html"
-    },
-    {
-      "@type":"CreativeWork",
-      "@id":"https://jackikun11406jmvv.github.io/#jara-work",
-      "name":"Jara, the Noble PDD",
-      "description":"Illustrated children's book based on a true story.",
-      "creator":{"@id":"https://jackikun11406jmvv.github.io/#author"},
-      "publisher":{"@id":"https://jackikun11406jmvv.github.io/#publisher"},
-      "isPartOf":{"@id":"https://jackikun11406jmvv.github.io/#series"},
-      "inLanguage":["es","en","fr"],
-      "genre":["Children's literature","Animal fiction","Educational fiction"],
-      "keywords":"dogs,PDD,empathy,respect",
-      "creativeWorkStatus":"Published",
-      "hasPart":[{"@id":"https://jackikun11406jmvv.github.io/#jara-work/lang-es"},{"@id":"https://jackikun11406jmvv.github.io/#jara-work/lang-en"},{"@id":"https://jackikun11406jmvv.github.io/#jara-work/lang-fr"}],
-      "url":"https://jackikun11406jmvv.github.io/en/jara-la-noble-ppp.html"
-    },
-    {
-      "@type":"CreativeWork",
-      "@id":"https://jackikun11406jmvv.github.io/#san-nicolas-work",
-      "name":"The Origin of Santa Claus",
-      "description":"Upcoming illustrated children's book about Saint Nicholas.",
-      "creator":{"@id":"https://jackikun11406jmvv.github.io/#author"},
-      "publisher":{"@id":"https://jackikun11406jmvv.github.io/#publisher"},
-      "isPartOf":{"@id":"https://jackikun11406jmvv.github.io/#series"},
-      "inLanguage":["es","en","fr"],
-      "creativeWorkStatus":"InProgress",
-      "hasPart":[{"@id":"https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-es"},{"@id":"https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-en"},{"@id":"https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-fr"}],
-      "url":"https://jackikun11406jmvv.github.io/en/san-nicolas.html"
-    }
-,
-    {
-      "@type":"CreativeWork",
-      "@id":"https://jackikun11406jmvv.github.io/#perez-work/lang-es",
-      "name":"The Origin of the Little Mouse Pérez (Español)",
-      "inLanguage":"es",
-      "translationOfWork":{"@id":"https://jackikun11406jmvv.github.io/#perez-work"}
-    },
-    {
-      "@type":"CreativeWork",
-      "@id":"https://jackikun11406jmvv.github.io/#perez-work/lang-en",
-      "name":"The Origin of the Little Mouse Pérez (English)",
-      "inLanguage":"en",
-      "translationOfWork":{"@id":"https://jackikun11406jmvv.github.io/#perez-work"}
-    },
-    {
-      "@type":"CreativeWork",
-      "@id":"https://jackikun11406jmvv.github.io/#perez-work/lang-fr",
-      "name":"The Origin of the Little Mouse Pérez (Français)",
-      "inLanguage":"fr",
-      "translationOfWork":{"@id":"https://jackikun11406jmvv.github.io/#perez-work"}
-    },
-    {
-      "@type":"CreativeWork",
-      "@id":"https://jackikun11406jmvv.github.io/#jara-work/lang-es",
-      "name":"Jara, la noble PPP (Español)",
-      "inLanguage":"es",
-      "translationOfWork":{"@id":"https://jackikun11406jmvv.github.io/#jara-work"}
-    },
-    {
-      "@type":"CreativeWork",
-      "@id":"https://jackikun11406jmvv.github.io/#jara-work/lang-en",
-      "name":"Jara, the Noble PDD (English)",
-      "inLanguage":"en",
-      "translationOfWork":{"@id":"https://jackikun11406jmvv.github.io/#jara-work"}
-    },
-    {
-      "@type":"CreativeWork",
-      "@id":"https://jackikun11406jmvv.github.io/#jara-work/lang-fr",
-      "name":"Jara, la noble CPD (Français)",
-      "inLanguage":"fr",
-      "translationOfWork":{"@id":"https://jackikun11406jmvv.github.io/#jara-work"}
-    }
-,
-    {
-      "@type":"CreativeWork",
-      "@id":"https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-es",
-      "name":"The Origin of Santa Claus (Español)",
-      "inLanguage":"es",
-      "translationOfWork":{"@id":"https://jackikun11406jmvv.github.io/#san-nicolas-work"}
-    },
-    {
-      "@type":"CreativeWork",
-      "@id":"https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-en",
-      "name":"The Origin of Santa Claus (English)",
-      "inLanguage":"en",
-      "translationOfWork":{"@id":"https://jackikun11406jmvv.github.io/#san-nicolas-work"}
-    },
-    {
-      "@type":"CreativeWork",
-      "@id":"https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-fr",
-      "name":"The Origin of Santa Claus (Français)",
-      "inLanguage":"fr",
-      "translationOfWork":{"@id":"https://jackikun11406jmvv.github.io/#san-nicolas-work"}
-    }
-
-
   ]
 }
 </script>
 
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
 </head><body><a class="skip-link" href="#contenido">Skip to content</a><header class="topbar"><div class="container nav">
 <a class="brand" href="../en/index.html">
 <img src="../images/logo.svg" alt="Juan Manuel Vela Vacas logo" class="brand-logo" width="42" height="42">
@@ -255,10 +412,10 @@
 <a class="book-card" href="../en/jara-la-noble-ppp.html"><div class="book-img"><img alt="Jara, the Noble PDD" decoding="async" height="1200" loading="lazy" src="../images/en/jara-cover.webp" width="1183"/></div><div class="book-info"><div class="mini">A story based on real events</div><h3>Jara, the Noble PDD</h3><p>A story about love, respect and education. Because it is not about how she looks, but about the heart she has.</p><p class="mini">📖 Available in Spanish, English and French</p><span class="btn">MEET JARA →</span></div></a>
 </div></div></section>
 <section class="coming-soon" id="proximamente"><div class="container coming-grid"><div class="coming-copy"><div class="eyebrow">Coming soon...</div><h2>Did you know Santa Claus<br/><span>has a Spanish story?</span></h2><p>A new story is taking shape. Before becoming the figure we all know, there was a man, a legend and a journey that would change everything.</p><p class="secret-note">Juan Manuel Vela Vacas' next story.</p></div><div class="coming-card"><div class="coming-card-inner"><div class="small">NEXT BOOK</div><h3>Saint Nicholas</h3><p>A new story is about to begin...</p><div class="coming-stars">✦ ✧ ✦</div></div></div></div></section>
-<section class="about" id="autor"><div class="container about-grid"><div class="portrait"><img alt="Juan Manuel Vela Vacas holding his book El origen del Ratoncito Pérez in Jerez" decoding="async" height="1200" loading="lazy" src="../images/juan-manuel-autor.webp" width="900"/></div><div><div class="eyebrow">About the author</div><h2>Hello, I'm Juan Manuel.</h2><p>I'm from Jerez and I love turning ideas, memories and little stories into tales that children and adults can enjoy together.</p><p>I'm inspired by tradition, animals and that special magic that appears when a story manages to stay in your memory.</p><div class="quote">“What if the Little Mouse Pérez had been born in Jerez?”</div><div class="author-story"><h3>From an idea to a story 📖</h3><p>When I discovered that Father Luis Coloma, the author of the first literary description of the Ratoncito Pérez, was born in Jerez, I started to imagine...</p><p><em>What if it had all begun here?</em></p><p>That is how <strong>El origen del Ratoncito Pérez</strong> was born: a story of wine cellars, little mice and tradition.</p><a class="btn" href="../en/origen-ratoncito-perez.html">DISCOVER PÉREZ'S ORIGIN →</a></div></div></div></section><section class="paper"><div class="container"><h2>Explore more stories</h2><p>Discover the rest of the author's children's stories.</p><ul><li><a href="../en/el-origen-del-ratoncito-perez.html">The Origin of the Little Mouse Pérez</a></li><li><a href="../en/jara-la-noble-ppp.html">Jara, the Noble PDD</a></li><li><a href="../en/san-nicolas.html">The Origin of Santa Claus (coming soon)</a></li></ul></div></section></main>
+<section class="about" id="autor"><div class="container about-grid"><div class="portrait"><img alt="Juan Manuel Vela Vacas holding his book El origen del Ratoncito Pérez in Jerez" decoding="async" height="1200" loading="lazy" src="../images/juan-manuel-autor.webp" width="900"/></div><div><div class="eyebrow">About the author</div><h2>Hello, I'm Juan Manuel.</h2><p>I'm from Jerez and I love turning ideas, memories and little stories into tales that children and adults can enjoy together.</p><p>I'm inspired by tradition, animals and that special magic that appears when a story manages to stay in your memory.</p><div class="quote">“What if the Little Mouse Pérez had been born in Jerez?”</div><div class="author-story"><h3>From an idea to a story 📖</h3><p>When I discovered that Father Luis Coloma, the author of the first literary description of the Ratoncito Pérez, was born in Jerez, I started to imagine...</p><p><em>What if it had all begun here?</em></p><p>That is how <strong>El origen del Ratoncito Pérez</strong> was born: a story of wine cellars, little mice and tradition.</p><a class="btn" href="../en/origen-ratoncito-perez.html">DISCOVER PÉREZ'S ORIGIN →</a></div></div></div></section><section class="paper story-links"><div class="container"><h2>Explore more stories</h2><p>Discover the rest of the author's children's stories.</p><ul><li><a href="../en/el-origen-del-ratoncito-perez.html">The Origin of the Little Mouse Pérez</a></li><li><a href="../en/jara-la-noble-ppp.html">Jara, the Noble PDD</a></li><li><a href="../en/san-nicolas.html">The Origin of Santa Claus (coming soon)</a></li></ul></div></section></main>
 <footer id="contacto"><div class="container footer"><div><strong>Juan Manuel Vela Vacas</strong><br/><small>Children’s author · From Jerez</small><br/><div aria-label="Social media and contact" role="group" class="social-links">
 <a aria-label="Email" class="social-icon email-icon" href="mailto:jvv_11406@live.com" title="Email"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="14" rx="1.5" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg></a>
 <a aria-label="Instagram" class="social-icon" href="https://www.instagram.com/jackikun/" rel="noopener noreferrer" target="_blank" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="17" rx="5" width="17" x="3.5" y="3.5"></rect><circle cx="12" cy="12" r="4"></circle><circle class="fill" cx="17.4" cy="6.7" r="1"></circle></svg></a>
 <a aria-label="TikTok" class="social-icon" href="https://www.tiktok.com/@jackiikun" rel="noopener noreferrer" target="_blank" title="TikTok"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M14.5 4v10.1a4.4 4.4 0 1 1-3.4-4.3v3.2a1.5 1.5 0 1 0 .8 1.3V4h2.6a4.6 4.6 0 0 0 3.9 3.9V10a7.2 7.2 0 0 1-3.9-1.2V14a4.4 4.4 0 1 1-4.4-4.4"></path></svg></a>
 <a aria-label="Facebook" class="social-icon" href="https://www.facebook.com/Jackikun/" rel="noopener noreferrer" target="_blank" title="Facebook"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V10H8v3h2.6v8"></path></svg></a>
-</div></div><small>© 2026 · All rights reserved</small></div></footer><script src="../index.js" defer></script></body></html>
+</div></div><div class="footer-meta"><nav class="footer-nav" aria-label="Secondary navigation"><a href="index.html">Home</a><a href="index.html#libros">Books</a><a href="index.html#autor">About</a><a href="index.html#proximamente">Coming soon</a></nav><small>© 2026 · All rights reserved</small></div></div></footer><script src="../index.js" defer></script></body></html>

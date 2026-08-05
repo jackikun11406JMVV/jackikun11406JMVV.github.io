@@ -134,6 +134,25 @@ def iter_json_urls(value: object):
         yield value
 
 
+def json_ld_nodes(value: object) -> list[dict[str, object]]:
+    """Devuelve solo entidades declaradas, no referencias @id anidadas."""
+    if not isinstance(value, dict):
+        return []
+    graph = value.get("@graph")
+    if isinstance(graph, list):
+        return [node for node in graph if isinstance(node, dict)]
+    return [value]
+
+
+def schema_types(node: dict[str, object]) -> set[str]:
+    value = node.get("@type")
+    if isinstance(value, str):
+        return {value}
+    if isinstance(value, list):
+        return {item for item in value if isinstance(item, str)}
+    return set()
+
+
 def fail(errors: list[str], path: Path, message: str) -> None:
     errors.append(f"{path.relative_to(ROOT)}: {message}")
 
@@ -142,6 +161,7 @@ def main() -> int:
     errors: list[str] = []
     html_files = sorted(ROOT.rglob("*.html"))
     pages = {path.resolve(): parse_page(path) for path in html_files}
+    json_ld_by_page: dict[Path, list[object]] = {}
 
     for path, page in pages.items():
         duplicates = sorted({item for item in page.ids if page.ids.count(item) > 1})
@@ -171,16 +191,25 @@ def main() -> int:
                 if target_page and fragment not in target_page.ids:
                     fail(errors, path, f"fragmento inexistente: {raw_url}")
 
+        parsed_json_ld: list[object] = []
         for index, block in enumerate(page.json_ld, start=1):
             try:
                 data = json.loads(block)
             except json.JSONDecodeError as exc:
                 fail(errors, path, f"JSON-LD {index} inválido: {exc.msg} (línea {exc.lineno})")
                 continue
+            parsed_json_ld.append(data)
             for raw_url in iter_json_urls(data):
                 target, _ = url_to_path(path, raw_url)
                 if target is not None and target.suffix and not target.exists():
                     fail(errors, path, f"URL local inexistente en JSON-LD: {raw_url}")
+        json_ld_by_page[path] = parsed_json_ld
+
+        declared_nodes = [node for data in parsed_json_ld for node in json_ld_nodes(data)]
+        declared_ids = [node.get("@id") for node in declared_nodes if isinstance(node.get("@id"), str)]
+        duplicate_schema_ids = sorted({item for item in declared_ids if declared_ids.count(item) > 1})
+        if duplicate_schema_ids:
+            fail(errors, path, f"entidades JSON-LD duplicadas: {', '.join(duplicate_schema_ids)}")
 
     language_clusters = [
         ["index.html", "en/index.html", "fr/index.html"],
@@ -194,6 +223,26 @@ def main() -> int:
         for candidate in cluster[1:]:
             if pages[(ROOT / candidate).resolve()].structure != reference:
                 errors.append(f"{candidate}: la estructura no coincide con la versión española {cluster[0]}")
+
+    schema_requirements = {
+        "home": ({"Person", "Organization", "WebSite", "WebPage", "CollectionPage", "CreativeWorkSeries"}, language_clusters[0]),
+        "perez": ({"Person", "Organization", "BookPage", "Book", "BreadcrumbList", "FAQPage"}, language_clusters[1]),
+        "jara": ({"Person", "Organization", "BookPage", "Book", "BreadcrumbList"}, language_clusters[2]),
+        "origin": ({"Person", "Article", "BreadcrumbList", "FAQPage"}, language_clusters[3]),
+        "saint": ({"Book", "BreadcrumbList"}, language_clusters[4]),
+    }
+    for cluster_name, (required_types, paths) in schema_requirements.items():
+        for relative_path in paths:
+            path = (ROOT / relative_path).resolve()
+            nodes = [node for data in json_ld_by_page.get(path, []) for node in json_ld_nodes(data)]
+            present_types = set().union(*(schema_types(node) for node in nodes)) if nodes else set()
+            missing_types = sorted(required_types - present_types)
+            if missing_types:
+                fail(errors, path, f"schema {cluster_name} incompleto; faltan tipos: {', '.join(missing_types)}")
+            if cluster_name == "perez":
+                faq_count = sum("FAQPage" in schema_types(node) for node in nodes)
+                if faq_count != 1:
+                    fail(errors, path, f"debe declarar una sola FAQPage y declara {faq_count}")
 
     for css in sorted(ROOT.glob("*.css")):
         text = css.read_text(encoding="utf-8")
@@ -261,13 +310,23 @@ def main() -> int:
 
     sitemap_path = ROOT / "sitemap.xml"
     sitemap = ElementTree.parse(sitemap_path)
+    sitemap_urls = sitemap.findall("s:url", SITEMAP_NS)
     locs = [node.text.strip() for node in sitemap.findall(".//s:loc", SITEMAP_NS) if node.text]
     if len(locs) != len(set(locs)):
         fail(errors, sitemap_path, "contiene URLs duplicadas")
     if len(locs) != 15:
         fail(errors, sitemap_path, f"debe contener 15 páginas publicables y contiene {len(locs)}")
+    for url_node in sitemap_urls:
+        loc_node = url_node.find("s:loc", SITEMAP_NS)
+        lastmod_node = url_node.find("s:lastmod", SITEMAP_NS)
+        loc = loc_node.text.strip() if loc_node is not None and loc_node.text else "(sin loc)"
+        lastmod = lastmod_node.text.strip() if lastmod_node is not None and lastmod_node.text else ""
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod):
+            fail(errors, sitemap_path, f"lastmod ausente o inválido para {loc}: {lastmod!r}")
 
     hreflang_reference: dict[str, dict[str, str]] = {}
+    titles: dict[str, list[str]] = {}
+    descriptions: dict[str, list[str]] = {}
     for loc in locs:
         target, _ = url_to_path(sitemap_path, loc)
         if target is None or not target.exists():
@@ -285,16 +344,29 @@ def main() -> int:
             fail(errors, target, "falta title")
         if not page.description:
             fail(errors, target, "falta meta description")
+        if page.title:
+            titles.setdefault(page.title.casefold(), []).append(loc)
+        if page.description:
+            descriptions.setdefault(page.description.casefold(), []).append(loc)
         if page.h1_count != 1:
             fail(errors, target, f"debe tener un H1 y tiene {page.h1_count}")
         if "noindex" in page.robots:
             fail(errors, target, "está en el sitemap pero tiene noindex")
+        if not page.robots:
+            fail(errors, target, "falta una directiva robots explícita")
         required = {"es", "en", "fr", "x-default"}
         if set(page.alternates) != required:
             missing = sorted(required - set(page.alternates))
             extra = sorted(set(page.alternates) - required)
             fail(errors, target, f"hreflang incompleto; faltan={missing}, sobran={extra}")
         hreflang_reference[loc] = page.alternates
+
+    for value, urls in titles.items():
+        if len(urls) > 1:
+            errors.append(f"SEO: title duplicado en {', '.join(urls)}: {value!r}")
+    for value, urls in descriptions.items():
+        if len(urls) > 1:
+            errors.append(f"SEO: meta description duplicada en {', '.join(urls)}: {value!r}")
 
     loc_set = set(locs)
     for loc, alternates in hreflang_reference.items():
