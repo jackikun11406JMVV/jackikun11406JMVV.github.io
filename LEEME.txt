@@ -1,6 +1,6 @@
 WEB DE JUAN MANUEL VELA VACAS · ESPAÑOL / INGLÉS / FRANCÉS
 
-Versión integral revisada el 5 de agosto de 2026.
+Versión integral mejorada y revisada el 5 de agosto de 2026.
 
 La web incluye:
 - Página de autor en español, inglés y francés.
@@ -10,5 +10,11 @@ La web incluye:
 - Enlaces de compra de todas las ediciones disponibles.
 - Sitemap, robots.txt, canonical, hreflang y datos estructurados.
 - Redirecciones seguras desde las antiguas páginas perez.html, jara.html e index_corregido.html.
+- Página 404 personalizada para direcciones inexistentes.
+- Imágenes optimizadas sin cambiar nombres ni rutas.
+- Diseño móvil, botones, tarjetas y bloques de compra mejorados.
+- Comprobación automática en GitHub para evitar futuras roturas.
 
 La fuente de verdad del diseño y la estructura es la versión española. Las versiones inglesa y francesa conservan la misma organización, adaptando únicamente idioma, textos, enlaces, rutas e imágenes.
+
+Para comprobar manualmente la web antes de publicarla, abre index.html y recorre las versiones ES, EN y FR. La validación automática también puede ejecutarse con: python3 scripts/check_site.py
