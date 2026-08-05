@@ -1,9 +1,22 @@
-AUDITORÍA FINAL DE LA WEB
+AUDITORÍA INTEGRAL DE LA WEB · 5 DE AGOSTO DE 2026
 
-Páginas HTML revisadas: 12
+Páginas indexables revisadas: 15
+Páginas antiguas redirigidas: 3
 Archivos locales ausentes: 0
-Anclajes rotos: 0
-Páginas sin título: 0
-Páginas sin descripción: 0
+Enlaces internos rotos: 0
+Bloques JSON-LD inválidos: 0
+Rutas locales rotas dentro del JSON-LD: 0
+Páginas indexables sin título: 0
+Páginas indexables sin descripción: 0
+Páginas indexables sin H1 único: 0
 
-Mejoras aplicadas: navegación móvil horizontal, espaciado móvil reducido, imágenes optimizadas para carga, metadatos sociales y de autor revisados, locales Open Graph corregidos, textos SEO revisados y carga inicial de la portada optimizada.
+Correcciones principales:
+- Restaurados los hreflang recíprocos de las portadas ES / EN / FR.
+- Corregido el JSON-LD inválido de la página inglesa de Pérez.
+- Corregidas las rutas erróneas de portadas inglesas y francesas dentro del schema.
+- Corregidos los enlaces internos inexistentes.
+- Completada la página francesa de Jara y normalizados sus nombres oficiales.
+- Añadidas las páginas de San Nicolás en inglés y francés.
+- Sustituidas las páginas antiguas rotas por redirecciones a sus URL actuales.
+- Eliminadas referencias a favicons inexistentes y reparadas rutas antiguas del CSS.
+- Actualizado sitemap.xml con 15 URL y fecha 2026-08-05.

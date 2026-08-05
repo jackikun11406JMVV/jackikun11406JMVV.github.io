@@ -1,18 +1,16 @@
 VERSIÓN PARA GITHUB PAGES
 
-Para actualizar tu web:
-1. Sube TODO el contenido de esta carpeta a tu repositorio.
-2. Reemplaza los archivos existentes.
-3. Pulsa Commit changes.
+La web está preparada para publicarse desde la rama principal del repositorio.
 
-La versión incluye:
-- Diseño visual de la web de Juan Manuel Vela Vacas.
-- Español / Inglés / Francés.
-- Selector de idioma en todas las páginas.
-- Pérez con las cinco imágenes del interior.
-- Diferenciación de 40 / 80 páginas.
-- Enlaces de compra de las tres versiones de Pérez.
-- Enlace de compra de Jara.
-- Aviso de que Jara está disponible únicamente en español.
-- Sección de San Nicolás.
+Incluye:
+- Diseño visual preservado.
+- Español, inglés y francés.
+- Selector de idioma y enlaces internos funcionales.
+- Imágenes WebP correctas en cada idioma.
+- Enlaces de compra de las tres versiones de Pérez y Jara.
+- Página de San Nicolás en los tres idiomas.
 - Sección de prensa de Diario de Jerez.
+- Redirecciones desde las URL antiguas para evitar páginas rotas.
+- Sitemap y robots.txt actualizados.
+
+Tras publicar, conviene comprobar la portada, las páginas de Jara y San Nicolás y volver a enviar sitemap.xml en Google Search Console.

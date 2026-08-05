@@ -1,16 +1,14 @@
-WEB DE JUAN MANUEL VELA VACAS · VERSIÓN ES / EN / FR
+WEB DE JUAN MANUEL VELA VACAS · ESPAÑOL / INGLÉS / FRANCÉS
 
-Versión auditada de la web de autor.
-
-1. Descomprime el ZIP.
-2. Sube TODO el contenido a tu repositorio de GitHub Pages.
-3. Reemplaza los archivos existentes.
-4. Pulsa Commit changes.
+Versión integral revisada el 5 de agosto de 2026.
 
 La web incluye:
 - Página de autor en español, inglés y francés.
-- El origen del Ratoncito Pérez en los tres idiomas.
-- Página SEO dedicada al origen del Ratoncito Pérez.
-- Jara, la noble PPP con aviso de que el libro está disponible únicamente en español.
-- Sitemap y robots.txt.
-- SEO técnico, canonical, hreflang y datos estructurados.
+- El origen del Ratoncito Pérez y su página informativa en los tres idiomas.
+- Jara, la noble PPP / Jara, the Noble PDD / Jara, la noble CPD.
+- El próximo cuento sobre San Nicolás en los tres idiomas.
+- Enlaces de compra de todas las ediciones disponibles.
+- Sitemap, robots.txt, canonical, hreflang y datos estructurados.
+- Redirecciones seguras desde las antiguas páginas perez.html, jara.html e index_corregido.html.
+
+La fuente de verdad del diseño y la estructura es la versión española. Las versiones inglesa y francesa conservan la misma organización, adaptando únicamente idioma, textos, enlaces, rutas e imágenes.

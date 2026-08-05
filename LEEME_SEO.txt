@@ -1,21 +1,16 @@
-VERSIÓN SEO AUDITADA
+VERSIÓN SEO REVISADA · 5 DE AGOSTO DE 2026
 
 Incluye:
 - Títulos y descripciones diferenciados por página e idioma.
-- URL canónica en todas las páginas.
-- hreflang recíproco ES / EN / FR.
-- Sitemap XML actualizado con las 12 URLs canónicas.
+- URL canónica y hreflang recíproco ES / EN / FR en las 15 páginas indexables.
+- Sitemap XML actualizado con las 15 URL canónicas.
 - robots.txt.
-- Datos estructurados de autor, libro, artículo y breadcrumbs.
-- SEO específico para “origen del Ratoncito Pérez”.
-- Enlaces internos entre el cuento y la página del origen.
-- Metadatos para redes sociales.
-- Optimización visual y de carga para dispositivos móviles.
+- Datos estructurados válidos de autor, libro, artículo, página y breadcrumbs.
+- Metadatos Open Graph y Twitter.
+- Rutas internas, imágenes y favicons comprobados.
+- Páginas antiguas marcadas como noindex y redirigidas a su URL canónica.
 
-Después de subirla:
-1. Comprueba que la web se ha actualizado.
-2. El sitemap sigue siendo el mismo: sitemap.xml.
-3. No necesitas rehacer toda la configuración de Search Console.
-4. Si quieres, puedes solicitar de nuevo la indexación de la portada y de las páginas que hayas cambiado.
-
-No es necesario tocar más el SEO técnico ahora.
+Después de publicar:
+1. Comprueba que GitHub Pages ha terminado de actualizarse.
+2. Envía de nuevo sitemap.xml en Google Search Console.
+3. Solicita indexación de las portadas, Jara y las tres páginas de San Nicolás.
