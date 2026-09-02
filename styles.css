@@ -97,7 +97,7 @@ section{padding:105px 0}
 .section-title h2,.about h2,.feature h2,.inner h1,.inside h2,.seo h2{font-weight:normal}
 .section-title h2{font-size:72px;line-height:.8;margin:0}
 .section-title p{max-width:420px;color:var(--muted);line-height:1.7}
-.books{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.books{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
 .book-card{position:relative;overflow:visible;background:var(--paper);padding:22px;padding-top:48px;box-shadow:0 18px 40px #43231114;border:1px solid var(--line);transition:.25s}
 .book-card:hover{transform:translateY(-6px);box-shadow:0 25px 50px #43231122}
 .book-card:before{content:"";position:absolute;inset:9px;border:1px solid #b7863840;pointer-events:none}
@@ -711,7 +711,7 @@ translateY(-3px);
 
 .books{
     overflow:visible;
-    align-items:start;
+    align-items:stretch;
 }
 
 .book-card{
@@ -1185,7 +1185,7 @@ body{
 
 /* Cierre editorial 2026: lectura, enlazado interno y pie de página */
 :root{--muted:#654933}
-#libros,#autor,#proximamente,#contacto{scroll-margin-top:92px}
+#libros,#autor,#contacto,#estado-publicacion,#publication-status,#statut-publication{scroll-margin-top:92px}
 .coming-soon .eyebrow{color:#efc878}
 
 .story-links{
@@ -1455,4 +1455,54 @@ footer{padding:58px 0 52px;border-top:1px solid rgba(239,200,120,.24)}
  .topbar .nav{gap:6px 8px}
  .navlinks{justify-content:space-between;gap:5px;overflow-x:visible}
  .navlinks a{padding:7px 6px;font-size:9px;letter-spacing:.35px;white-space:nowrap}
+}
+
+/* Tercer libro oficial y estado editorial de San Nicolás */
+@media(max-width:1050px) and (min-width:851px){
+ .books{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .books .book-card:last-child{grid-column:1/-1;width:min(100%,560px);justify-self:center}
+}
+.saint-page .saint-cover-card{position:relative;padding:18px;max-width:460px;margin:0 auto}
+.saint-page .saint-cover{display:block;width:100%;height:auto;border-radius:12px}
+.saint-page .saint-cover-card .status-pill{
+ position:absolute;
+ z-index:2;
+ top:32px;
+ left:32px;
+ right:32px;
+ width:max-content;
+ max-width:calc(100% - 64px);
+ margin:0;
+ background:rgba(36,18,7,.9);
+ backdrop-filter:blur(7px);
+}
+.publication-status .publication-actions{
+ margin:28px auto 0;
+ padding:22px 26px;
+ max-width:720px;
+ border:1px solid rgba(184,135,55,.45);
+ border-radius:18px;
+ background:rgba(184,135,55,.09);
+}
+.publication-status .publication-actions p{margin:0}
+.publication-status .publication-actions p+p{margin-top:12px}
+.books .book-card{
+ height:100%;
+ display:flex;
+ flex-direction:column;
+}
+.books .book-info{
+ display:flex;
+ flex:1;
+ flex-direction:column;
+}
+.books .book-info .btn{margin-top:auto}
+@media(max-width:850px){
+ .books{grid-template-columns:1fr}
+ .books .book-card:last-child{grid-column:auto;width:100%;justify-self:stretch}
+}
+@media(max-width:560px){
+ .saint-page .saint-cover-card{padding:12px}
+ .saint-page .saint-cover-card .status-pill{top:24px;left:24px;right:24px;max-width:calc(100% - 48px);font-size:10px}
+ .publication-status .publication-actions{padding:18px}
 }
