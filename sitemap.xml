@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url><loc>https://jackikun11406jmvv.github.io/</loc><lastmod>2026-08-06</lastmod></url>
   <url><loc>https://jackikun11406jmvv.github.io/el-origen-del-ratoncito-perez.html</loc><lastmod>2026-08-06</lastmod></url>
-  <url><loc>https://jackikun11406jmvv.github.io/origen-ratoncito-perez.html</loc><lastmod>2026-08-06</lastmod></url>
+  <url>
+    <loc>https://jackikun11406jmvv.github.io/origen-ratoncito-perez.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/raton-perez-luis-coloma-casa.webp</image:loc>
+      <image:caption>Ratón Pérez de Luis Coloma y la casa de la familia Pérez.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/luis-coloma-raton-perez-recreacion.webp</image:loc>
+      <image:caption>Luis Coloma junto al Ratón Pérez.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/luis-coloma-alfonso-xiii-raton-perez.webp</image:loc>
+      <image:caption>Luis Coloma, Bubi y la historia del Ratón Pérez.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/raton-perez-coloma-palacio-real.webp</image:loc>
+      <image:caption>Dos miembros de la familia Pérez frente al Palacio Real de Madrid.</image:caption>
+    </image:image>
+  </url>
   <url><loc>https://jackikun11406jmvv.github.io/jara-la-noble-ppp.html</loc><lastmod>2026-08-06</lastmod></url>
   <url><loc>https://jackikun11406jmvv.github.io/san-nicolas.html</loc><lastmod>2026-08-06</lastmod></url>
   <url><loc>https://jackikun11406jmvv.github.io/en/</loc><lastmod>2026-08-06</lastmod></url>
