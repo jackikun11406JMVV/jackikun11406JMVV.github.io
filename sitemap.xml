@@ -1,38 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://jackikun11406jmvv.github.io/</loc><lastmod>2026-09-04</lastmod></url>
-  <url><loc>https://jackikun11406jmvv.github.io/el-origen-del-ratoncito-perez.html</loc><lastmod>2026-08-06</lastmod></url>
+
+  <url>
+    <loc>https://jackikun11406jmvv.github.io/</loc>
+    <lastmod>2026-09-04</lastmod>
+  </url>
+
+  <url>
+    <loc>https://jackikun11406jmvv.github.io/el-origen-del-ratoncito-perez.html</loc>
+    <lastmod>2026-08-06</lastmod>
+  </url>
+
   <url>
     <loc>https://jackikun11406jmvv.github.io/origen-ratoncito-perez.html</loc>
     <lastmod>2026-09-04</lastmod>
+
     <image:image>
       <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/raton-perez-luis-coloma-casa.webp</image:loc>
       <image:caption>Ratón Pérez de Luis Coloma y la casa de la familia Pérez.</image:caption>
     </image:image>
+
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/raton-perez-coloma-descripcion.webp</image:loc>
+      <image:caption>Ratón Pérez descrito por Luis Coloma con sombrero de paja, lentes de oro, zapatos claros y cartera roja.</image:caption>
+    </image:image>
+
     <image:image>
       <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/luis-coloma-raton-perez-recreacion.webp</image:loc>
       <image:caption>Luis Coloma junto al Ratón Pérez.</image:caption>
     </image:image>
+
     <image:image>
       <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/luis-coloma-alfonso-xiii-raton-perez.webp</image:loc>
       <image:caption>Luis Coloma, Bubi y la historia del Ratón Pérez.</image:caption>
     </image:image>
+
     <image:image>
       <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/raton-perez-coloma-palacio-real.webp</image:loc>
       <image:caption>Dos miembros de la familia Pérez frente al Palacio Real de Madrid.</image:caption>
     </image:image>
   </url>
-  <url><loc>https://jackikun11406jmvv.github.io/jara-la-noble-ppp.html</loc><lastmod>2026-08-06</lastmod></url>
-  <url><loc>https://jackikun11406jmvv.github.io/san-nicolas.html</loc><lastmod>2026-08-06</lastmod></url>
-  <url><loc>https://jackikun11406jmvv.github.io/en/</loc><lastmod>2026-09-04</lastmod></url>
-  <url><loc>https://jackikun11406jmvv.github.io/en/el-origen-del-ratoncito-perez.html</loc><lastmod>2026-08-06</lastmod></url>
-  <url><loc>https://jackikun11406jmvv.github.io/en/origen-ratoncito-perez.html</loc><lastmod>2026-09-04</lastmod></url>
-  <url><loc>https://jackikun11406jmvv.github.io/en/jara-la-noble-ppp.html</loc><lastmod>2026-08-06</lastmod></url>
-  <url><loc>https://jackikun11406jmvv.github.io/en/san-nicolas.html</loc><lastmod>2026-08-06</lastmod></url>
-  <url><loc>https://jackikun11406jmvv.github.io/fr/</loc><lastmod>2026-09-04</lastmod></url>
-  <url><loc>https://jackikun11406jmvv.github.io/fr/el-origen-del-ratoncito-perez.html</loc><lastmod>2026-08-06</lastmod></url>
-  <url><loc>https://jackikun11406jmvv.github.io/fr/origen-ratoncito-perez.html</loc><lastmod>2026-09-04</lastmod></url>
-  <url><loc>https://jackikun11406jmvv.github.io/fr/jara-la-noble-ppp.html</loc><lastmod>2026-08-06</lastmod></url>
-  <url><loc>https://jackikun11406jmvv.github.io/fr/san-nicolas.html</loc><lastmod>2026-08-06</lastmod></url>
+
+  <url>
+    <loc>https://jackikun11406jmvv.github.io/jara-la-noble-ppp.html</loc>
+    <lastmod>2026-08-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://jackikun11406jmvv.github.io/san-nicolas.html</loc>
+    <lastmod>2026-08-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://jackikun11406jmvv.github.io/en/</loc>
+    <lastmod>2026-09-04</lastmod>
+  </url>
+
+  <url>
+    <loc>https://jackikun11406jmvv.github.io/en/el-origen-del-ratoncito-perez.html</loc>
+    <lastmod>2026-08-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://jackikun11406jmvv.github.io/en/origen-ratoncito-perez.html</loc>
+    <lastmod>2026-09-04</lastmod>
+
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/raton-perez-luis-coloma-casa.webp</image:loc>
+      <image:caption>Little Mouse Pérez and the Pérez family home.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/raton-perez-coloma-descripcion.webp</image:loc>
+      <image:caption>Little Mouse Pérez as described by Luis Coloma, with a straw hat, gold spectacles, light shoes and a red satchel.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/luis-coloma-raton-perez-recreacion.webp</image:loc>
+      <image:caption>Luis Coloma with Little Mouse Pérez.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/luis-coloma-alfonso-xiii-raton-perez.webp</image:loc>
+      <image:caption>Luis Coloma, Bubi and the story of Little Mouse Pérez.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/raton-perez-coloma-palacio-real.webp</image:loc>
+      <image:caption>Two members of the Pérez family in front of the Royal Palace of Madrid.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://jackikun11406jmvv.github.io/en/jara-la-noble-ppp.html</loc>
+    <lastmod>2026-08-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://jackikun11406jmvv.github.io/en/san-nicolas.html</loc>
+    <lastmod>2026-08-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://jackikun11406jmvv.github.io/fr/</loc>
+    <lastmod>2026-09-04</lastmod>
+  </url>
+
+  <url>
+    <loc>https://jackikun11406jmvv.github.io/fr/el-origen-del-ratoncito-perez.html</loc>
+    <lastmod>2026-08-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://jackikun11406jmvv.github.io/fr/origen-ratoncito-perez.html</loc>
+    <lastmod>2026-09-04</lastmod>
+
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/raton-perez-luis-coloma-casa.webp</image:loc>
+      <image:caption>La Petite Souris Pérez et la maison de la famille Pérez.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/raton-perez-coloma-descripcion.webp</image:loc>
+      <image:caption>La Petite Souris Pérez décrite par Luis Coloma, avec chapeau de paille, lunettes dorées, chaussures claires et sacoche rouge.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/luis-coloma-raton-perez-recreacion.webp</image:loc>
+      <image:caption>Luis Coloma avec la Petite Souris Pérez.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/luis-coloma-alfonso-xiii-raton-perez.webp</image:loc>
+      <image:caption>Luis Coloma, Bubi et l’histoire de la Petite Souris Pérez.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/perez-coloma/raton-perez-coloma-palacio-real.webp</image:loc>
+      <image:caption>Deux membres de la famille Pérez devant le Palais royal de Madrid.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://jackikun11406jmvv.github.io/fr/jara-la-noble-ppp.html</loc>
+    <lastmod>2026-08-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://jackikun11406jmvv.github.io/fr/san-nicolas.html</loc>
+    <lastmod>2026-08-06</lastmod>
+  </url>
+
 </urlset>
