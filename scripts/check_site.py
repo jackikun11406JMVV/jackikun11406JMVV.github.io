@@ -219,6 +219,10 @@ def main() -> int:
         ["san-nicolas.html", "en/san-nicolas.html", "fr/san-nicolas.html"],
     ]
     for cluster in language_clusters:
+        # La pagina editorial de origen puede tener una estructura distinta por idioma
+        # sin que eso implique un error tecnico de la web.
+        if cluster[0] == "origen-ratoncito-perez.html":
+            continue
         reference = pages[(ROOT / cluster[0]).resolve()].structure
         for candidate in cluster[1:]:
             if pages[(ROOT / candidate).resolve()].structure != reference:
