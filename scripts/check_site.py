@@ -16,6 +16,9 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE_ORIGIN = "https://jackikun11406jmvv.github.io"
 SITEMAP_NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 URL_ATTRS = {"a": ("href",), "img": ("src", "srcset"), "link": ("href",), "script": ("src",)}
+SAN_NICOLAS_ISBN = "9788409924981"
+SAN_NICOLAS_LEGAL_DEPOSIT = "CA 656-2026"
+SAN_NICOLAS_SCHEMA_COPIES = 6
 
 
 class PageParser(HTMLParser):
@@ -153,6 +156,13 @@ def schema_types(node: dict[str, object]) -> set[str]:
     return set()
 
 
+def valid_isbn13(value: str) -> bool:
+    if not re.fullmatch(r"\d{13}", value):
+        return False
+    total = sum(int(digit) * (1 if index % 2 == 0 else 3) for index, digit in enumerate(value[:12]))
+    return (10 - total % 10) % 10 == int(value[-1])
+
+
 def fail(errors: list[str], path: Path, message: str) -> None:
     errors.append(f"{path.relative_to(ROOT)}: {message}")
 
@@ -162,6 +172,8 @@ def main() -> int:
     html_files = sorted(ROOT.rglob("*.html"))
     pages = {path.resolve(): parse_page(path) for path in html_files}
     json_ld_by_page: dict[Path, list[object]] = {}
+    isbn_records: list[tuple[Path, str, str]] = []
+    legal_deposit_records: list[tuple[Path, str, str]] = []
 
     for path, page in pages.items():
         duplicates = sorted({item for item in page.ids if page.ids.count(item) > 1})
@@ -210,6 +222,53 @@ def main() -> int:
         duplicate_schema_ids = sorted({item for item in declared_ids if declared_ids.count(item) > 1})
         if duplicate_schema_ids:
             fail(errors, path, f"entidades JSON-LD duplicadas: {', '.join(duplicate_schema_ids)}")
+
+        for node in declared_nodes:
+            node_id = node.get("@id", "")
+            if "isbn" in node:
+                isbn_records.append((path, str(node_id), str(node["isbn"])))
+            identifiers = node.get("identifier", [])
+            if isinstance(identifiers, dict):
+                identifiers = [identifiers]
+            if isinstance(identifiers, list):
+                for identifier in identifiers:
+                    if isinstance(identifier, dict) and identifier.get("propertyID") == "Depósito Legal":
+                        legal_deposit_records.append((path, str(node_id), str(identifier.get("value", ""))))
+
+        html = path.read_text(encoding="utf-8")
+        for candidate in re.findall(r"(?<!\d)97[89](?:[\s-]?\d){10}(?!\d)", html):
+            normalized = re.sub(r"\D", "", candidate)
+            if normalized != SAN_NICOLAS_ISBN:
+                fail(errors, path, f"ISBN no registrado o antiguo: {candidate}")
+
+        html_without_json_ld = re.sub(
+            r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>[\s\S]*?</script>',
+            "",
+            html,
+            flags=re.I,
+        )
+        if re.search(r"(?<!\d)97[89](?:[\s-]?\d){10}(?!\d)", html_without_json_ld):
+            fail(errors, path, "el ISBN no debe mostrarse fuera de los datos estructurados")
+        if SAN_NICOLAS_LEGAL_DEPOSIT in html_without_json_ld:
+            fail(errors, path, "el depósito legal no debe mostrarse fuera de los datos estructurados")
+
+    for path, node_id, isbn in isbn_records:
+        if not valid_isbn13(isbn):
+            fail(errors, path, f"ISBN-13 con dígito de control inválido: {isbn}")
+        if isbn != SAN_NICOLAS_ISBN or "#san-nicolas-work/lang-es" not in node_id:
+            fail(errors, path, f"ISBN asignado a una edición incorrecta: {node_id} = {isbn}")
+    for path, node_id, legal_deposit in legal_deposit_records:
+        if legal_deposit != SAN_NICOLAS_LEGAL_DEPOSIT or "#san-nicolas-work/lang-es" not in node_id:
+            fail(errors, path, f"depósito legal asignado a una edición incorrecta: {node_id} = {legal_deposit}")
+    if len(isbn_records) != SAN_NICOLAS_SCHEMA_COPIES:
+        errors.append(
+            f"ISBN: debe declararse {SAN_NICOLAS_SCHEMA_COPIES} veces en los datos estructurados y se declara {len(isbn_records)}"
+        )
+    if len(legal_deposit_records) != SAN_NICOLAS_SCHEMA_COPIES:
+        errors.append(
+            "Depósito Legal: debe acompañar a las seis declaraciones de la edición española "
+            f"y se declara {len(legal_deposit_records)} veces"
+        )
 
     language_clusters = [
         ["index.html", "en/index.html", "fr/index.html"],
