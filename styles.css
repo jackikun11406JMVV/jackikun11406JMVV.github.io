@@ -1062,6 +1062,26 @@ body{
 .buy-card.featured::after{content:attr(data-featured-label)}
 .buy-info ul{padding-left:20px;color:var(--muted);line-height:1.65}
 .buy-amazon{display:flex;align-items:center;justify-content:center}
+.buy-card.pending-edition{
+ border:2px dashed rgba(184,135,55,.65);
+ background:linear-gradient(165deg,#fffaf0,#f8edda);
+}
+.buy-card.pending-edition:hover{transform:none}
+.buy-links>.buy-card:only-child{
+ grid-column:1/-1;
+ width:100%;
+ max-width:560px;
+ justify-self:center;
+}
+.availability-note{
+ margin-top:auto;
+ padding:12px 14px;
+ border-radius:10px;
+ background:rgba(125,46,32,.08);
+ color:var(--wine);
+ font-weight:700;
+ text-align:center;
+}
 
 .seo a,.jara-mission a:not(.btn),.faq a{
  color:var(--wine);

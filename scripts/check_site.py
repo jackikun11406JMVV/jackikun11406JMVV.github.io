@@ -257,14 +257,14 @@ def main() -> int:
 
     purchase_contracts = {
         "perez": {
-            "es": {"B0H274BD3J", "B0H247GFV3", "B0H2CKRR67"},
-            "en": {"B0H28NQ8SQ", "B0H2B5GT6J", "B0H2C62YNM"},
-            "fr": {"B0H3KWF5YB", "B0H3LBXMHD", "B0H12YB6KW"},
+            "es": {"B0H2CKRR67"},
+            "en": {"B0H2C62YNM"},
+            "fr": {"B0H12YB6KW"},
         },
         "jara": {
-            "es": {"B0H6KVFH2P", "B0H6NPP9KH"},
-            "en": {"B0HBCZKTS2", "B0HB9VHXXD"},
-            "fr": {"B0HBRW2QFQ", "B0HBBZ1M5L"},
+            "es": {"B0H6NPP9KH"},
+            "en": {"B0HB9VHXXD"},
+            "fr": {"B0HBBZ1M5L"},
         },
     }
     product_pages = {
