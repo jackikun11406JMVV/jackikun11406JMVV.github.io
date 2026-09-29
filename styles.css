@@ -1205,7 +1205,7 @@ body{
 
 /* Cierre editorial 2026: lectura, enlazado interno y pie de página */
 :root{--muted:#654933}
-#libros,#autor,#contacto,#estado-publicacion,#publication-status,#statut-publication{scroll-margin-top:92px}
+#libros,#autor,#contacto,#el-libro,#the-book,#le-livre,#estado-publicacion,#publication-status,#statut-publication,#preguntas,#questions{scroll-margin-top:92px}
 .coming-soon .eyebrow{color:#efc878}
 
 .story-links{
@@ -1473,6 +1473,10 @@ footer{padding:58px 0 52px;border-top:1px solid rgba(239,200,120,.24)}
 
 @media(max-width:430px){
  .topbar .nav{gap:6px 8px}
+ .brand{font-size:14px;gap:5px}
+ .brand-logo{width:36px;height:36px}
+ .brand-text{max-width:130px;white-space:normal;line-height:1}
+ .lang-switch{padding:6px 8px;font-size:.62rem}
  .navlinks{justify-content:space-between;gap:5px;overflow-x:visible}
  .navlinks a{padding:7px 6px;font-size:9px;letter-spacing:.35px;white-space:nowrap}
 }
@@ -1506,6 +1510,67 @@ footer{padding:58px 0 52px;border-top:1px solid rgba(239,200,120,.24)}
 }
 .publication-status .publication-actions p{margin:0}
 .publication-status .publication-actions p+p{margin-top:12px}
+.jara-page .jara-mission .mission-note{
+ margin-top:28px;
+ padding:20px 22px;
+ border:1px solid rgba(239,200,120,.42);
+ border-radius:16px;
+ background:rgba(255,255,255,.06);
+}
+.saint-story{padding:96px 0;background:#f7ead3}
+.saint-story-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:64px;align-items:center}
+.saint-story h2{margin:10px 0 26px;font-size:clamp(46px,6vw,72px);font-weight:400;line-height:.92;color:var(--brown)}
+.saint-story p{max-width:720px;font-size:18px;line-height:1.8;color:var(--muted)}
+.saint-story-note{
+ padding:42px 38px;
+ border-radius:26px;
+ background:linear-gradient(145deg,#35190e,#6b351e);
+ box-shadow:0 24px 50px rgba(60,31,17,.2);
+ color:#f7dfae;
+}
+.saint-story-note>span{display:block;margin-bottom:18px;color:#efc878;font-size:38px}
+.saint-story-note strong{display:block;font-family:var(--serif,Georgia,serif);font-size:32px;line-height:1.08;color:#ffe0a0}
+.saint-story-note p{margin:18px 0 0;color:#ecd5aa;font-size:16px}
+.saint-highlights{padding:96px 0;background:#fffaf2}
+.saint-feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
+.saint-feature{
+ min-height:280px;
+ padding:32px 30px;
+ border:1px solid rgba(125,46,32,.2);
+ border-radius:22px;
+ background:#fff;
+ box-shadow:0 15px 35px rgba(82,44,21,.08);
+}
+.saint-feature>span{display:block;color:#b88737;font-size:14px;font-weight:800;letter-spacing:.18em}
+.saint-feature h3{margin:40px 0 14px;color:var(--wine);font-size:29px;font-weight:400;line-height:1.05}
+.saint-feature p{margin:0;color:var(--muted);line-height:1.7}
+.saint-edition{padding:96px 0;background:linear-gradient(130deg,#2b170d,#59301b);color:#f6dfae}
+.saint-edition .section-title h2{color:#f5d58f}
+.saint-edition .section-title p{color:#e5c994}
+.saint-edition .eyebrow{color:#efc878}
+.saint-edition-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.saint-edition-grid article{padding:24px;border:1px solid rgba(239,200,120,.3);border-radius:18px;background:rgba(255,255,255,.06)}
+.saint-edition-grid span{display:block;margin-bottom:10px;color:#d6b471;font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.saint-edition-grid strong{display:block;color:#fff0cb;font-family:var(--serif,Georgia,serif);font-size:22px;line-height:1.2;overflow-wrap:anywhere}
+.release-placeholder{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:24px;
+ margin-top:22px;
+ padding:24px 26px;
+ border:1px dashed rgba(239,200,120,.55);
+ border-radius:18px;
+ background:rgba(0,0,0,.12);
+}
+.release-placeholder strong{display:block;color:#ffe0a0;font-size:20px}
+.release-placeholder div span{display:block;margin-top:6px;color:#ddc493}
+.release-state{flex:0 0 auto;padding:9px 12px;border-radius:999px;background:#ecd39d;color:#3d2112;font-size:11px;font-weight:900;letter-spacing:.08em}
+.saint-faq{padding:96px 0;background:#f3e1c1}
+.saint-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:36px}
+.saint-faq-grid article{padding:28px 30px;border:1px solid rgba(125,46,32,.18);border-radius:20px;background:rgba(255,252,245,.86)}
+.saint-faq-grid h3{margin:0 0 12px;color:var(--wine);font-size:24px;font-weight:400;line-height:1.15}
+.saint-faq-grid p{margin:0;color:var(--muted);line-height:1.7}
 .books .book-card{
  height:100%;
  display:flex;
@@ -1520,9 +1585,20 @@ footer{padding:58px 0 52px;border-top:1px solid rgba(239,200,120,.24)}
 @media(max-width:850px){
  .books{grid-template-columns:1fr}
  .books .book-card:last-child{grid-column:auto;width:100%;justify-self:stretch}
+ .saint-story-grid{grid-template-columns:1fr;gap:34px}
+ .saint-feature-grid{grid-template-columns:1fr}
+ .saint-feature{min-height:0}
+ .saint-feature h3{margin-top:24px}
+ .saint-edition-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:560px){
  .saint-page .saint-cover-card{padding:12px}
  .saint-page .saint-cover-card .status-pill{top:24px;left:24px;right:24px;max-width:calc(100% - 48px);font-size:10px}
  .publication-status .publication-actions{padding:18px}
+ .saint-story,.saint-highlights,.saint-edition,.saint-faq{padding:68px 0}
+ .saint-story-note{padding:30px 24px}
+ .saint-story-note strong{font-size:27px}
+ .saint-feature{padding:26px 23px}
+ .saint-edition-grid,.saint-faq-grid{grid-template-columns:1fr}
+ .release-placeholder{align-items:flex-start;flex-direction:column;padding:22px}
 }

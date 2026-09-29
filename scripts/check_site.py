@@ -233,7 +233,7 @@ def main() -> int:
         "perez": ({"Person", "Organization", "BookPage", "Book", "BreadcrumbList", "FAQPage"}, language_clusters[1]),
         "jara": ({"Person", "Organization", "BookPage", "Book", "BreadcrumbList"}, language_clusters[2]),
         "origin": ({"Person", "Article", "BreadcrumbList", "FAQPage"}, language_clusters[3]),
-        "saint": ({"Book", "BreadcrumbList"}, language_clusters[4]),
+        "saint": ({"Book", "BreadcrumbList", "FAQPage"}, language_clusters[4]),
     }
     for cluster_name, (required_types, paths) in schema_requirements.items():
         for relative_path in paths:
