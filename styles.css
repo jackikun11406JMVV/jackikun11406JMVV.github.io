@@ -456,6 +456,12 @@ box-shadow:0 10px 22px rgba(66,35,17,.18);
 transition:.25s}
 .buy-amazon:hover{transform:translateY(-3px);filter:brightness(1.05)}
 .buy-amazon::before{content:"🛒 ";margin-right:6px}
+.amazon-routing-note{margin:14px 0 0;color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.01em}
+.publication-status .amazon-routing-note{color:#ddc493}
+.amazon-affiliate-note{margin:7px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
+.publication-status .amazon-affiliate-note{color:#c8b58e}
+.purchase-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+.purchase-grid .buy-amazon{margin:0;min-width:0;text-align:center}
 .buy-card.featured{border:2px solid var(--gold);position:relative}
 .buy-card.featured::after{
 content:"Nuestra edición más completa";
@@ -1592,6 +1598,7 @@ footer{padding:58px 0 52px;border-top:1px solid rgba(239,200,120,.24)}
  .saint-edition-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:560px){
+ .purchase-grid{grid-template-columns:1fr}
  .saint-page .saint-cover-card{padding:12px}
  .saint-page .saint-cover-card .status-pill{top:24px;left:24px;right:24px;max-width:calc(100% - 48px);font-size:10px}
  .publication-status .publication-actions{padding:18px}
