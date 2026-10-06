@@ -19,6 +19,8 @@ URL_ATTRS = {"a": ("href",), "img": ("src", "srcset"), "link": ("href",), "scrip
 SAN_NICOLAS_ISBN = "9788409924981"
 SAN_NICOLAS_LEGAL_DEPOSIT = "CA 656-2026"
 SAN_NICOLAS_SCHEMA_COPIES = 6
+PEREZ_HARDBACK_ISBN = "9788409927814"
+PEREZ_HARDBACK_SCHEMA_COPIES = 3
 
 
 class PageParser(HTMLParser):
@@ -238,7 +240,7 @@ def main() -> int:
         html = path.read_text(encoding="utf-8")
         for candidate in re.findall(r"(?<!\d)97[89](?:[\s-]?\d){10}(?!\d)", html):
             normalized = re.sub(r"\D", "", candidate)
-            if normalized != SAN_NICOLAS_ISBN:
+            if normalized not in {SAN_NICOLAS_ISBN, PEREZ_HARDBACK_ISBN}:
                 fail(errors, path, f"ISBN no registrado o antiguo: {candidate}")
 
         html_without_json_ld = re.sub(
@@ -252,17 +254,29 @@ def main() -> int:
         if SAN_NICOLAS_LEGAL_DEPOSIT in html_without_json_ld:
             fail(errors, path, "el depósito legal no debe mostrarse fuera de los datos estructurados")
 
+    san_nicolas_isbn_count = 0
+    perez_hardback_isbn_count = 0
     for path, node_id, isbn in isbn_records:
         if not valid_isbn13(isbn):
             fail(errors, path, f"ISBN-13 con dígito de control inválido: {isbn}")
-        if isbn != SAN_NICOLAS_ISBN or "#san-nicolas-work/lang-es" not in node_id:
+        if isbn == SAN_NICOLAS_ISBN and "#san-nicolas-work/lang-es" in node_id:
+            san_nicolas_isbn_count += 1
+        elif isbn == PEREZ_HARDBACK_ISBN and "#perez-work/lang-es/hardcover" in node_id:
+            perez_hardback_isbn_count += 1
+        else:
             fail(errors, path, f"ISBN asignado a una edición incorrecta: {node_id} = {isbn}")
     for path, node_id, legal_deposit in legal_deposit_records:
         if legal_deposit != SAN_NICOLAS_LEGAL_DEPOSIT or "#san-nicolas-work/lang-es" not in node_id:
             fail(errors, path, f"depósito legal asignado a una edición incorrecta: {node_id} = {legal_deposit}")
-    if len(isbn_records) != SAN_NICOLAS_SCHEMA_COPIES:
+    if san_nicolas_isbn_count != SAN_NICOLAS_SCHEMA_COPIES:
         errors.append(
-            f"ISBN: debe declararse {SAN_NICOLAS_SCHEMA_COPIES} veces en los datos estructurados y se declara {len(isbn_records)}"
+            "ISBN San Nicolás: debe declararse "
+            f"{SAN_NICOLAS_SCHEMA_COPIES} veces y se declara {san_nicolas_isbn_count}"
+        )
+    if perez_hardback_isbn_count != PEREZ_HARDBACK_SCHEMA_COPIES:
+        errors.append(
+            "ISBN tapa dura Pérez: debe declararse "
+            f"{PEREZ_HARDBACK_SCHEMA_COPIES} veces y se declara {perez_hardback_isbn_count}"
         )
     if len(legal_deposit_records) != SAN_NICOLAS_SCHEMA_COPIES:
         errors.append(
@@ -316,7 +330,7 @@ def main() -> int:
 
     purchase_contracts = {
         "perez": {
-            "es": {"B0H2CKRR67"},
+            "es": {"B0HLYNHB35", "8409927810"},
             "en": {"B0H2C62YNM"},
             "fr": {"B0H12YB6KW"},
         },

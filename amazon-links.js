@@ -1,8 +1,4 @@
 (() => {
-  const languages = Array.isArray(navigator.languages) && navigator.languages.length
-    ? navigator.languages
-    : [navigator.language || ""];
-
   let timeZone = "";
   try {
     timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
@@ -13,12 +9,12 @@
     : null;
   const isSpain = localPreviewCountry
     ? localPreviewCountry === "es"
-    : languages.some((language) => /(^|-)ES$/i.test(language))
-      || timeZone === "Europe/Madrid"
+    : timeZone === "Europe/Madrid"
       || timeZone === "Atlantic/Canary";
 
   const universalToSpain = {
-    "https://www.letraminuscula.com/amz/B0H2CKRR67": "https://link.amazon/B08zpKRCC",
+    "https://www.letraminuscula.com/amz/B0HLYNHB35": "https://link.amazon/B0d90zCpt",
+    "https://www.letraminuscula.com/amz/8409927810": "https://link.amazon/B07hbUgj0",
     "https://www.letraminuscula.com/amz/B0H2C62YNM": "https://link.amazon/B0gMEXdKP",
     "https://www.letraminuscula.com/amz/B0H12YB6KW": "https://link.amazon/B07UnTZPu",
     "https://www.letraminuscula.com/amz/B0H6NPP9KH": "https://link.amazon/B0bdQBFld",

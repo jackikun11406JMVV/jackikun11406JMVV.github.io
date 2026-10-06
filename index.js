@@ -1,8 +1,14 @@
+document.documentElement.classList.add("js");
+
 document.addEventListener("DOMContentLoaded",()=>{
 
     const hero=document.querySelector(".hero-content");
 
-    hero.classList.add("show");
+    if(hero){
+
+        hero.classList.add("show");
+
+    }
 
     const cards=document.querySelectorAll(".book-card");
 
