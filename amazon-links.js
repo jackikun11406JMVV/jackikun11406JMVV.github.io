@@ -17,7 +17,6 @@
     "https://www.letraminuscula.com/amz/8409927810": "https://link.amazon/B07hbUgj0",
     "https://www.letraminuscula.com/amz/B0H2C62YNM": "https://link.amazon/B0gMEXdKP",
     "https://www.letraminuscula.com/amz/B0H12YB6KW": "https://link.amazon/B07UnTZPu",
-    "https://www.letraminuscula.com/amz/B0H6NPP9KH": "https://link.amazon/B0bdQBFld",
     "https://www.letraminuscula.com/amz/B0HB9VHXXD": "https://link.amazon/B0dJAdadw",
     "https://www.letraminuscula.com/amz/B0HBBZ1M5L": "https://link.amazon/B0ajsMq6j",
     "https://www.letraminuscula.com/amz/8409924986": "https://link.amazon/B0fYmijyV",
