@@ -10,7 +10,8 @@
   const isSpain = localPreviewCountry
     ? localPreviewCountry === "es"
     : timeZone === "Europe/Madrid"
-      || timeZone === "Atlantic/Canary";
+      || timeZone === "Atlantic/Canary"
+      || timeZone === "Africa/Ceuta";
 
   const universalToSpain = {
     "https://www.letraminuscula.com/amz/B0HLYNHB35": "https://link.amazon/B0d90zCpt",
@@ -26,9 +27,9 @@
   document.querySelectorAll("a.buy-amazon, a[data-amazon-spain]").forEach((link) => {
     const universalUrl = link.dataset.amazonUniversal || link.href;
     const spainUrl = link.dataset.amazonSpain || universalToSpain[universalUrl];
-    if (!spainUrl) return;
-    link.href = isSpain ? spainUrl : universalUrl;
-    link.dataset.amazonDestination = isSpain ? "spain" : "universal";
+    const useSpainLink = isSpain && Boolean(spainUrl);
+    link.href = useSpainLink ? spainUrl : universalUrl;
+    link.dataset.amazonDestination = useSpainLink ? "spain" : "universal";
     link.rel = "sponsored nofollow noopener noreferrer";
   });
 
@@ -48,16 +49,41 @@
     en: "As an Amazon Associate, the owner of this website earns from qualifying purchases.",
     fr: "En tant que Partenaire Amazon, le propriétaire de ce site perçoit une rémunération sur les achats admissibles."
   };
+  const mixedCopy = {
+    es: "Destino de compra: algunos formatos usan enlace universal y otros, enlace de asociado de Amazon España.",
+    en: "Shopping destination: some formats use a universal link and others an Amazon Spain affiliate link.",
+    fr: "Destination d’achat : certains formats utilisent un lien universel et d’autres un lien affilié Amazon Espagne."
+  };
+  const newTabCopy = {
+    es: "se abre en una pestaña nueva",
+    en: "opens in a new tab",
+    fr: "s’ouvre dans un nouvel onglet"
+  };
+
+  const language = document.documentElement.lang || "es";
+  document.querySelectorAll("a.buy-amazon[target='_blank']").forEach((link) => {
+    const label = link.textContent.replace(/\s*→\s*$/, "").trim();
+    link.setAttribute("aria-label", `${label} (${newTabCopy[language] || newTabCopy.es})`);
+  });
 
   document.querySelectorAll(".buy-accordion, .publication-actions").forEach((block) => {
-    if (!block.querySelector("a[data-amazon-destination]")) return;
+    const destinations = Array.from(
+      block.querySelectorAll("a[data-amazon-destination]"),
+      (link) => link.dataset.amazonDestination
+    );
+    if (!destinations.length) return;
+    const hasSpain = destinations.includes("spain");
+    const hasUniversal = destinations.includes("universal");
     const note = document.createElement("p");
     note.className = "amazon-routing-note";
-    note.textContent = copy[document.documentElement.lang] || copy.es;
+    note.textContent = hasSpain && hasUniversal
+      ? (mixedCopy[language] || mixedCopy.es)
+      : (copy[language] || copy.es);
     block.insertAdjacentElement("afterend", note);
+    if (!hasSpain) return;
     const affiliateNote = document.createElement("p");
     affiliateNote.className = "amazon-affiliate-note";
-    affiliateNote.textContent = disclosure[document.documentElement.lang] || disclosure.es;
+    affiliateNote.textContent = disclosure[language] || disclosure.es;
     note.insertAdjacentElement("afterend", affiliateNote);
   });
 })();

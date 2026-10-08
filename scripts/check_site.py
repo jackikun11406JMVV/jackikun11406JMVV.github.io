@@ -36,6 +36,7 @@ class PageParser(HTMLParser):
         self.images: list[dict[str, str]] = []
         self.ids: list[str] = []
         self.alternates: dict[str, str] = {}
+        self.stylesheets: list[str] = []
         self.json_ld: list[str] = []
         self.blank_links: list[dict[str, str]] = []
         self.structure: list[str] = []
@@ -64,6 +65,8 @@ class PageParser(HTMLParser):
                 self.robots = data.get("content", "").lower()
         if tag == "link":
             rel = set(data.get("rel", "").lower().split())
+            if "stylesheet" in rel and data.get("href"):
+                self.stylesheets.append(data["href"])
             if "canonical" in rel:
                 self.canonical = data.get("href", "")
             if "alternate" in rel and data.get("hreflang"):
@@ -375,6 +378,17 @@ def main() -> int:
             if open_languages != {page_language}:
                 fail(errors, path, f"debe estar abierto solo el bloque {page_language} y están abiertos {sorted(open_languages)}")
 
+    san_nicolas_asins = {"8409924986", "B0H98JJD4W"}
+    for path in [ROOT / "san-nicolas.html", ROOT / "en/san-nicolas.html", ROOT / "fr/san-nicolas.html"]:
+        html = path.read_text(encoding="utf-8")
+        asins = set(re.findall(r"letraminuscula\.com/amz/([A-Z0-9]+)", html))
+        if asins != san_nicolas_asins:
+            fail(
+                errors,
+                path,
+                f"enlaces de compra de San Nicolás incorrectos: {sorted(asins)}; esperados {sorted(san_nicolas_asins)}",
+            )
+
     image_files = [path for path in (ROOT / "images").rglob("*") if path.is_file()]
     image_total = sum(path.stat().st_size for path in image_files)
     image_budget = 13 * 1024 * 1024
@@ -421,6 +435,8 @@ def main() -> int:
             fail(errors, target, "falta title")
         if not page.description:
             fail(errors, target, "falta meta description")
+        if not page.stylesheets:
+            fail(errors, target, "falta la hoja de estilos")
         if page.title:
             titles.setdefault(page.title.casefold(), []).append(loc)
         if page.description:
