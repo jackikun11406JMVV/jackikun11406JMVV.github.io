@@ -1825,6 +1825,143 @@ footer{padding:58px 0 52px;border-top:1px solid rgba(239,200,120,.24)}
  }
 }
 
+/* Revisión de conversión 2026-10-08: acciones inequívocamente pulsables */
+.books .book-card{
+ cursor:pointer;
+}
+.books .book-card[href*="el-origen-del-ratoncito-perez"]{order:1}
+.books .book-card[href*="san-nicolas"]{order:2;border-color:rgba(125,46,32,.34)}
+.books .book-card[href*="jara-la-noble-ppp"]{order:3}
+.books .book-card:focus-visible{
+ outline:4px solid var(--gold);
+ outline-offset:6px;
+}
+.books .book-card .btn{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ align-self:flex-start;
+ min-height:48px;
+ margin-top:auto;
+ padding:13px 20px;
+ border:1px solid rgba(255,255,255,.2);
+ border-radius:12px;
+ background:linear-gradient(180deg,#963d2b,#762719);
+ color:#fff8e8;
+ box-shadow:0 10px 22px rgba(74,29,19,.22);
+ font-size:14px;
+ font-weight:800;
+ letter-spacing:.035em;
+ line-height:1.25;
+ text-decoration:none;
+ transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+}
+.books .book-card .btn::after{content:none}
+.books .book-card:hover .btn{
+ transform:translateY(-2px);
+ background:linear-gradient(180deg,#aa4a34,#842d1c);
+ box-shadow:0 14px 28px rgba(74,29,19,.28);
+}
+
+.story-links li a,.related-stories li a{
+ align-items:flex-end;
+ padding-top:54px;
+ background:linear-gradient(145deg,#fffdf8,#f8ead0);
+ box-shadow:0 14px 32px rgba(66,35,17,.12);
+}
+.story-links li:has(a[href*="el-origen-del-ratoncito-perez"]){order:1}
+.story-links li:has(a[href*="san-nicolas"]){order:2}
+.story-links li:has(a[href*="jara-la-noble-ppp"]){order:3}
+.story-links li a::before,.related-stories li a::before{
+ position:absolute;
+ top:19px;
+ left:24px;
+ color:var(--wine);
+ font-size:11px;
+ font-weight:900;
+ letter-spacing:.14em;
+ line-height:1;
+ text-transform:uppercase;
+}
+html[lang="es"] .story-links li a::before,
+html[lang="es"] .related-stories li a::before{content:"Abrir cuento"}
+html[lang="en"] .story-links li a::before,
+html[lang="en"] .related-stories li a::before{content:"Open story"}
+html[lang="fr"] .story-links li a::before,
+html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
+.story-links li a:hover,.related-stories li a:hover{
+ border-color:var(--wine);
+ background:#fffdf8;
+ box-shadow:0 20px 42px rgba(66,35,17,.18);
+}
+
+.footer-nav{
+ gap:10px;
+}
+.footer-nav a[href="./"]{order:0}
+.footer-nav a[href*="el-origen-del-ratoncito-perez"]{order:1}
+.footer-nav a[href*="san-nicolas"]{order:2}
+.footer-nav a[href*="jara-la-noble-ppp"]{order:3}
+.footer-nav a{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ min-height:42px;
+ padding:10px 15px;
+ border:1px solid rgba(239,200,120,.42);
+ border-radius:999px;
+ background:rgba(255,255,255,.055);
+ color:#f8dda6;
+ font-weight:800;
+ text-decoration:none;
+ box-shadow:inset 0 1px rgba(255,255,255,.08);
+ transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease;
+}
+.footer-nav a::after{
+ content:"\2192";
+ margin-left:7px;
+ color:#efc878;
+ font-size:16px;
+ line-height:1;
+}
+.footer-nav a:hover{
+ transform:translateY(-2px);
+ border-color:#efc878;
+ background:rgba(239,200,120,.14);
+ color:#fff4cf;
+}
+.footer-nav a[aria-current="page"]{
+ border-color:#efc878;
+ background:#efc878;
+ color:#2b180f;
+}
+.footer-nav a[aria-current="page"]::after{color:#2b180f}
+.footer-nav a:focus-visible{
+ outline:3px solid #fff4cf;
+ outline-offset:3px;
+}
+
+.saint-page .other-story .btn{
+ min-height:50px;
+ border:1px solid rgba(255,255,255,.18);
+ box-shadow:0 12px 26px rgba(66,35,17,.25);
+ font-weight:850;
+}
+
+@media(max-width:560px){
+ .books .book-card .btn{
+  width:100%;
+  min-height:50px;
+ }
+ .story-links li a,.related-stories li a{
+  min-height:112px;
+  padding-top:52px;
+ }
+ .story-links li a::before,.related-stories li a::before{left:20px}
+ .footer-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .footer-nav a{width:100%;min-height:46px;padding:10px 12px;font-size:12px}
+}
+
 @media(max-width:430px){
  .lang-switch{gap:0;padding:0;font-size:.7rem}
  .lang-switch a,.lang-switch strong{
