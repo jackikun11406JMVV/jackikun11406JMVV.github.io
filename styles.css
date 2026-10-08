@@ -1931,11 +1931,17 @@ footer{padding:58px 0 52px;border-top:1px solid rgba(239,200,120,.24)}
   width:auto;
   max-width:620px;
   margin:0;
-  padding:66px 42px 58px;
+  padding:38px 32px 36px;
   align-self:center;
  }
- .saint-cinematic-content h1{font-size:clamp(62px,5.5vw,88px)}
- .saint-cinematic-content .crumb{margin-bottom:26px}
+ .saint-cinematic-content .crumb{margin-bottom:18px}
+ .saint-cinematic-content .status-pill{margin-bottom:12px}
+ .saint-cinematic-content .eyebrow{font-size:11px;letter-spacing:2.2px}
+ .saint-cinematic-content h1{margin:8px 0 14px;font-size:clamp(58px,4.8vw,74px);line-height:.86}
+ .saint-cinematic-content .saint-hero-lead{font-size:19px;line-height:1.35}
+ .saint-cinematic-content .saint-hero-availability{margin-top:10px;font-size:14px}
+ .saint-cinematic-content .saint-hero-actions{margin-top:18px}
+ .saint-cinematic-content .saint-hero-badges{margin-top:14px}
 }
 
 .history-page{background:#f8ecd5}
