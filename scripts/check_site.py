@@ -405,8 +405,8 @@ def main() -> int:
     locs = [node.text.strip() for node in sitemap.findall(".//s:loc", SITEMAP_NS) if node.text]
     if len(locs) != len(set(locs)):
         fail(errors, sitemap_path, "contiene URLs duplicadas")
-    if len(locs) != 15:
-        fail(errors, sitemap_path, f"debe contener 15 páginas publicables y contiene {len(locs)}")
+    if len(locs) != 18:
+        fail(errors, sitemap_path, f"debe contener 18 páginas publicables y contiene {len(locs)}")
     for url_node in sitemap_urls:
         loc_node = url_node.find("s:loc", SITEMAP_NS)
         lastmod_node = url_node.find("s:lastmod", SITEMAP_NS)
