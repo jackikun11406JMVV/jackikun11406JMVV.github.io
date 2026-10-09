@@ -2353,6 +2353,36 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
 .saint-history-layout{grid-template-columns:minmax(0,1fr) 290px;gap:60px;padding-top:78px}
 .history-byline{display:flex;align-items:center;gap:10px;margin:0 0 34px;padding:13px 16px;border:1px solid rgba(108,66,37,.14);border-radius:12px;background:rgba(255,250,241,.78);color:var(--muted);font-size:14px!important;line-height:1.45!important}
 .history-byline::before{content:"✦";color:var(--gold);font-size:17px}
+.saint-family-story{padding:42px;border:1px solid rgba(108,66,37,.15);border-radius:28px;background:linear-gradient(145deg,#fffaf1,#f4dfb9);box-shadow:0 22px 52px rgba(73,39,19,.1)}
+.saint-family-story>h2{margin:12px 0 18px!important}
+.saint-family-lead{max-width:780px;font-size:20px!important;line-height:1.7!important;color:var(--brown)!important}
+.saint-family-scenes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+.saint-family-scene{overflow:hidden;border:1px solid rgba(108,66,37,.16);border-radius:20px;background:#fffaf1;box-shadow:0 14px 30px rgba(73,39,19,.08)}
+.saint-family-scene figure{margin:0;aspect-ratio:16/10;overflow:hidden;background:#102e68}
+.saint-family-scene img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.saint-family-scene:hover img{transform:scale(1.025)}
+.saint-family-scene>div{padding:22px}
+.saint-family-step{display:block;color:var(--red);font-size:11px;font-weight:900;letter-spacing:1.35px;text-transform:uppercase}
+.saint-family-scene h3{margin:9px 0 10px;color:var(--brown);font-size:clamp(24px,2.7vw,35px);font-weight:400;line-height:1.06}
+.saint-family-scene p{margin:0;font-size:15px;line-height:1.65}
+.saint-family-note{margin:24px 0 0;padding:15px 18px;border-radius:14px;background:rgba(255,255,255,.62);color:var(--muted);font-size:14px!important;line-height:1.6!important}
+.saint-age-zone{margin:88px 0 12px;padding:0;border:0}
+.saint-age-zone>summary{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:20px 22px;border:1px solid rgba(239,200,120,.25);border-radius:20px;background:linear-gradient(135deg,#201b19,#3d3029);color:#fff;cursor:pointer;list-style:none;box-shadow:0 18px 48px rgba(45,29,18,.14)}
+.saint-age-zone>summary::-webkit-details-marker{display:none}
+.saint-age-zone>summary:focus-visible{outline:4px solid var(--gold);outline-offset:5px}
+.saint-age-badge{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:#f1d79c;color:#4b321c;font-size:16px;font-weight:900}
+.saint-age-title strong{display:block;margin-bottom:4px;color:#fff3d0;font-size:18px}
+.saint-age-title span{display:block;color:rgba(255,255,255,.78);font-size:14px;line-height:1.45}
+.saint-age-arrow{color:#f1d79c;font-size:28px;transition:transform .2s ease}
+.saint-age-zone[open] .saint-age-arrow{transform:rotate(180deg)}
+.saint-age-body{margin-top:14px;overflow:hidden;border:1px solid rgba(70,42,25,.14);border-radius:24px;background:rgba(255,250,241,.7)}
+.saint-age-warning{padding:17px 22px;border-bottom:1px solid rgba(70,42,25,.14);background:#fff0d7;color:var(--muted);font-size:14px;line-height:1.65}
+.saint-age-nav{display:flex;flex-wrap:wrap;gap:8px;padding:18px 22px;border-bottom:1px solid rgba(70,42,25,.12)}
+.saint-age-nav a{padding:8px 11px;border-radius:999px;background:#ead6b5;color:var(--brown);font-size:12px;font-weight:800}
+.saint-age-body>section{padding:0 28px 72px;scroll-margin-top:110px}
+.saint-age-body>section:first-of-type{padding-top:18px}
+.saint-age-body>section+section{padding-top:72px;border-top:1px solid rgba(94,54,30,.16)}
+.saint-age-footer{padding:16px 22px;background:rgba(255,255,255,.72);color:var(--muted);font-size:13px;line-height:1.55}
 .saint-history-layout .history-article>section{scroll-margin-top:110px}
 .saint-history-layout .history-article>section+section{margin-top:88px;padding-top:72px;border-top:1px solid rgba(94,54,30,.16)}
 .saint-history-layout .history-article>.saint-history-book-bridge{border-top:0}
@@ -2422,6 +2452,7 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
  .saint-history-feature,.saint-history-book-bridge{grid-template-columns:1fr}
  .saint-history-feature.is-reversed figure{order:0}
  .saint-history-book-bridge img{width:min(70%,280px);margin:0 auto;order:-1}
+ .saint-family-scenes{grid-template-columns:1fr}
 }
 
 @media(max-width:560px){
@@ -2447,6 +2478,15 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
  .saint-history-feature img{min-height:0}
  .festival-steps{grid-template-columns:1fr}
  .saint-history-book-bridge{padding:30px 24px}
+ .saint-family-story{padding:27px 18px;border-radius:22px}
+ .saint-family-lead{font-size:17px!important}
+ .saint-family-scene>div{padding:19px}
+ .saint-age-zone{margin-top:62px}
+ .saint-age-zone>summary{grid-template-columns:auto 1fr;padding:16px;gap:12px}
+ .saint-age-badge{width:50px;height:50px}
+ .saint-age-arrow{display:none}
+ .saint-age-body>section{padding-right:18px;padding-left:18px}
+ .saint-age-nav{padding:15px 16px}
  .saint-history-aside nav{grid-template-columns:1fr 1fr;gap:6px}
  .saint-history-aside nav a{padding:9px 10px;font-size:12px}
 }
