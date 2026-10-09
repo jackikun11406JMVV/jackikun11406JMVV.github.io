@@ -50,6 +50,26 @@
   <url>
     <loc>https://jackikun11406jmvv.github.io/san-nicolas.html</loc>
     <lastmod>2026-10-10</lastmod>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-hero.webp</image:loc>
+      <image:caption>San Nicolás a caballo junto a Pedro mientras Papá Noel cruza el cielo en su trineo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-alicante.webp</image:loc>
+      <image:caption>San Nicolás parte en barco desde Alicante mientras Papá Noel vuela en su trineo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-joven.webp</image:loc>
+      <image:caption>Nicolás niño comparte pan y una manta con otro niño en Patara</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-santa.webp</image:loc>
+      <image:caption>San Nicolás y Papá Noel conversan frente al puerto iluminado de Alicante</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-pieten.webp</image:loc>
+      <image:caption>San Nicolás y los jóvenes Pieten reparten regalos por tejados y chimeneas</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -60,12 +80,20 @@
       <image:caption>San Nicolás llega desde España mientras Papá Noel cruza el cielo sobre Alicante</image:caption>
     </image:image>
     <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-joven.webp</image:loc>
+      <image:caption>Nicolás niño descubre que la generosidad y la ayuda pueden cambiar una vida</image:caption>
+    </image:image>
+    <image:image>
       <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-pieten.webp</image:loc>
       <image:caption>San Nicolás y los Pieten reparten regalos por tejados y chimeneas</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-santa.webp</image:loc>
       <image:caption>San Nicolás y Papá Noel frente al puerto iluminado de Alicante</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-cover.webp</image:loc>
+      <image:caption>Portada del cuento ilustrado El origen de Papá Noel: San Nicolás</image:caption>
     </image:image>
   </url>
 
@@ -117,6 +145,26 @@
   <url>
     <loc>https://jackikun11406jmvv.github.io/en/san-nicolas.html</loc>
     <lastmod>2026-10-10</lastmod>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-hero.webp</image:loc>
+      <image:caption>Saint Nicholas on horseback with Peter while Santa Claus crosses the sky in his sleigh</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-alicante.webp</image:loc>
+      <image:caption>Saint Nicholas sails from Alicante while Santa Claus flies in his sleigh</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-joven.webp</image:loc>
+      <image:caption>Young Nicholas shares bread and a blanket with another child in Patara</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-santa.webp</image:loc>
+      <image:caption>Saint Nicholas and Santa Claus talk beside Alicante's illuminated harbour</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-pieten.webp</image:loc>
+      <image:caption>Saint Nicholas and the young Pieten deliver gifts across rooftops and chimneys</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -127,12 +175,20 @@
       <image:caption>Saint Nicholas arrives from Spain while Santa Claus crosses the sky above Alicante</image:caption>
     </image:image>
     <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-joven.webp</image:loc>
+      <image:caption>Young Nicholas discovers how generosity and kindness can change a life</image:caption>
+    </image:image>
+    <image:image>
       <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-pieten.webp</image:loc>
       <image:caption>Saint Nicholas and the Pieten deliver gifts across rooftops and chimneys</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-santa.webp</image:loc>
       <image:caption>Saint Nicholas and Santa Claus by Alicante's illuminated harbour</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-cover.webp</image:loc>
+      <image:caption>Cover of the illustrated story The Origin of Santa Claus: Saint Nicholas</image:caption>
     </image:image>
   </url>
 
@@ -184,6 +240,26 @@
   <url>
     <loc>https://jackikun11406jmvv.github.io/fr/san-nicolas.html</loc>
     <lastmod>2026-10-10</lastmod>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-hero.webp</image:loc>
+      <image:caption>Saint Nicolas à cheval avec Pierre tandis que le Père Noël traverse le ciel en traîneau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-alicante.webp</image:loc>
+      <image:caption>Saint Nicolas quitte Alicante en bateau tandis que le Père Noël vole en traîneau</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-joven.webp</image:loc>
+      <image:caption>Le jeune Nicolas partage du pain et une couverture avec un autre enfant à Patara</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-santa.webp</image:loc>
+      <image:caption>Saint Nicolas et le Père Noël parlent près du port illuminé d'Alicante</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-pieten.webp</image:loc>
+      <image:caption>Saint Nicolas et les jeunes Pieten distribuent des cadeaux sur les toits</image:caption>
+    </image:image>
   </url>
 
   <url>
@@ -194,12 +270,20 @@
       <image:caption>Saint Nicolas arrive d'Espagne tandis que le Père Noël traverse le ciel d'Alicante</image:caption>
     </image:image>
     <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-joven.webp</image:loc>
+      <image:caption>Le jeune Nicolas découvre que la générosité et l'entraide peuvent changer une vie</image:caption>
+    </image:image>
+    <image:image>
       <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-pieten.webp</image:loc>
       <image:caption>Saint Nicolas et les Pieten distribuent des cadeaux sur les toits</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-santa.webp</image:loc>
       <image:caption>Saint Nicolas et le Père Noël devant le port illuminé d'Alicante</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jackikun11406jmvv.github.io/images/es/san-nicolas-cover.webp</image:loc>
+      <image:caption>Couverture du conte illustré L'origine du Père Noël : Saint Nicolas</image:caption>
     </image:image>
   </url>
 
