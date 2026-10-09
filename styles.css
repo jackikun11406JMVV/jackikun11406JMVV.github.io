@@ -1,7 +1,9 @@
 
 :root{
  --cream:#f8edcf;--paper:#fff8e9;--ink:#2e1a0f;--brown:#553019;--wine:#7d2e20;
- --gold:#b88737;--red:#8f3828;--muted:#725943;--dark:#26160c;--line:#caa76766;
+ --gold:#b88737;--red:#8f3828;--muted:#654933;--dark:#26160c;--line:#caa76766;
+ --surface:#fffaf0;--surface-strong:#fff4dc;--focus:#f2c66f;
+ --shadow-soft:0 16px 42px rgba(55,30,15,.12);--shadow-strong:0 24px 60px rgba(45,22,10,.20);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -935,14 +937,6 @@ translateY(-3px);
 /* MEJORA INTEGRAL 2026 · capa visual y accesibilidad */
 /* ================================================= */
 
-:root{
- --surface:#fffaf0;
- --surface-strong:#fff4dc;
- --focus:#f2c66f;
- --shadow-soft:0 16px 42px rgba(55,30,15,.12);
- --shadow-strong:0 24px 60px rgba(45,22,10,.20);
-}
-
 body{
  background:
   radial-gradient(circle at 12% 2%,rgba(255,255,255,.48),transparent 24rem),
@@ -1244,7 +1238,6 @@ body{
 }
 
 /* Cierre editorial 2026: lectura, enlazado interno y pie de página */
-:root{--muted:#654933}
 #libros,#autor,#contacto,#el-libro,#the-book,#le-livre,#estado-publicacion,#publication-status,#statut-publication,#preguntas,#questions{scroll-margin-top:92px}
 .coming-soon .eyebrow{color:#efc878}
 
@@ -2204,8 +2197,8 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
 }
 
 /* Navegación equilibrada y mayor visibilidad para la historia de Pérez */
-.navlinks a[aria-current="page"]{color:#fff0be}
-.navlinks a[aria-current="page"]::after{transform:scaleX(1);background:#efc878}
+.navlinks a[aria-current]{color:#fff0be}
+.navlinks a[aria-current]::after{transform:scaleX(1);background:#efc878}
 
 .perez-discovery{
  position:relative;
@@ -2348,6 +2341,8 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
 .saint-history-hero figure{margin:0;padding:12px;border:1px solid rgba(244,204,121,.46);border-radius:25px;background:rgba(255,247,225,.09);box-shadow:0 30px 70px rgba(0,0,0,.34);transform:rotate(1deg)}
 .saint-history-hero figure img{display:block;width:100%;height:auto;border-radius:15px}
 .saint-history-hero figcaption{padding:12px 5px 1px;color:#e8d7b4;font-size:13px;line-height:1.4}
+.saint-history-hero .crumb{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px}
+.saint-history-hero .crumb a{text-decoration:underline;text-decoration-color:rgba(255,240,196,.45);text-underline-offset:3px}
 .saint-history-hero-actions{display:flex;align-items:center;gap:24px;margin-top:28px;flex-wrap:wrap}
 .saint-history-hero-actions .btn{margin:0}
 .saint-history-hero .text-link{color:#fff0c4;font-weight:800;text-decoration:none;border-bottom:1px solid rgba(255,240,196,.55)}
@@ -2356,6 +2351,8 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
 .saint-history-facts strong{color:#efc878;font-size:12px;letter-spacing:.45px;text-transform:uppercase}
 .saint-history-content{background:linear-gradient(180deg,#f8ecd5,#fffaf0 48%,#f8ecd5)}
 .saint-history-layout{grid-template-columns:minmax(0,1fr) 290px;gap:60px;padding-top:78px}
+.history-byline{display:flex;align-items:center;gap:10px;margin:0 0 34px;padding:13px 16px;border:1px solid rgba(108,66,37,.14);border-radius:12px;background:rgba(255,250,241,.78);color:var(--muted);font-size:14px!important;line-height:1.45!important}
+.history-byline::before{content:"✦";color:var(--gold);font-size:17px}
 .saint-history-layout .history-article>section{scroll-margin-top:110px}
 .saint-history-layout .history-article>section+section{margin-top:88px;padding-top:72px;border-top:1px solid rgba(94,54,30,.16)}
 .saint-history-layout .history-article>.saint-history-book-bridge{border-top:0}
@@ -2431,10 +2428,15 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
  .history-discoveries{padding:64px 0}
  .history-discovery-card>div{padding:25px 23px 28px}
  .history-discovery-card h3{font-size:34px}
- .saint-history-hero{padding:34px 0 48px}
- .saint-history-hero h1{margin:16px 0;font-size:clamp(40px,12vw,54px);line-height:.94}
- .saint-history-hero p{line-height:1.58}
- .saint-history-hero-actions{align-items:flex-start;flex-direction:column}
+ .saint-history-hero{padding:20px 0 38px}
+ .saint-history-hero-grid{gap:18px}
+ .saint-history-hero figure{padding:7px;border-radius:19px}
+ .saint-history-hero figure img{border-radius:12px}
+ .saint-history-hero figcaption{padding:7px 3px 0;font-size:11px}
+ .saint-history-hero .crumb{gap:6px;font-size:12px}
+ .saint-history-hero h1{margin:12px 0;font-size:clamp(36px,10.8vw,48px);line-height:.94}
+ .saint-history-hero p{font-size:15px;line-height:1.47}
+ .saint-history-hero-actions{align-items:flex-start;flex-direction:column;gap:13px;margin-top:19px}
  .saint-history-hero-actions .btn{width:100%;text-align:center}
  .saint-history-facts{grid-template-columns:1fr 1fr;margin-top:28px}
  .saint-history-facts span{min-height:76px;padding:12px 10px}
