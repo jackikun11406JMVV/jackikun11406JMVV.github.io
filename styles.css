@@ -2114,8 +2114,9 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
 }
 .footer-nav a[href="./"]{order:0}
 .footer-nav a[href*="el-origen-del-ratoncito-perez"]{order:1}
-.footer-nav a[href*="san-nicolas"]{order:2}
+.footer-nav a[href="origen-ratoncito-perez.html"]{order:2}
 .footer-nav a[href*="jara-la-noble-ppp"]{order:3}
+.footer-nav a[href*="san-nicolas"]{order:4}
 .footer-nav a{
  display:inline-flex;
  align-items:center;
@@ -2207,4 +2208,104 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
   font-size:10px;
   letter-spacing:.4px;
  }
+}
+
+/* Navegación equilibrada y mayor visibilidad para la historia de Pérez */
+.navlinks a[aria-current="page"]{color:#fff0be}
+.navlinks a[aria-current="page"]::after{transform:scaleX(1);background:#efc878}
+
+.perez-discovery{
+ position:relative;
+ overflow:hidden;
+ padding:96px 0;
+ background:
+  radial-gradient(circle at 78% 0,rgba(239,200,120,.2),transparent 28rem),
+  linear-gradient(135deg,#32190e,#6f321d);
+ color:#f8e2b3;
+}
+.perez-discovery::after{
+ content:"P";
+ position:absolute;
+ right:3%;
+ bottom:-70px;
+ color:rgba(239,200,120,.07);
+ font-size:clamp(220px,32vw,470px);
+ line-height:.72;
+ pointer-events:none;
+}
+.perez-discovery-grid,.perez-origin-feature-grid{
+ position:relative;
+ z-index:1;
+ display:grid;
+ grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);
+ gap:clamp(44px,7vw,92px);
+ align-items:center;
+}
+.perez-discovery figure,.perez-origin-feature figure{margin:0}
+.perez-discovery figure{
+ padding:14px;
+ border:1px solid rgba(239,200,120,.5);
+ border-radius:24px;
+ background:rgba(255,248,232,.09);
+ box-shadow:0 30px 70px rgba(18,8,3,.36);
+ transform:rotate(-1.2deg);
+}
+.perez-discovery img,.perez-origin-feature img{display:block;width:100%;height:auto;border-radius:14px}
+.perez-discovery .eyebrow{color:#efc878}
+.perez-discovery h2,.perez-origin-feature h2{
+ margin:12px 0 22px;
+ font-size:clamp(46px,5.6vw,72px);
+ font-weight:400;
+ line-height:.92;
+ text-wrap:balance;
+}
+.perez-discovery p{margin:0;color:#efd9aa;font-size:18px;line-height:1.75}
+.perez-discovery .btn{margin-top:28px;background:#efc878;color:#2b180f;box-shadow:0 14px 30px rgba(16,7,3,.28)}
+
+.perez-origin-feature{
+ padding:92px 0;
+ background:
+  radial-gradient(circle at 12% 0,rgba(184,135,55,.2),transparent 24rem),
+  linear-gradient(145deg,#f7ead0,#fffaf0);
+}
+.perez-origin-feature-grid{grid-template-columns:minmax(0,.95fr) minmax(360px,1.05fr)}
+.perez-origin-feature h2{color:var(--brown)}
+.perez-origin-feature p{margin:0;color:var(--muted);font-size:18px;line-height:1.75}
+.perez-origin-feature ul{display:grid;gap:10px;margin:25px 0 0;padding:0;list-style:none}
+.perez-origin-feature li{
+ position:relative;
+ padding:13px 15px 13px 43px;
+ border:1px solid rgba(125,46,32,.16);
+ border-radius:13px;
+ background:rgba(255,253,247,.7);
+ color:var(--brown);
+ font-weight:750;
+}
+.perez-origin-feature li::before{content:"✦";position:absolute;left:17px;color:var(--gold)}
+.perez-origin-feature .btn{margin-top:28px}
+.perez-origin-feature figure{
+ padding:14px;
+ border:1px solid rgba(125,46,32,.2);
+ border-radius:24px;
+ background:#fffdf8;
+ box-shadow:0 26px 58px rgba(66,35,17,.16);
+}
+.product-faq-only .container{grid-template-columns:1fr}
+.product-faq-only .faq-block{max-width:1100px;margin:0 auto}
+
+@media(max-width:850px){
+ .perez-discovery,.perez-origin-feature{padding:72px 0}
+ .perez-discovery-grid,.perez-origin-feature-grid{grid-template-columns:1fr;gap:38px}
+ .perez-origin-feature-grid>div{order:2}
+ .perez-origin-feature-grid>figure{order:1}
+}
+
+@media(max-width:560px){
+ .perez-discovery,.perez-origin-feature{padding:58px 0}
+ .perez-discovery h2,.perez-origin-feature h2{font-size:clamp(42px,13vw,56px)}
+ .perez-discovery p,.perez-origin-feature p{font-size:16px}
+ .perez-discovery .btn,.perez-origin-feature .btn{width:100%;text-align:center;white-space:normal}
+ .perez-discovery figure,.perez-origin-feature figure{padding:9px;border-radius:18px;transform:none}
+ .footer-nav{grid-template-columns:1fr 1fr}
+ .footer-nav a[href="origen-ratoncito-perez.html"]{grid-column:1/-1}
 }
