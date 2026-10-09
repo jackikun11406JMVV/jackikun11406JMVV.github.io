@@ -26,17 +26,17 @@ const pages = [
 const localeOf = (file) => file.startsWith("en/") ? "en" : file.startsWith("fr/") ? "fr" : "es";
 
 const labels = {
-  es: { aria: "Navegación principal", home: "INICIO", perez: "PÉREZ", jara: "JARA", saint: "SAN NICOLÁS", saintFooter: "San Nicolás", about: "SOBRE MÍ", footer: "Navegación secundaria", history: "Historia de Pérez" },
-  en: { aria: "Main navigation", home: "HOME", perez: "PÉREZ", jara: "JARA", saint: "SAINT NICHOLAS", saintFooter: "Saint Nicholas", about: "ABOUT ME", footer: "Secondary navigation", history: "Pérez history" },
-  fr: { aria: "Navigation principale", home: "ACCUEIL", perez: "PÉREZ", jara: "JARA", saint: "SAINT NICOLAS", saintFooter: "Saint Nicolas", about: "À PROPOS", footer: "Navigation secondaire", history: "Histoire de Pérez" },
+  es: { aria: "Navegación principal", home: "INICIO", perez: "PÉREZ", jara: "JARA", saint: "SAN NICOLÁS", saintFooter: "San Nicolás", about: "SOBRE MÍ", footer: "Navegación secundaria", history: "Historia de Pérez", saintHistory: "Historia de San Nicolás" },
+  en: { aria: "Main navigation", home: "HOME", perez: "PÉREZ", jara: "JARA", saint: "SAINT NICHOLAS", saintFooter: "Saint Nicholas", about: "ABOUT ME", footer: "Secondary navigation", history: "Pérez history", saintHistory: "Saint Nicholas history" },
+  fr: { aria: "Navigation principale", home: "ACCUEIL", perez: "PÉREZ", jara: "JARA", saint: "SAINT NICOLAS", saintFooter: "Saint Nicolas", about: "À PROPOS", footer: "Navigation secondaire", history: "Histoire de Pérez", saintHistory: "Histoire de saint Nicolas" },
 };
 
 function currentFor(file) {
   const base = path.basename(file);
   if (base === "index.html") return "home";
-  if (base === "el-origen-del-ratoncito-perez.html") return "perez";
+  if (base === "el-origen-del-ratoncito-perez.html" || base === "origen-ratoncito-perez.html") return "perez";
   if (base === "jara-la-noble-ppp.html") return "jara";
-  if (base === "san-nicolas.html") return "saint";
+  if (base === "san-nicolas.html" || base === "origen-san-nicolas-papa-noel.html") return "saint";
   return "";
 }
 
@@ -63,7 +63,8 @@ function footerNavigation(file) {
   const base = path.basename(file);
   const active = currentFor(file);
   const historyCurrent = base === "origen-ratoncito-perez.html" ? ' aria-current="page"' : "";
-  return `<nav class="footer-nav" aria-label="${copy.footer}"><a href="./"${currentAttr(active, "home")}>${copy.home[0]}${copy.home.slice(1).toLowerCase()}</a><a href="el-origen-del-ratoncito-perez.html"${base === "el-origen-del-ratoncito-perez.html" ? ' aria-current="page"' : ""}>Pérez</a><a href="origen-ratoncito-perez.html"${historyCurrent}>${copy.history}</a><a href="jara-la-noble-ppp.html"${currentAttr(active, "jara")}>Jara</a><a href="san-nicolas.html"${active === "saint" ? ' aria-current="page"' : ""}>${copy.saintFooter}</a></nav>`;
+  const saintHistoryCurrent = base === "origen-san-nicolas-papa-noel.html" ? ' aria-current="page"' : "";
+  return `<nav class="footer-nav" aria-label="${copy.footer}"><a href="./"${currentAttr(active, "home")}>${copy.home[0]}${copy.home.slice(1).toLowerCase()}</a><a href="el-origen-del-ratoncito-perez.html"${base === "el-origen-del-ratoncito-perez.html" ? ' aria-current="page"' : ""}>Pérez</a><a href="origen-ratoncito-perez.html"${historyCurrent}>${copy.history}</a><a href="jara-la-noble-ppp.html"${currentAttr(active, "jara")}>Jara</a><a href="san-nicolas.html"${base === "san-nicolas.html" ? ' aria-current="page"' : ""}>${copy.saintFooter}</a><a href="origen-san-nicolas-papa-noel.html"${saintHistoryCurrent}>${copy.saintHistory}</a></nav>`;
 }
 
 for (const file of pages) {
@@ -75,7 +76,7 @@ for (const file of pages) {
   const footerPattern = /<nav\b[^>]*\bclass="footer-nav"[^>]*>[\s\S]*?<\/nav>/;
   if (footerPattern.test(html)) html = html.replace(footerPattern, footerNavigation(file));
 
-  html = html.replaceAll("styles.css?v=20261008-11", "styles.css?v=20261008-12");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20261009-1");
   html = html.replaceAll('"dateModified": "2026-10-08"', '"dateModified": "2026-10-09"');
   html = html.replaceAll('"dateModified":"2026-10-08"', '"dateModified":"2026-10-09"');
   fs.writeFileSync(file, html);
@@ -98,7 +99,7 @@ for (const file of ["index.html", "en/index.html", "fr/index.html"]) {
   let html = fs.readFileSync(file, "utf8");
   const aboutMarker = '<section class="about" id="autor">';
   if (!html.includes(aboutMarker)) throw new Error(`No se encontró la sección del autor en ${file}`);
-  if (!html.includes('class="perez-discovery"')) html = html.replace(aboutMarker, `${homeFeatures[locale]}\n\n${aboutMarker}`);
+  if (!html.includes('class="perez-discovery"') && !html.includes('class="history-discoveries"')) html = html.replace(aboutMarker, `${homeFeatures[locale]}\n\n${aboutMarker}`);
   html = html.replace(/<div class="author-story">[\s\S]*?<\/div>\s*(?=<div class="goodreads-card">)/, `${authorNotes[locale]}\n`);
   html = html.replace(/\s*<section class="paper story-links">[\s\S]*?<\/section>/, "");
   fs.writeFileSync(file, html);
