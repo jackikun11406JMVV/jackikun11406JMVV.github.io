@@ -1,7 +1,7 @@
 
 :root{
  --cream:#f8edcf;--paper:#fff8e9;--ink:#2e1a0f;--brown:#553019;--wine:#7d2e20;
- --gold:#b88737;--muted:#725943;--dark:#26160c;--line:#caa76766;
+ --gold:#b88737;--red:#8f3828;--muted:#725943;--dark:#26160c;--line:#caa76766;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -1527,16 +1527,6 @@ footer{padding:58px 0 52px;border-top:1px solid rgba(239,200,120,.24)}
  .footer-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:14px 20px}
 }
 
-@media(max-width:430px){
- .topbar .nav{gap:6px 8px}
- .brand{font-size:14px;gap:5px}
- .brand-logo{width:36px;height:36px}
- .brand-text{max-width:130px;white-space:normal;line-height:1}
- .lang-switch{padding:6px 8px;font-size:.62rem}
- .navlinks{justify-content:space-between;gap:5px;overflow-x:visible}
- .navlinks a{padding:7px 6px;font-size:9px;letter-spacing:.35px;white-space:nowrap}
-}
-
 /* Tercer libro oficial y estado editorial de San Nicolás */
 @media(max-width:1050px) and (min-width:851px){
  .books{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -2179,6 +2169,10 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
 }
 
 @media(max-width:430px){
+ .topbar .nav{gap:6px 8px}
+ .brand{font-size:14px;gap:5px}
+ .brand-logo{width:36px;height:36px}
+ .brand-text{max-width:130px;white-space:normal;line-height:1}
  .lang-switch{gap:0;padding:0;font-size:.7rem}
  .lang-switch a,.lang-switch strong{
   display:inline-flex;
@@ -2190,24 +2184,22 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
  }
  .lang-switch span{font-size:.62rem}
  .navlinks{
-  justify-content:flex-start;
-  gap:8px;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:5px 7px;
   max-width:100%;
   min-width:0;
-  overflow-x:auto;
-  overflow-y:hidden;
-  padding-bottom:8px;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
+  overflow:visible;
+  padding-bottom:6px;
  }
  .navlinks a{
   display:inline-flex;
-  flex:0 0 auto;
+  flex:0 1 auto;
   align-items:center;
   min-height:36px;
-  padding:8px 10px;
-  font-size:10px;
-  letter-spacing:.4px;
+  padding:7px 8px;
+  font-size:9px;
+  letter-spacing:.3px;
  }
 }
 
@@ -2327,9 +2319,11 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
  color:var(--brown);
  box-shadow:0 22px 52px rgba(66,35,17,.12);
  text-decoration:none;
- transition:transform .25s ease,box-shadow .25s ease;
+ cursor:pointer;
+ transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
 }
-.history-discovery-card:hover{transform:translateY(-6px);box-shadow:0 30px 68px rgba(66,35,17,.2)}
+.history-discovery-card:hover{transform:translateY(-6px);border-color:rgba(143,56,40,.46);box-shadow:0 30px 68px rgba(66,35,17,.2)}
+.history-discovery-card:focus-visible{outline:4px solid var(--gold);outline-offset:6px}
 .history-discovery-card figure{position:relative;overflow:hidden;margin:0;aspect-ratio:16/10;background:#24150e}
 .history-discovery-card figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(23,11,6,.48))}
 .history-discovery-card img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
@@ -2338,9 +2332,11 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
 .history-discovery-card span{color:var(--red);font-size:12px;font-weight:900;letter-spacing:1.7px;text-transform:uppercase}
 .history-discovery-card h3{margin:12px 0 14px;font-size:clamp(31px,3.5vw,46px);font-weight:400;line-height:1}
 .history-discovery-card p{margin:0 0 26px;color:var(--muted);font-size:17px;line-height:1.65}
-.history-discovery-card strong{margin-top:auto;color:var(--red);font-size:13px;letter-spacing:.75px}
+.history-discovery-card strong{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-height:44px;margin-top:auto;padding:12px 16px;border-radius:999px;background:var(--red);color:#fff9ed;font-size:12px;letter-spacing:.65px;box-shadow:0 9px 20px rgba(88,31,21,.2);transition:transform .2s ease,box-shadow .2s ease}
+.history-discovery-card:hover strong{transform:translateY(-2px);box-shadow:0 13px 26px rgba(88,31,21,.28)}
 .history-discovery-card.is-saint{background:#0b2456;color:#fff0c9;border-color:rgba(228,188,105,.28)}
-.history-discovery-card.is-saint span,.history-discovery-card.is-saint strong{color:#efc878}
+.history-discovery-card.is-saint span{color:#efc878}
+.history-discovery-card.is-saint strong{background:#efc878;color:#24150e}
 .history-discovery-card.is-saint p{color:#ded8c8}
 
 /* Guía visual de Sinterklaas y San Nicolás */
@@ -2399,9 +2395,15 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
 .history-sources .source-list{display:grid;gap:10px;margin-top:25px}
 .history-sources .source-list a{display:block;padding:14px 16px;border:1px solid rgba(108,66,37,.14);border-radius:12px;background:#fffaf1;color:var(--red);font-weight:750;text-decoration:none}
 .history-sources .source-list a:hover{border-color:var(--red);background:#fff}
+.source-note{color:var(--muted);font-size:.82em;font-weight:700;white-space:nowrap}
 .saint-history-aside nav{display:grid;gap:7px;margin:18px 0 0}
 .saint-history-aside nav a{padding:10px 12px;border-radius:10px;color:var(--brown);font-size:14px;font-weight:800;text-decoration:none;background:#f6ead4}
 .saint-history-aside nav a:hover{background:#ecd5ad;color:var(--red)}
+.saint-history-toc{margin:0 0 24px}
+.saint-history-toc summary{position:relative;cursor:pointer;padding:12px 42px 12px 14px;border-radius:12px;background:#f0dfbf;color:var(--brown);font-weight:900;list-style:none}
+.saint-history-toc summary::-webkit-details-marker{display:none}
+.saint-history-toc summary::after{content:"+";position:absolute;right:15px;top:5px;color:var(--red);font-size:28px;font-weight:400}
+.saint-history-toc[open] summary::after{content:"−"}
 .aside-divider{height:1px;margin:26px 0;background:rgba(108,66,37,.18)}
 
 @media(max-width:1050px){
@@ -2409,12 +2411,14 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
  .saint-history-hero figure{max-width:760px;transform:none}
  .saint-history-facts{max-width:760px}
  .saint-history-layout{grid-template-columns:1fr}
- .saint-history-aside{position:static;order:-1}
+ .saint-history-aside{position:static;order:-1;padding:20px 22px}
  .saint-history-aside nav{grid-template-columns:1fr 1fr}
 }
 
 @media(max-width:760px){
  .history-discovery-grid{grid-template-columns:1fr}
+ .saint-history-hero-grid{display:flex;flex-direction:column;align-items:stretch;gap:28px}
+ .saint-history-hero figure{order:-1;max-width:none}
  .saint-history-facts{grid-template-columns:1fr 1fr}
  .origin-route,.saint-symbol-grid{grid-template-columns:1fr}
  .origin-route::before{display:none}
@@ -2427,11 +2431,13 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
  .history-discoveries{padding:64px 0}
  .history-discovery-card>div{padding:25px 23px 28px}
  .history-discovery-card h3{font-size:34px}
- .saint-history-hero{padding:58px 0 52px}
- .saint-history-hero h1{font-size:clamp(48px,14vw,65px)}
+ .saint-history-hero{padding:34px 0 48px}
+ .saint-history-hero h1{margin:16px 0;font-size:clamp(40px,12vw,54px);line-height:.94}
+ .saint-history-hero p{line-height:1.58}
  .saint-history-hero-actions{align-items:flex-start;flex-direction:column}
  .saint-history-hero-actions .btn{width:100%;text-align:center}
- .saint-history-facts{grid-template-columns:1fr}
+ .saint-history-facts{grid-template-columns:1fr 1fr;margin-top:28px}
+ .saint-history-facts span{min-height:76px;padding:12px 10px}
  .saint-history-layout{padding-top:55px}
  .saint-history-layout .history-article>section+section{margin-top:62px;padding-top:52px}
  .saint-history-feature{padding:10px;gap:24px}
@@ -2439,5 +2445,6 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
  .saint-history-feature img{min-height:0}
  .festival-steps{grid-template-columns:1fr}
  .saint-history-book-bridge{padding:30px 24px}
- .saint-history-aside nav{grid-template-columns:1fr}
+ .saint-history-aside nav{grid-template-columns:1fr 1fr;gap:6px}
+ .saint-history-aside nav a{padding:9px 10px;font-size:12px}
 }
