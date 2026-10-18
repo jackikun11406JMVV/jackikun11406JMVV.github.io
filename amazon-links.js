@@ -1,86 +1,49 @@
 (() => {
-  let timeZone = "";
-  try {
-    timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
-  } catch (_) {}
-
-  const localPreviewCountry = /^(localhost|127\.0\.0\.1)$/.test(location.hostname)
-    ? new URLSearchParams(location.search).get("country")
-    : null;
-  const isSpain = localPreviewCountry
-    ? localPreviewCountry === "es"
-    : timeZone === "Europe/Madrid"
-      || timeZone === "Atlantic/Canary"
-      || timeZone === "Africa/Ceuta";
-
-  const universalToSpain = {
-    "https://www.letraminuscula.com/amz/B0HLYNHB35": "https://link.amazon/B0d90zCpt",
-    "https://www.letraminuscula.com/amz/8409927810": "https://link.amazon/B07hbUgj0",
-    "https://www.letraminuscula.com/amz/B0H2C62YNM": "https://link.amazon/B0gMEXdKP",
-    "https://www.letraminuscula.com/amz/B0H12YB6KW": "https://link.amazon/B07UnTZPu",
-    "https://www.letraminuscula.com/amz/B0HB9VHXXD": "https://link.amazon/B0dJAdadw",
-    "https://www.letraminuscula.com/amz/B0HBBZ1M5L": "https://link.amazon/B0ajsMq6j",
-    "https://www.letraminuscula.com/amz/8409924986": "https://link.amazon/B0fYmijyV",
-    "https://www.letraminuscula.com/amz/B0H98JJD4W": "https://link.amazon/B05N1OlMw"
+  const affiliateTag = "jmvv-21";
+  const amazonProductPattern = /^https:\/\/(?:www\.)?amazon\.es\/dp\/([A-Z0-9]+)(?:[/?#]|$)/i;
+  const newTabCopy = {
+    es: "se abre en una pestaña nueva",
+    en: "opens in a new tab",
+    fr: "s’ouvre dans un nouvel onglet"
   };
-
-  document.querySelectorAll("a.buy-amazon, a[data-amazon-spain]").forEach((link) => {
-    const universalUrl = link.dataset.amazonUniversal || link.href;
-    const spainUrl = link.dataset.amazonSpain || universalToSpain[universalUrl];
-    const useSpainLink = isSpain && Boolean(spainUrl);
-    link.href = useSpainLink ? spainUrl : universalUrl;
-    link.dataset.amazonDestination = useSpainLink ? "spain" : "universal";
-    link.rel = "sponsored nofollow noopener noreferrer";
-  });
-
-  const copy = {
-    es: isSpain
-      ? "Destino de compra: Amazon España · enlace de asociado"
-      : "Destino de compra: Amazon de tu país · enlace universal",
-    en: isSpain
-      ? "Shopping destination: Amazon Spain · affiliate link"
-      : "Shopping destination: Amazon for your country · universal link",
-    fr: isSpain
-      ? "Destination d’achat : Amazon Espagne · lien affilié"
-      : "Destination d’achat : Amazon de votre pays · lien universel"
+  const routingCopy = {
+    es: "Destino de compra: Amazon España · enlace de afiliado",
+    en: "Shopping destination: Amazon Spain · affiliate link",
+    fr: "Destination d’achat : Amazon Espagne · lien affilié"
   };
   const disclosure = {
     es: "En calidad de Afiliado de Amazon, el titular de esta web obtiene ingresos por las compras adscritas que cumplen los requisitos aplicables.",
     en: "As an Amazon Associate, the owner of this website earns from qualifying purchases.",
     fr: "En tant que Partenaire Amazon, le propriétaire de ce site perçoit une rémunération sur les achats admissibles."
   };
-  const mixedCopy = {
-    es: "Destino de compra: algunos formatos usan enlace universal y otros, enlace de asociado de Amazon España.",
-    en: "Shopping destination: some formats use a universal link and others an Amazon Spain affiliate link.",
-    fr: "Destination d’achat : certains formats utilisent un lien universel et d’autres un lien affilié Amazon Espagne."
-  };
-  const newTabCopy = {
-    es: "se abre en una pestaña nueva",
-    en: "opens in a new tab",
-    fr: "s’ouvre dans un nouvel onglet"
-  };
 
   const language = document.documentElement.lang || "es";
-  document.querySelectorAll("a.buy-amazon[target='_blank']").forEach((link) => {
-    const label = link.textContent.replace(/\s*→\s*$/, "").trim();
-    link.setAttribute("aria-label", `${label} (${newTabCopy[language] || newTabCopy.es})`);
+
+  document.querySelectorAll("a.buy-amazon").forEach((link) => {
+    const sourceUrl = link.dataset.amazonProduct || link.href;
+    const match = sourceUrl.match(amazonProductPattern);
+    if (!match) return;
+
+    const productUrl = new URL(`https://www.amazon.es/dp/${match[1].toUpperCase()}`);
+    productUrl.searchParams.set("tag", affiliateTag);
+    link.href = productUrl.toString();
+    link.dataset.amazonDestination = "spain-affiliate";
+    link.rel = "sponsored nofollow noopener noreferrer";
+
+    if (link.target === "_blank") {
+      const label = link.textContent.replace(/\s*→\s*$/, "").trim();
+      link.setAttribute("aria-label", `${label} (${newTabCopy[language] || newTabCopy.es})`);
+    }
   });
 
   document.querySelectorAll(".buy-accordion, .publication-actions").forEach((block) => {
-    const destinations = Array.from(
-      block.querySelectorAll("a[data-amazon-destination]"),
-      (link) => link.dataset.amazonDestination
-    );
-    if (!destinations.length) return;
-    const hasSpain = destinations.includes("spain");
-    const hasUniversal = destinations.includes("universal");
+    if (!block.querySelector("a[data-amazon-destination='spain-affiliate']")) return;
+
     const note = document.createElement("p");
     note.className = "amazon-routing-note";
-    note.textContent = hasSpain && hasUniversal
-      ? (mixedCopy[language] || mixedCopy.es)
-      : (copy[language] || copy.es);
+    note.textContent = routingCopy[language] || routingCopy.es;
     block.insertAdjacentElement("afterend", note);
-    if (!hasSpain) return;
+
     const affiliateNote = document.createElement("p");
     affiliateNote.className = "amazon-affiliate-note";
     affiliateNote.textContent = disclosure[language] || disclosure.es;

@@ -331,6 +331,13 @@ def main() -> int:
             if target is not None and not target.exists():
                 fail(errors, css, f"recurso CSS inexistente: {raw_url}")
 
+    for path in html_files:
+        html = path.read_text(encoding="utf-8")
+        if "TU_TAG" in html:
+            fail(errors, path, "contiene un identificador provisional de afiliación")
+        if "letraminuscula.com/amz/" in html:
+            fail(errors, path, "mantiene un intermediario antiguo en los enlaces de Amazon")
+
     purchase_contracts = {
         "perez": {
             "es": {"B0HLYNHB35", "8409927810"},
@@ -369,7 +376,7 @@ def main() -> int:
                 seen_languages.add(language)
                 if re.search(r"\bopen\b", attributes):
                     open_languages.add(language)
-                asins = set(re.findall(r"letraminuscula\.com/amz/([A-Z0-9]+)", block))
+                asins = set(re.findall(r"amazon\.es/dp/([A-Z0-9]+)", block))
                 expected = purchase_contracts[product][language]
                 if asins != expected:
                     fail(errors, path, f"enlaces de compra {language} incorrectos: {sorted(asins)}; esperados {sorted(expected)}")
@@ -381,7 +388,7 @@ def main() -> int:
     san_nicolas_asins = {"8409924986", "B0H98JJD4W"}
     for path in [ROOT / "san-nicolas.html", ROOT / "en/san-nicolas.html", ROOT / "fr/san-nicolas.html"]:
         html = path.read_text(encoding="utf-8")
-        asins = set(re.findall(r"letraminuscula\.com/amz/([A-Z0-9]+)", html))
+        asins = set(re.findall(r"amazon\.es/dp/([A-Z0-9]+)", html))
         if asins != san_nicolas_asins:
             fail(
                 errors,
