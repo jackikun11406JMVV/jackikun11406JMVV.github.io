@@ -129,7 +129,7 @@ for (const page of pages) {
         : "core";
   const prefix = page.includes("/") ? "../" : "";
   let html = readFileSync(path, "utf8");
-  html = html.replace(/(?:\.\.\/)?styles\.css\?v=[^"']+/g, `${prefix}assets/css/${bundleNames[group]}.min.css?v=20261010-4`);
+  html = html.replace(/(?:\.\.\/)?(?:styles\.css|assets\/css\/(?:site|perez|jara|san-nicolas)\.min\.css)\?v=[^"']+/g, `${prefix}assets/css/${bundleNames[group]}.min.css?v=20261021-1`);
   writeFileSync(path, html, "utf8");
 }
 
