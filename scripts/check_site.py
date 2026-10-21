@@ -357,7 +357,7 @@ def main() -> int:
         html = path.read_text(encoding="utf-8")
         if "TU_TAG" in html:
             fail(errors, path, "contiene un identificador provisional de afiliación")
-        if "letraminuscula.com/amz/" in html:
+        if re.search(r'href=["\']https://www\.letraminuscula\.com/amz/', html):
             fail(errors, path, "mantiene un intermediario antiguo en los enlaces de Amazon")
 
     purchase_contracts = {

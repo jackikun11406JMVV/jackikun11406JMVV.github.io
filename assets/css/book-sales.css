@@ -1,0 +1,233 @@
+.cover-buy-link {
+  position: relative;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.cover-buy-link img {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.cover-buy-link:hover img {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 55px rgba(52, 27, 14, .24);
+}
+
+.cover-buy-link:focus-visible {
+  outline: 4px solid var(--gold);
+  outline-offset: 7px;
+}
+
+.cover-buy-hint {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 12px;
+  background: rgba(46, 21, 10, .92);
+  color: #fff4d3;
+  box-shadow: 0 12px 28px rgba(30, 12, 5, .3);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .06em;
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.book-sales-heading {
+  margin-bottom: 22px;
+}
+
+.book-sales-heading h1 {
+  margin-bottom: 12px;
+}
+
+.book-synopsis {
+  margin-top: 34px;
+  padding: 27px 28px;
+  border: 1px solid rgba(125, 46, 32, .2);
+  border-radius: 20px;
+  background: rgba(255, 250, 241, .76);
+  box-shadow: 0 15px 34px rgba(66, 35, 17, .08);
+}
+
+.book-synopsis h2 {
+  margin: 8px 0 15px;
+  color: var(--brown);
+  font-size: clamp(30px, 3.2vw, 43px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.book-synopsis p {
+  margin: 0 0 13px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.book-synopsis p:last-child {
+  margin-bottom: 0;
+}
+
+.book-distribution {
+  padding: 78px 0;
+  background: linear-gradient(145deg, #f3dfb9, #fbefd5);
+}
+
+.book-distribution .section-title {
+  margin-bottom: 30px;
+}
+
+.book-distribution-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, .6fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.book-distribution .distribution-note,
+.book-distribution .book-identifiers {
+  max-width: none;
+  margin: 0;
+}
+
+.book-distribution .distribution-note {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px 27px;
+  font-size: 16px;
+}
+
+.book-distribution .book-identifiers {
+  grid-template-columns: 1fr;
+}
+
+.book-distribution .book-identifiers > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.saint-hero-image-link {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 850px) {
+  .perez-page .inner-hero {
+    padding-top: 28px;
+  }
+
+  .perez-page .inner-hero .crumb {
+    display: none;
+  }
+
+  .perez-page .inner-hero .inner-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .perez-page .inner-hero .cover-buy-link {
+    width: min(100%, 340px);
+    margin: 0 auto;
+  }
+
+  .perez-page .inner-hero .cover-buy-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .book-sales-heading {
+    text-align: center;
+  }
+
+  .book-sales-heading h1 {
+    margin-top: 12px;
+    font-size: clamp(43px, 13vw, 61px);
+    line-height: .9;
+  }
+
+  .book-sales-heading .book-subtitle {
+    margin-bottom: 0;
+    font-size: 18px;
+  }
+
+  .book-sales-content .buy-accordion {
+    margin-top: 0;
+  }
+
+  .book-synopsis {
+    margin-top: 26px;
+    padding: 23px 21px;
+  }
+
+  .book-synopsis h2 {
+    font-size: 34px;
+  }
+
+  .book-synopsis p {
+    font-size: 16px;
+  }
+
+  .book-distribution {
+    padding: 60px 0;
+  }
+
+  .book-distribution-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1050px) {
+  .saint-hero-image-link {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: block;
+    height: 67.17vw;
+  }
+
+  .saint-hero-image-link:focus-visible {
+    outline: 4px solid #efc878;
+    outline-offset: -7px;
+  }
+}
+
+@media (max-width: 560px) {
+  .cover-buy-hint {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    min-height: 46px;
+  }
+
+  .book-distribution .section-title h2 {
+    font-size: 42px;
+  }
+}
