@@ -180,6 +180,133 @@ html[lang="fr"] .saint-hero-image-link::after {
   border: 0;
 }
 
+body.perez-page .inner-hero {
+  padding: 36px 0 82px;
+}
+
+body.perez-page .inner-hero .crumb {
+  display: none;
+}
+
+body.perez-page .inner-hero .inner-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 30px;
+}
+
+body.perez-page .inner-hero .cover-buy-link {
+  width: min(100%, 420px);
+  margin: 0 auto;
+}
+
+body.perez-page .inner-hero .cover-buy-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+}
+
+.book-sales-content {
+  width: min(100%, 980px);
+  margin: 0 auto;
+}
+
+.book-sales-heading {
+  text-align: center;
+}
+
+.book-sales-heading h1 {
+  margin-top: 12px;
+  font-size: clamp(56px, 7vw, 86px);
+  line-height: .88;
+}
+
+.book-sales-heading .book-subtitle {
+  margin-bottom: 0;
+}
+
+.book-sales-content .buy-accordion {
+  margin-top: 0;
+}
+
+.saint-page .saint-cinematic-hero {
+  display: block;
+  min-height: 0;
+  padding-top: 0;
+  background-color: #061946;
+  background-image: none;
+}
+
+.saint-page .saint-cinematic-hero::before,
+.saint-page .saint-cinematic-hero::after,
+.saint-page .saint-cinematic-image-backdrop {
+  display: none;
+}
+
+.saint-page .saint-cinematic-image {
+  position: relative;
+  inset: auto;
+  display: block;
+  width: min(100%, 1440px);
+  height: auto;
+  margin: 0 auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.saint-page .saint-hero-image-link {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: auto;
+  left: 50%;
+  display: block;
+  width: min(100%, 1440px);
+  height: auto;
+  aspect-ratio: 1440 / 967;
+  transform: translateX(-50%);
+}
+
+.saint-page .saint-hero-image-link:hover {
+  transform: translateX(-50%);
+  filter: none;
+}
+
+.saint-page .saint-cinematic-content {
+  padding-top: 34px;
+  padding-bottom: 44px;
+}
+
+.saint-page .saint-cinematic-content .crumb,
+.saint-page .saint-cinematic-content .eyebrow,
+.saint-page .saint-cinematic-content .saint-hero-lead,
+.saint-page .saint-cinematic-content .saint-hero-availability,
+.saint-page .saint-cinematic-content .saint-hero-badges,
+.saint-page .saint-cinematic-content .saint-hero-actions .secondary {
+  display: none;
+}
+
+.saint-page .saint-cinematic-content .status-pill {
+  margin-bottom: 14px;
+}
+
+.saint-page .saint-cinematic-content h1 {
+  margin: 0;
+}
+
+.saint-page .saint-cinematic-content .saint-hero-actions {
+  width: min(100%, 380px);
+  margin-top: 6px;
+}
+
+.saint-page .saint-cinematic-content .saint-hero-actions .btn {
+  width: 100%;
+  margin-left: 0;
+  text-align: center;
+}
+
 @media (max-width: 850px) {
   .perez-page .inner-hero {
     padding-top: 28px;
