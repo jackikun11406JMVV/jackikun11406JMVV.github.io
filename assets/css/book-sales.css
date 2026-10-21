@@ -233,7 +233,7 @@ body.perez-page .inner-hero .cover-buy-link img {
 .saint-page .saint-cinematic-hero {
   display: block;
   min-height: 0;
-  padding-top: 0;
+  padding: 0;
   background-color: #061946;
   background-image: none;
 }
@@ -250,6 +250,7 @@ body.perez-page .inner-hero .cover-buy-link img {
   display: block;
   width: min(100%, 850px);
   height: auto;
+  min-height: 0;
   margin: 0 auto;
   aspect-ratio: auto;
   object-fit: contain;
