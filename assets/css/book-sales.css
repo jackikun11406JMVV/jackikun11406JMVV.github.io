@@ -9,6 +9,10 @@
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
+.cover-buy-link::before {
+  content: none;
+}
+
 .cover-buy-link:hover img {
   transform: translateY(-4px);
   box-shadow: 0 24px 55px rgba(52, 27, 14, .24);
@@ -144,7 +148,7 @@
     display: none;
   }
 
-  .perez-page .inner-hero .inner-grid {
+  body.perez-page .inner-hero .inner-grid {
     display: flex;
     flex-direction: column;
     gap: 26px;
