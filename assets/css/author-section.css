@@ -89,7 +89,6 @@
   grid-template-columns: repeat(5, minmax(0, 1fr));
   margin: 32px 0 34px;
   padding: 0;
-  counter-reset: author-step;
   list-style: none;
 }
 
@@ -105,11 +104,9 @@
   line-height: 1.35;
   text-align: center;
   text-transform: uppercase;
-  counter-increment: author-step;
 }
 
-.author-process-steps li::before {
-  content: counter(author-step, decimal-leading-zero);
+.author-process-steps li > span {
   position: absolute;
   top: -14px;
   left: 50%;
