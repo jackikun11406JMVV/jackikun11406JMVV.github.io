@@ -39,6 +39,7 @@ class PageParser(HTMLParser):
         self.stylesheets: list[str] = []
         self.json_ld: list[str] = []
         self.blank_links: list[dict[str, str]] = []
+        self.generic_aria_labels: list[str] = []
         self.structure: list[str] = []
         self._in_title = False
         self._in_json_ld = False
@@ -49,6 +50,8 @@ class PageParser(HTMLParser):
         tag = tag.lower()
         if tag == "html":
             self.language = data.get("lang", "")
+        if tag == "div" and data.get("aria-label") and not data.get("role"):
+            self.generic_aria_labels.append(data["aria-label"])
         if tag in {"header", "main", "section", "article", "details", "footer"}:
             self.structure.append(f"{tag}:{data.get('class', '')}")
         if tag == "title":
@@ -142,6 +145,17 @@ def iter_json_urls(value: object):
         yield value
 
 
+def iter_json_property(value: object, property_name: str):
+    if isinstance(value, dict):
+        if property_name in value:
+            yield value[property_name]
+        for child in value.values():
+            yield from iter_json_property(child, property_name)
+    elif isinstance(value, list):
+        for child in value:
+            yield from iter_json_property(child, property_name)
+
+
 def json_ld_nodes(value: object) -> list[dict[str, object]]:
     """Devuelve solo entidades declaradas, no referencias @id anidadas."""
     if not isinstance(value, dict):
@@ -184,11 +198,15 @@ def main() -> int:
         duplicates = sorted({item for item in page.ids if page.ids.count(item) > 1})
         if duplicates:
             fail(errors, path, f"identificadores duplicados: {', '.join(duplicates)}")
+        for label in page.generic_aria_labels:
+            fail(errors, path, f"div con aria-label pero sin role: {label!r}")
         for image in page.images:
             if not image.get("alt", "").strip():
                 fail(errors, path, f"imagen sin texto alternativo: {image.get('src', '(sin src)')}")
             if not image.get("width") or not image.get("height"):
                 fail(errors, path, f"imagen sin dimensiones: {image.get('src', '(sin src)')}")
+            if image.get("sizes") and not image.get("srcset"):
+                fail(errors, path, f"imagen con sizes pero sin srcset: {image.get('src', '(sin src)')}")
         for link in page.blank_links:
             rel = set(link.get("rel", "").lower().split())
             if "noopener" not in rel:
@@ -216,6 +234,10 @@ def main() -> int:
                 fail(errors, path, f"JSON-LD {index} inválido: {exc.msg} (línea {exc.lineno})")
                 continue
             parsed_json_ld.append(data)
+            for isbn_value in iter_json_property(data, "isbn"):
+                isbn = str(isbn_value)
+                if not valid_isbn13(isbn):
+                    fail(errors, path, f"ISBN en JSON-LD no es un ISBN-13 válido: {isbn}")
             for raw_url in iter_json_urls(data):
                 target, _ = url_to_path(path, raw_url)
                 if target is not None and target.suffix and not target.exists():
@@ -421,6 +443,23 @@ def main() -> int:
         lastmod = lastmod_node.text.strip() if lastmod_node is not None and lastmod_node.text else ""
         if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod):
             fail(errors, sitemap_path, f"lastmod ausente o inválido para {loc}: {lastmod!r}")
+        target, _ = url_to_path(sitemap_path, loc)
+        article_dates = (
+            [
+                str(node.get("dateModified", ""))[:10]
+                for data in json_ld_by_page.get(target.resolve(), [])
+                for node in json_ld_nodes(data)
+                if "Article" in schema_types(node) and node.get("dateModified")
+            ]
+            if target is not None
+            else []
+        )
+        if article_dates and lastmod < max(article_dates):
+            fail(
+                errors,
+                sitemap_path,
+                f"lastmod {lastmod} anterior a dateModified {max(article_dates)} para {loc}",
+            )
 
     hreflang_reference: dict[str, dict[str, str]] = {}
     titles: dict[str, list[str]] = {}
