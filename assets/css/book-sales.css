@@ -276,8 +276,10 @@ body.perez-page .inner-hero .cover-buy-link img {
 }
 
 .saint-page .saint-cinematic-content {
+  align-items: center;
   padding-top: 20px;
   padding-bottom: 26px;
+  text-align: center;
 }
 
 .saint-page .saint-cinematic-content .crumb,
