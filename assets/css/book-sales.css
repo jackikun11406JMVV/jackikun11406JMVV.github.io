@@ -181,22 +181,23 @@ html[lang="fr"] .saint-hero-image-link::after {
 }
 
 body.perez-page .inner-hero {
-  padding: 36px 0 82px;
+  padding: 42px 0 88px;
 }
 
 body.perez-page .inner-hero .crumb {
-  display: none;
+  display: block;
 }
 
 body.perez-page .inner-hero .inner-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: minmax(330px, .82fr) minmax(0, 1.18fr);
+  align-items: start;
+  gap: clamp(48px, 6vw, 82px);
 }
 
 body.perez-page .inner-hero .cover-buy-link {
-  width: min(100%, 400px);
+  width: 100%;
+  max-width: 480px;
   margin: 0 auto;
 }
 
@@ -228,6 +229,19 @@ body.perez-page .inner-hero .cover-buy-link img {
 
 .book-sales-content .buy-accordion {
   margin-top: 0;
+}
+
+body.perez-page .book-sales-content {
+  width: 100%;
+  margin: 0;
+}
+
+body.perez-page .book-sales-heading {
+  text-align: left;
+}
+
+body.perez-page .book-sales-heading h1 {
+  font-size: clamp(60px, 6vw, 82px);
 }
 
 .saint-page .saint-cinematic-hero {
@@ -314,12 +328,55 @@ body.perez-page .inner-hero .cover-buy-link img {
   text-align: center;
 }
 
+@media (min-width: 1051px) {
+  .saint-page .saint-cinematic-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.48fr) minmax(430px, .72fr);
+    min-height: 680px;
+  }
+
+  .saint-page .saint-cinematic-image {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    min-height: 680px;
+    object-fit: contain;
+  }
+
+  .saint-page .saint-hero-image-link {
+    grid-column: 1;
+    grid-row: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    transform: none;
+  }
+
+  .saint-page .saint-hero-image-link:hover {
+    transform: none;
+  }
+
+  .saint-page .saint-cinematic-content {
+    grid-column: 2;
+    grid-row: 1;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 48px 42px;
+    text-align: left;
+  }
+}
+
 @media (max-width: 850px) {
-  .perez-page .inner-hero {
+  body.perez-page .inner-hero {
     padding-top: 28px;
   }
 
-  .perez-page .inner-hero .crumb {
+  body.perez-page .inner-hero .crumb {
     display: none;
   }
 
@@ -329,28 +386,28 @@ body.perez-page .inner-hero .cover-buy-link img {
     gap: 26px;
   }
 
-  .perez-page .inner-hero .cover-buy-link {
+  body.perez-page .inner-hero .cover-buy-link {
     width: min(100%, 340px);
     margin: 0 auto;
   }
 
-  .perez-page .inner-hero .cover-buy-link img {
+  body.perez-page .inner-hero .cover-buy-link img {
     display: block;
     width: 100%;
     height: auto;
   }
 
-  .book-sales-heading {
+  body.perez-page .book-sales-heading {
     text-align: center;
   }
 
-  .book-sales-heading h1 {
+  body.perez-page .book-sales-heading h1 {
     margin-top: 12px;
     font-size: clamp(43px, 13vw, 61px);
     line-height: .9;
   }
 
-  .book-sales-heading .book-subtitle {
+  body.perez-page .book-sales-heading .book-subtitle {
     margin-bottom: 0;
     font-size: 18px;
   }
