@@ -277,6 +277,9 @@ body.perez-page .inner-hero .cover-buy-link img {
 
 .saint-page .saint-cinematic-content {
   align-items: center;
+  width: min(900px, calc(100% - 32px));
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 20px;
   padding-bottom: 26px;
   text-align: center;
