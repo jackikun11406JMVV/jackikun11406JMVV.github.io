@@ -764,102 +764,121 @@ body.jara-page .jara-gallery-card img {
   background: rgba(239, 200, 120, .1);
 }
 
-/* Muestras de lectura: cinco páginas reales, completas y sin recortes. */
-.sample-pages-section .section-title {
-  align-items: end;
+/* Muestras de lectura: la ficha queda corta y las páginas se abren en el visor. */
+.sample-launch-section {
+  padding-block: clamp(54px, 7vw, 88px) !important;
 }
 
-.sample-pages-grid {
+.sample-launch-card {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 16px;
-  align-items: start;
-}
-
-.sample-page-card,
-.sample-page-card.saint-journey-media {
-  min-width: 0;
-  height: auto;
-  min-height: 0;
-  margin: 0 !important;
-  padding: 8px 8px 0;
-  overflow: hidden;
-  border: 1px solid rgba(75, 42, 27, .14);
-  border-radius: 18px;
-  background: #fffaf1;
-  box-shadow: 0 14px 34px rgba(75, 42, 27, .1);
-}
-
-.sample-page-card img,
-body.jara-page .sample-page-card img,
-.sample-page-card.saint-journey-media img {
-  display: block;
-  width: 100% !important;
-  height: auto !important;
-  max-height: none !important;
-  aspect-ratio: auto !important;
-  object-fit: contain !important;
-  border-radius: 12px;
-  background: #fff;
-}
-
-.sample-page-card figcaption {
-  padding: 11px 6px 13px;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 1.35;
-  text-align: center;
-}
-
-.saint-page .sample-pages-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
   max-width: 1180px;
   margin: 0 auto;
+  padding: clamp(28px, 5vw, 58px);
+  overflow: hidden;
+  border: 1px solid rgba(125, 46, 32, .18);
+  border-radius: 28px;
+  background: linear-gradient(135deg, #fffaf1 0%, #f4e5cf 100%);
+  box-shadow: 0 22px 54px rgba(75, 42, 27, .12);
 }
 
-.saint-page .sample-page-card:last-child {
-  grid-column: 1 / -1;
-  width: calc(50% - 8px);
-  justify-self: center;
+.sample-launch-card::after {
+  position: absolute;
+  right: -85px;
+  bottom: -125px;
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(125, 46, 32, .12);
+  border-radius: 50%;
+  content: "";
 }
 
-@media (max-width: 1000px) {
-  .sample-pages-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+.sample-launch-copy,
+.sample-launch-button {
+  position: relative;
+  z-index: 1;
 }
 
-@media (max-width: 620px) {
-  .sample-pages-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
+.sample-launch-copy h2 {
+  max-width: 780px;
+  margin: 9px 0 14px;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: .96;
+  text-align: left;
+}
 
-  .sample-page-card,
-  .sample-page-card.saint-journey-media {
-    padding: 5px 5px 0;
-    border-radius: 14px;
-  }
+.sample-launch-copy p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
 
-  .sample-page-card img,
-  body.jara-page .sample-page-card img,
-  .sample-page-card.saint-journey-media img {
-    border-radius: 10px;
-  }
+.sample-launch-button.btn {
+  min-width: 270px;
+  min-height: 56px;
+  border: 0;
+  background: var(--wine);
+  color: #fffaf1;
+  white-space: normal;
+  text-align: center;
+  cursor: pointer;
+}
 
-  .sample-page-card figcaption {
-    padding: 9px 4px 11px;
-    font-size: 11px;
-  }
+.sample-launch-button.btn:hover {
+  background: #6f271d;
+}
 
-  .saint-page .sample-pages-grid {
+.saint-page .sample-launch-card {
+  border-color: rgba(239, 200, 120, .3);
+  background: linear-gradient(135deg, #102d69 0%, #061946 100%);
+  box-shadow: 0 22px 54px rgba(6, 25, 70, .2);
+}
+
+.saint-page .sample-launch-card::after {
+  border-color: rgba(239, 200, 120, .22);
+}
+
+.saint-page .sample-launch-copy .eyebrow,
+.saint-page .sample-launch-copy h2 {
+  color: #fff4d3;
+}
+
+.saint-page .sample-launch-copy p {
+  color: #f1d7a5;
+}
+
+.saint-page .sample-launch-button.btn {
+  background: #efc878;
+  color: #2b180f;
+}
+
+.saint-page .sample-launch-button.btn:hover {
+  background: #f7d991;
+}
+
+.sample-pages-source[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .sample-launch-card {
     grid-template-columns: 1fr;
+    gap: 24px;
+    border-radius: 22px;
   }
 
-  .saint-page .sample-page-card:last-child {
-    grid-column: auto;
+  .sample-launch-copy h2 {
+    font-size: clamp(36px, 11vw, 48px);
+  }
+
+  .sample-launch-button.btn {
     width: 100%;
+    min-width: 0;
   }
 }
 
