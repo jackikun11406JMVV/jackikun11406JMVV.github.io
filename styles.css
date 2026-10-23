@@ -2677,3 +2677,13 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
  .desktop-book-nav a[aria-current]{background:#efc878;color:#2c170b}
  .site-menu{margin-left:4px}
 }
+
+/* Objetivos táctiles más cómodos en navegación y contacto. */
+.social-icon{width:44px;height:44px}
+
+@media(max-width:560px){
+ .topbar .brand{min-height:44px}
+ .topbar .lang-switch a,.topbar .lang-switch strong{min-width:44px;min-height:44px}
+ .site-menu summary{min-height:44px}
+ .crumb a,.breadcrumb a{display:inline-flex;align-items:center;min-height:44px}
+}
