@@ -450,8 +450,7 @@ body.jara-page .jara-gallery-card img {
 .saint-page .saint-cinematic-content .eyebrow,
 .saint-page .saint-cinematic-content .saint-hero-lead,
 .saint-page .saint-cinematic-content .saint-hero-availability,
-.saint-page .saint-cinematic-content .saint-hero-badges,
-.saint-page .saint-cinematic-content .saint-hero-actions .secondary {
+.saint-page .saint-cinematic-content .saint-hero-badges {
   display: none;
 }
 
@@ -465,6 +464,9 @@ body.jara-page .jara-gallery-card img {
 }
 
 .saint-page .saint-cinematic-content .saint-hero-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
   width: min(100%, 380px);
   margin-top: 2px;
 }
@@ -473,6 +475,12 @@ body.jara-page .jara-gallery-card img {
   width: 100%;
   margin-left: 0;
   text-align: center;
+}
+
+.saint-page .saint-cinematic-content .saint-hero-actions .btn.secondary {
+  border-color: #efc878;
+  background: #fff4d3;
+  color: #061946;
 }
 
 @media (min-width: 1051px) {
@@ -682,8 +690,7 @@ body.jara-page .jara-gallery-card img {
   .saint-cinematic-content .eyebrow,
   .saint-cinematic-content .saint-hero-lead,
   .saint-cinematic-content .saint-hero-availability,
-  .saint-cinematic-content .saint-hero-badges,
-  .saint-cinematic-content .saint-hero-actions .secondary {
+  .saint-cinematic-content .saint-hero-badges {
     display: none;
   }
 
@@ -703,5 +710,31 @@ body.jara-page .jara-gallery-card img {
   .saint-cinematic-content .saint-hero-actions {
     width: 100%;
     margin-top: 4px;
+  }
+
+  .book-purchase-panel .purchase-intro h2 {
+    font-size: clamp(32px, 10vw, 40px);
+  }
+
+  .saint-buy-section .section-title {
+    margin-bottom: 26px;
+  }
+
+  .saint-buy-section .section-title h2 {
+    font-size: clamp(40px, 11vw, 50px);
+    line-height: .92;
+  }
+}
+
+/* The mobile purchase bar appears only after the hero and disappears again
+   around the purchase panel and footer. sales-behavior.js controls the state. */
+.mobile-buy-bar {
+  display: none !important;
+}
+
+@media (max-width: 560px) {
+  .mobile-buy-bar.is-visible {
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    display: flex !important;
   }
 }

@@ -1,5 +1,5 @@
 (() => {
-  const images = document.querySelectorAll(".inside-card img, .saint-journey-media img");
+  const images = document.querySelectorAll(".inside-card img, .saint-journey-media img, .jara-gallery-card img");
   if (!images.length) return;
 
   const lang = document.documentElement.lang || "es";
@@ -16,11 +16,16 @@
 
   const largeImage = dialog.querySelector("img");
   const caption = dialog.querySelector("figcaption");
+  let trigger = null;
   const close = () => dialog.close();
 
   dialog.querySelector("button").addEventListener("click", close);
   dialog.addEventListener("click", event => {
     if (event.target === dialog) close();
+  });
+  dialog.addEventListener("close", () => {
+    trigger?.focus();
+    trigger = null;
   });
 
   for (const image of images) {
@@ -29,6 +34,7 @@
     image.setAttribute("role", "button");
     image.setAttribute("aria-label", `${labels.open}: ${image.alt}`);
     const open = () => {
+      trigger = image;
       largeImage.src = image.currentSrc || image.src;
       largeImage.alt = image.alt;
       caption.textContent = image.closest("figure, .inside-card")?.querySelector("figcaption, p")?.textContent || image.alt;
