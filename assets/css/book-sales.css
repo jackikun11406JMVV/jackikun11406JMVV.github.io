@@ -764,6 +764,84 @@ body.jara-page .jara-gallery-card img {
   background: rgba(239, 200, 120, .1);
 }
 
+/* Muestras de lectura: cinco páginas reales, completas y sin recortes. */
+.sample-pages-section .section-title {
+  align-items: end;
+}
+
+.sample-pages-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.sample-page-card,
+.sample-page-card.saint-journey-media {
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+  margin: 0 !important;
+  padding: 8px 8px 0;
+  overflow: hidden;
+  border: 1px solid rgba(75, 42, 27, .14);
+  border-radius: 18px;
+  background: #fffaf1;
+  box-shadow: 0 14px 34px rgba(75, 42, 27, .1);
+}
+
+.sample-page-card img,
+body.jara-page .sample-page-card img,
+.sample-page-card.saint-journey-media img {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.sample-page-card figcaption {
+  padding: 11px 6px 13px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .sample-pages-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .sample-pages-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .sample-page-card,
+  .sample-page-card.saint-journey-media {
+    padding: 5px 5px 0;
+    border-radius: 14px;
+  }
+
+  .sample-page-card img,
+  body.jara-page .sample-page-card img,
+  .sample-page-card.saint-journey-media img {
+    border-radius: 10px;
+  }
+
+  .sample-page-card figcaption {
+    padding: 9px 4px 11px;
+    font-size: 11px;
+  }
+}
+
 .image-lightbox-controls {
   display: grid;
   grid-template-columns: 48px minmax(96px, 1fr) 48px auto;
