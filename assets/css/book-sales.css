@@ -942,3 +942,78 @@ body.jara-page .jara-gallery-card img {
     grid-column: 1 / -1;
   }
 }
+
+/* Illustrated feature cards for The Origin of Santa Claus: Saint Nicholas */
+.saint-page .saint-feature {
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.saint-page .saint-feature-media {
+  aspect-ratio: 799 / 538;
+  margin: 0;
+  overflow: hidden;
+  background: #1d2c50;
+}
+
+.saint-page .saint-feature-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.saint-page .saint-feature:hover .saint-feature-media img {
+  transform: scale(1.035);
+}
+
+.saint-page .saint-feature-copy {
+  padding: 25px 27px 29px;
+}
+
+.saint-page .saint-feature-copy > span {
+  display: block;
+  color: #b88737;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+.saint-page .saint-feature-copy h3 {
+  margin: 17px 0 12px;
+}
+
+@media (max-width: 560px) {
+  .saint-page .saint-feature {
+    display: grid;
+    grid-template-columns: minmax(112px, 36%) 1fr;
+    align-items: stretch;
+  }
+
+  .saint-page .saint-feature-media {
+    aspect-ratio: auto;
+    min-height: 180px;
+  }
+
+  .saint-page .saint-feature-copy {
+    padding: 20px 18px 22px;
+  }
+
+  .saint-page .saint-feature-copy h3 {
+    margin-top: 12px;
+    font-size: 23px;
+  }
+
+  .saint-page .saint-feature-copy p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .saint-page .saint-feature-media img {
+    transition: none;
+  }
+}
