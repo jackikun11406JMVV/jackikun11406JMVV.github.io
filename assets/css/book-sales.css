@@ -987,18 +987,16 @@ body.jara-page .jara-gallery-card img {
 
 @media (max-width: 560px) {
   .saint-page .saint-feature {
-    display: grid;
-    grid-template-columns: minmax(112px, 36%) 1fr;
-    align-items: stretch;
+    display: block;
   }
 
   .saint-page .saint-feature-media {
-    aspect-ratio: auto;
-    min-height: 180px;
+    aspect-ratio: 799 / 538;
+    min-height: 0;
   }
 
   .saint-page .saint-feature-copy {
-    padding: 20px 18px 22px;
+    padding: 18px 20px 22px;
   }
 
   .saint-page .saint-feature-copy h3 {
@@ -1009,10 +1007,6 @@ body.jara-page .jara-gallery-card img {
   .saint-page .saint-feature-copy p {
     font-size: 14px;
     line-height: 1.55;
-  }
-
-  .saint-page .saint-feature-kings .saint-feature-media img {
-    object-position: right center;
   }
 }
 
