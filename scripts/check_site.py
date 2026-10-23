@@ -21,6 +21,14 @@ SAN_NICOLAS_LEGAL_DEPOSIT = "CA 656-2026"
 SAN_NICOLAS_SCHEMA_COPIES = 6
 PEREZ_HARDBACK_ISBN = "9788409927814"
 PEREZ_HARDBACK_SCHEMA_COPIES = 3
+VISIBLE_ISBN_BY_PAGE = {
+    "el-origen-del-ratoncito-perez.html": PEREZ_HARDBACK_ISBN,
+    "en/el-origen-del-ratoncito-perez.html": PEREZ_HARDBACK_ISBN,
+    "fr/el-origen-del-ratoncito-perez.html": PEREZ_HARDBACK_ISBN,
+    "san-nicolas.html": SAN_NICOLAS_ISBN,
+    "en/san-nicolas.html": SAN_NICOLAS_ISBN,
+    "fr/san-nicolas.html": SAN_NICOLAS_ISBN,
+}
 
 
 class PageParser(HTMLParser):
@@ -274,8 +282,16 @@ def main() -> int:
             html,
             flags=re.I,
         )
-        if re.search(r"(?<!\d)97[89](?:[\s-]?\d){10}(?!\d)", html_without_json_ld):
-            fail(errors, path, "el ISBN no debe mostrarse fuera de los datos estructurados")
+        visible_isbns = {
+            re.sub(r"\D", "", candidate)
+            for candidate in re.findall(r"(?<!\d)97[89](?:[\s-]?\d){10}(?!\d)", html_without_json_ld)
+        }
+        relative_path = path.relative_to(ROOT).as_posix()
+        expected_visible_isbn = VISIBLE_ISBN_BY_PAGE.get(relative_path)
+        if visible_isbns and visible_isbns != {expected_visible_isbn}:
+            fail(errors, path, f"ISBN visible incorrecto: {sorted(visible_isbns)}")
+        if expected_visible_isbn and expected_visible_isbn not in visible_isbns:
+            fail(errors, path, f"falta el ISBN visible de la edición disponible: {expected_visible_isbn}")
         if SAN_NICOLAS_LEGAL_DEPOSIT in html_without_json_ld:
             fail(errors, path, "el depósito legal no debe mostrarse fuera de los datos estructurados")
 
