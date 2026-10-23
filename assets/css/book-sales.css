@@ -766,18 +766,18 @@ body.jara-page .jara-gallery-card img {
 
 /* Muestras de lectura: la ficha queda corta y las páginas se abren en el visor. */
 .sample-launch-section {
-  padding-block: clamp(54px, 7vw, 88px) !important;
+  padding-block: clamp(40px, 5vw, 64px) !important;
 }
 
 .sample-launch-card {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(28px, 5vw, 72px);
+  gap: clamp(24px, 4vw, 50px);
   align-items: center;
-  max-width: 1180px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: clamp(28px, 5vw, 58px);
+  padding: clamp(24px, 3.5vw, 40px);
   overflow: hidden;
   border: 1px solid rgba(125, 46, 32, .18);
   border-radius: 28px;
@@ -804,9 +804,9 @@ body.jara-page .jara-gallery-card img {
 
 .sample-launch-copy h2 {
   max-width: 780px;
-  margin: 9px 0 14px;
-  font-size: clamp(38px, 5vw, 64px);
-  line-height: .96;
+  margin: 7px 0 11px;
+  font-size: clamp(34px, 3.8vw, 50px);
+  line-height: 1;
   text-align: left;
 }
 
@@ -814,13 +814,13 @@ body.jara-page .jara-gallery-card img {
   max-width: 720px;
   margin: 0;
   color: var(--muted);
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.55;
 }
 
 .sample-launch-button.btn {
-  min-width: 270px;
-  min-height: 56px;
+  min-width: 240px;
+  min-height: 52px;
   border: 0;
   background: var(--wine);
   color: #fffaf1;
@@ -866,19 +866,33 @@ body.jara-page .jara-gallery-card img {
 }
 
 @media (max-width: 760px) {
+  .sample-launch-section {
+    padding-block: 22px !important;
+  }
+
   .sample-launch-card {
     grid-template-columns: 1fr;
-    gap: 24px;
-    border-radius: 22px;
+    gap: 13px;
+    padding: 18px 16px;
+    border-radius: 18px;
   }
 
   .sample-launch-copy h2 {
-    font-size: clamp(36px, 11vw, 48px);
+    margin: 5px 0 0;
+    font-size: clamp(26px, 7.5vw, 30px);
+    line-height: 1.04;
+  }
+
+  .sample-launch-copy p {
+    display: none;
   }
 
   .sample-launch-button.btn {
     width: 100%;
     min-width: 0;
+    min-height: 48px;
+    padding: 12px 16px;
+    font-size: 13px;
   }
 }
 
