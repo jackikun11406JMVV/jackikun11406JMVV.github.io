@@ -1010,6 +1010,10 @@ body.jara-page .jara-gallery-card img {
     font-size: 14px;
     line-height: 1.55;
   }
+
+  .saint-page .saint-feature-kings .saint-feature-media img {
+    object-position: right center;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
