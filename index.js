@@ -2,6 +2,12 @@ document.documentElement.classList.add("js");
 
 document.addEventListener("DOMContentLoaded",()=>{
 
+    const seasonalCampaign=document.querySelector("[data-seasonal-campaign]");
+    if(seasonalCampaign){
+        const month=new Date().getMonth();
+        seasonalCampaign.hidden=!(month>=9||month===0);
+    }
+
     const hero=document.querySelector(".hero-content");
 
     if(hero){

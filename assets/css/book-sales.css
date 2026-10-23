@@ -738,3 +738,75 @@ body.jara-page .jara-gallery-card img {
     display: flex !important;
   }
 }
+
+/* Las portadas completas son el enlace de compra; ningún rótulo tapa la obra. */
+.cover-buy-hint,
+.saint-hero-image-link::after {
+  display: none !important;
+  content: none !important;
+}
+
+.hero-buy-actions .sample-open.btn {
+  border-color: rgba(125, 46, 32, .35);
+  background: transparent;
+  color: var(--wine);
+  cursor: pointer;
+}
+
+.saint-page .saint-cinematic-content .saint-hero-actions .sample-open.btn {
+  border: 1px solid rgba(239, 200, 120, .72);
+  background: transparent;
+  color: #fff4d3;
+  box-shadow: none;
+}
+
+.saint-page .saint-cinematic-content .saint-hero-actions .sample-open.btn:hover {
+  background: rgba(239, 200, 120, .1);
+}
+
+.image-lightbox-controls {
+  display: grid;
+  grid-template-columns: 48px minmax(96px, 1fr) 48px auto;
+  gap: 10px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.image-lightbox-controls button,
+.image-lightbox-buy {
+  min-height: 44px;
+  border: 1px solid rgba(255, 255, 255, .32);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .08);
+  color: #fff4d3;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.image-lightbox-count {
+  color: #f1d7a5;
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.image-lightbox-buy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  background: #efc878;
+  color: #2b180f;
+  text-decoration: none;
+}
+
+@media (max-width: 560px) {
+  .image-lightbox-controls {
+    grid-template-columns: 46px 1fr 46px;
+  }
+
+  .image-lightbox-buy {
+    grid-column: 1 / -1;
+  }
+}
