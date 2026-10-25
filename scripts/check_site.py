@@ -24,6 +24,9 @@ SAN_NICOLAS_LEGAL_DEPOSIT = "CA 656-2026"
 SAN_NICOLAS_SCHEMA_COPIES = 6
 PEREZ_HARDBACK_ISBN = "9788409927814"
 PEREZ_HARDBACK_SCHEMA_COPIES = 3
+PEREZ_PREVIOUS_HARDBACK_ISBN = "9798195889562"
+PEREZ_PREVIOUS_HARDBACK_SCHEMA_COPIES = 3
+GOODREADS_AUTHOR_URL = "https://www.goodreads.com/author/show/70320935.Don_Juan_Manuel_Vela_Vacas"
 VISIBLE_ISBN_BY_PAGE = {
     "el-origen-del-ratoncito-perez.html": PEREZ_HARDBACK_ISBN,
     "en/el-origen-del-ratoncito-perez.html": PEREZ_HARDBACK_ISBN,
@@ -289,7 +292,7 @@ def main() -> int:
         html = path.read_text(encoding="utf-8")
         for candidate in re.findall(r"(?<!\d)97[89](?:[\s-]?\d){10}(?!\d)", html):
             normalized = re.sub(r"\D", "", candidate)
-            if normalized not in {SAN_NICOLAS_ISBN, PEREZ_HARDBACK_ISBN}:
+            if normalized not in {SAN_NICOLAS_ISBN, PEREZ_HARDBACK_ISBN, PEREZ_PREVIOUS_HARDBACK_ISBN}:
                 fail(errors, path, f"ISBN no registrado o antiguo: {candidate}")
 
         html_without_json_ld = re.sub(
@@ -313,6 +316,7 @@ def main() -> int:
 
     san_nicolas_isbn_count = 0
     perez_hardback_isbn_count = 0
+    perez_previous_hardback_isbn_count = 0
     for path, node_id, isbn in isbn_records:
         if not valid_isbn13(isbn):
             fail(errors, path, f"ISBN-13 con dígito de control inválido: {isbn}")
@@ -320,6 +324,8 @@ def main() -> int:
             san_nicolas_isbn_count += 1
         elif isbn == PEREZ_HARDBACK_ISBN and "#perez-work/lang-es/hardcover" in node_id:
             perez_hardback_isbn_count += 1
+        elif isbn == PEREZ_PREVIOUS_HARDBACK_ISBN and "#perez-work/lang-es/hardcover-previous" in node_id:
+            perez_previous_hardback_isbn_count += 1
         else:
             fail(errors, path, f"ISBN asignado a una edición incorrecta: {node_id} = {isbn}")
     for path, node_id, legal_deposit in legal_deposit_records:
@@ -334,6 +340,11 @@ def main() -> int:
         errors.append(
             "ISBN tapa dura Pérez: debe declararse "
             f"{PEREZ_HARDBACK_SCHEMA_COPIES} veces y se declara {perez_hardback_isbn_count}"
+        )
+    if perez_previous_hardback_isbn_count != PEREZ_PREVIOUS_HARDBACK_SCHEMA_COPIES:
+        errors.append(
+            "ISBN tapa dura anterior de Pérez: debe declararse "
+            f"{PEREZ_PREVIOUS_HARDBACK_SCHEMA_COPIES} veces y se declara {perez_previous_hardback_isbn_count}"
         )
     if len(legal_deposit_records) != SAN_NICOLAS_SCHEMA_COPIES:
         errors.append(
@@ -400,6 +411,54 @@ def main() -> int:
             example_of_work = edition.get("exampleOfWork", {})
             if not isinstance(example_of_work, dict) or example_of_work.get("@id") != san_work_id:
                 fail(errors, path, f"la edición {edition_id} no enlaza con su obra principal")
+
+    perez_work_id = f"{SITE_ORIGIN}/#perez-work"
+    perez_edition_ids = {
+        f"{perez_work_id}/lang-es/kindle",
+        f"{perez_work_id}/lang-es/hardcover",
+        f"{perez_work_id}/lang-es/hardcover-previous",
+        f"{perez_work_id}/lang-en/kindle",
+        f"{perez_work_id}/lang-fr/kindle",
+    }
+    for relative_path in language_clusters[1]:
+        path = (ROOT / relative_path).resolve()
+        html = path.read_text(encoding="utf-8")
+        nodes = [node for data in json_ld_by_page.get(path, []) for node in json_ld_nodes(data)]
+        nodes_by_id = {node.get("@id"): node for node in nodes if isinstance(node.get("@id"), str)}
+        work = nodes_by_id.get(perez_work_id, {})
+        examples = {
+            item.get("@id")
+            for item in work.get("workExample", [])
+            if isinstance(item, dict) and isinstance(item.get("@id"), str)
+        }
+        if examples != perez_edition_ids:
+            fail(errors, path, f"la obra de Pérez no agrupa correctamente sus ediciones: {sorted(examples)}")
+        for edition_id in perez_edition_ids:
+            edition = nodes_by_id.get(edition_id, {})
+            example_of_work = edition.get("exampleOfWork", {})
+            if not isinstance(example_of_work, dict) or example_of_work.get("@id") != perez_work_id:
+                fail(errors, path, f"la edición {edition_id} no enlaza con su obra principal")
+        previous_edition = nodes_by_id.get(f"{perez_work_id}/lang-es/hardcover-previous", {})
+        if previous_edition.get("sameAs") != "https://www.amazon.es/dp/B0H274BD3J":
+            fail(errors, path, "la edición anterior de Pérez no enlaza con su ficha histórica de Amazon")
+        if "aggregateRating" in html:
+            fail(errors, path, "no deben agregarse como datos estructurados las valoraciones procedentes de Amazon")
+        if GOODREADS_AUTHOR_URL not in html:
+            fail(errors, path, "falta Goodreads en la identidad estructurada del autor")
+
+    perez_spanish_html = (ROOT / "el-origen-del-ratoncito-perez.html").read_text(encoding="utf-8")
+    for required_text in (
+        "29 valoraciones globales en Amazon",
+        "Ver las reseñas de la edición anterior en Amazon",
+        "https://www.amazon.es/dp/B0H274BD3J#customerReviews",
+    ):
+        if required_text not in perez_spanish_html:
+            fail(errors, ROOT / "el-origen-del-ratoncito-perez.html", f"falta la prueba social verificable: {required_text}")
+
+    for relative_path in language_clusters[2] + language_clusters[4]:
+        path = (ROOT / relative_path).resolve()
+        if GOODREADS_AUTHOR_URL not in path.read_text(encoding="utf-8"):
+            fail(errors, path, "falta Goodreads en la identidad estructurada del autor")
 
     for css in sorted(ROOT.glob("*.css")):
         text = css.read_text(encoding="utf-8")

@@ -1156,3 +1156,121 @@ body.jara-page .jara-gallery-card img {
     transition: none;
   }
 }
+
+/* Compact social proof for the previous Spanish hardback edition of Pérez. */
+.perez-page .reader-proof {
+  margin-top: 22px;
+  padding: 22px 24px;
+  border: 1px solid rgba(125, 46, 32, .22);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(255, 249, 236, .96), rgba(246, 225, 190, .72));
+  box-shadow: 0 14px 32px rgba(66, 35, 17, .08);
+}
+
+.perez-page .reader-proof-summary {
+  display: grid;
+  grid-template-columns: minmax(170px, .55fr) minmax(0, 1.45fr);
+  gap: 22px;
+  align-items: center;
+}
+
+.perez-page .reader-proof-summary > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
+  align-items: baseline;
+}
+
+.perez-page .reader-proof-stars {
+  grid-column: 1 / -1;
+  color: #b67920;
+  font-size: 19px;
+  letter-spacing: .08em;
+  line-height: 1;
+}
+
+.perez-page .reader-proof-summary strong {
+  color: var(--brown);
+  font-size: 23px;
+}
+
+.perez-page .reader-proof-summary span,
+.perez-page .reader-proof-summary p,
+.perez-page .reader-proof-source {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.perez-page .reader-proof-summary p {
+  margin: 0;
+}
+
+.perez-page .reader-proof h2 {
+  margin: 20px 0 12px;
+  color: var(--brown);
+  font-size: clamp(24px, 2.4vw, 31px);
+  line-height: 1.1;
+}
+
+.perez-page .reader-proof-quotes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.perez-page .reader-proof-quotes li {
+  padding: 13px 14px;
+  border: 1px solid rgba(125, 46, 32, .16);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, .64);
+}
+
+.perez-page .reader-proof-quotes q {
+  display: block;
+  color: var(--brown);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.perez-page .reader-proof-quotes span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.perez-page .reader-proof-source {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 18px;
+  margin-top: 14px;
+}
+
+.perez-page .reader-proof-source a {
+  color: var(--wine);
+  font-weight: 800;
+}
+
+@media (max-width: 680px) {
+  .perez-page .reader-proof {
+    padding: 18px;
+  }
+
+  .perez-page .reader-proof-summary,
+  .perez-page .reader-proof-quotes {
+    grid-template-columns: 1fr;
+  }
+
+  .perez-page .reader-proof-summary {
+    gap: 10px;
+  }
+
+  .perez-page .reader-proof h2 {
+    margin-top: 17px;
+  }
+}
