@@ -5,7 +5,6 @@
   const hero = document.querySelector(".inner-hero .inner-grid, .saint-cinematic-hero");
   const purchase = document.querySelector(".book-purchase-panel, .saint-buy-section");
   const footer = document.querySelector("footer");
-  const mobile = window.matchMedia("(max-width: 560px)");
   let frame = 0;
 
   const isInView = element => {
@@ -17,7 +16,7 @@
   const update = () => {
     frame = 0;
     const heroPassed = !hero || hero.getBoundingClientRect().bottom <= 90;
-    const visible = mobile.matches && heroPassed && !isInView(purchase) && !isInView(footer);
+    const visible = heroPassed && !isInView(purchase) && !isInView(footer);
     bar.classList.toggle("is-visible", visible);
     bar.setAttribute("aria-hidden", String(!visible));
   };
@@ -28,6 +27,5 @@
 
   window.addEventListener("scroll", schedule, { passive: true });
   window.addEventListener("resize", schedule);
-  mobile.addEventListener?.("change", schedule);
   update();
 })();
