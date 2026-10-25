@@ -11,7 +11,7 @@ node --check index.js
 node --check animations.js
 ```
 
-El verificador comprueba las 15 páginas publicables, enlaces y recursos locales,
+El verificador comprueba las 18 páginas publicables, enlaces y recursos locales,
 idiomas, canonical, hreflang, robots, sitemap, imágenes, datos estructurados y
 enlaces de compra. GitHub Actions ejecuta estas pruebas en cada subida.
 

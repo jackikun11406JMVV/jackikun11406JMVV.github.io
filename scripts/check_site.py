@@ -14,7 +14,10 @@ from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE_ORIGIN = "https://jackikun11406jmvv.github.io"
-SITEMAP_NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+SITEMAP_NS = {
+    "s": "http://www.sitemaps.org/schemas/sitemap/0.9",
+    "image": "http://www.google.com/schemas/sitemap-image/1.1",
+}
 URL_ATTRS = {"a": ("href",), "img": ("src", "srcset"), "link": ("href",), "script": ("src",)}
 SAN_NICOLAS_ISBN = "9788409924981"
 SAN_NICOLAS_LEGAL_DEPOSIT = "CA 656-2026"
@@ -28,6 +31,19 @@ VISIBLE_ISBN_BY_PAGE = {
     "san-nicolas.html": SAN_NICOLAS_ISBN,
     "en/san-nicolas.html": SAN_NICOLAS_ISBN,
     "fr/san-nicolas.html": SAN_NICOLAS_ISBN,
+}
+OBSOLETE_PUBLIC_FILES = {
+    "ARREGLAR_GITHUB.bat",
+    "ARREGLAR_GITHUB_ROBUSTO.bat",
+    "AUDITORIA_FINAL.txt",
+    "LEEME.txt",
+    "LEEME_GITHUB.txt",
+    "LEEME_SEO.txt",
+    "_arreglo_github.ps1",
+    "_arreglo_github_robusto.ps1",
+    "aplicar-correccion-validador.py",
+    "sitemap-prueba.txt",
+    "style.css",
 }
 
 
@@ -343,11 +359,11 @@ def main() -> int:
                 errors.append(f"{candidate}: la estructura no coincide con la versión española {cluster[0]}")
 
     schema_requirements = {
-        "home": ({"Person", "Organization", "WebSite", "WebPage", "CollectionPage", "CreativeWorkSeries"}, language_clusters[0]),
+        "home": ({"Person", "Organization", "WebSite", "WebPage", "ProfilePage", "CollectionPage", "CreativeWorkSeries"}, language_clusters[0]),
         "perez": ({"Person", "Organization", "BookPage", "Book", "BreadcrumbList", "FAQPage"}, language_clusters[1]),
         "jara": ({"Person", "Organization", "BookPage", "Book", "BreadcrumbList"}, language_clusters[2]),
         "origin": ({"Person", "Article", "BreadcrumbList", "FAQPage"}, language_clusters[3]),
-        "saint": ({"Book", "BreadcrumbList"}, language_clusters[4]),
+        "saint": ({"BookPage", "Book", "BreadcrumbList"}, language_clusters[4]),
     }
     for cluster_name, (required_types, paths) in schema_requirements.items():
         for relative_path in paths:
@@ -361,6 +377,29 @@ def main() -> int:
                 faq_count = sum("FAQPage" in schema_types(node) for node in nodes)
                 if faq_count != 1:
                     fail(errors, path, f"debe declarar una sola FAQPage y declara {faq_count}")
+
+    san_work_id = f"{SITE_ORIGIN}/#san-nicolas-work"
+    san_edition_ids = {
+        f"{san_work_id}/lang-es/hardcover",
+        f"{san_work_id}/lang-es/kindle",
+    }
+    for relative_path in language_clusters[4]:
+        path = (ROOT / relative_path).resolve()
+        nodes = [node for data in json_ld_by_page.get(path, []) for node in json_ld_nodes(data)]
+        nodes_by_id = {node.get("@id"): node for node in nodes if isinstance(node.get("@id"), str)}
+        work = nodes_by_id.get(san_work_id, {})
+        examples = {
+            item.get("@id")
+            for item in work.get("workExample", [])
+            if isinstance(item, dict) and isinstance(item.get("@id"), str)
+        }
+        if examples != san_edition_ids:
+            fail(errors, path, f"la obra de San Nicolás no agrupa correctamente sus ediciones: {sorted(examples)}")
+        for edition_id in san_edition_ids:
+            edition = nodes_by_id.get(edition_id, {})
+            example_of_work = edition.get("exampleOfWork", {})
+            if not isinstance(example_of_work, dict) or example_of_work.get("@id") != san_work_id:
+                fail(errors, path, f"la edición {edition_id} no enlaza con su obra principal")
 
     for css in sorted(ROOT.glob("*.css")):
         text = css.read_text(encoding="utf-8")
@@ -452,6 +491,14 @@ def main() -> int:
         fail(errors, sitemap_path, "contiene URLs duplicadas")
     if len(locs) != 18:
         fail(errors, sitemap_path, f"debe contener 18 páginas publicables y contiene {len(locs)}")
+
+    expected_saint_images = {
+        f"{SITE_ORIGIN}/images/es/san-nicolas-hero.webp",
+        f"{SITE_ORIGIN}/images/es/san-nicolas-cover.webp",
+        f"{SITE_ORIGIN}/images/es/san-nicolas-joven.webp",
+        f"{SITE_ORIGIN}/images/es/san-nicolas-pieten.webp",
+        f"{SITE_ORIGIN}/images/es/san-nicolas-reyes-magos.webp",
+    }
     for url_node in sitemap_urls:
         loc_node = url_node.find("s:loc", SITEMAP_NS)
         lastmod_node = url_node.find("s:lastmod", SITEMAP_NS)
@@ -460,22 +507,36 @@ def main() -> int:
         if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod):
             fail(errors, sitemap_path, f"lastmod ausente o inválido para {loc}: {lastmod!r}")
         target, _ = url_to_path(sitemap_path, loc)
-        article_dates = (
+        structured_dates = (
             [
                 str(node.get("dateModified", ""))[:10]
                 for data in json_ld_by_page.get(target.resolve(), [])
                 for node in json_ld_nodes(data)
-                if "Article" in schema_types(node) and node.get("dateModified")
+                if node.get("dateModified")
             ]
             if target is not None
             else []
         )
-        if article_dates and lastmod < max(article_dates):
+        if structured_dates and lastmod < max(structured_dates):
             fail(
                 errors,
                 sitemap_path,
-                f"lastmod {lastmod} anterior a dateModified {max(article_dates)} para {loc}",
+                f"lastmod {lastmod} anterior a dateModified {max(structured_dates)} para {loc}",
             )
+        if loc in {
+            f"{SITE_ORIGIN}/san-nicolas.html",
+            f"{SITE_ORIGIN}/en/san-nicolas.html",
+            f"{SITE_ORIGIN}/fr/san-nicolas.html",
+        }:
+            image_urls = {
+                node.text.strip()
+                for node in url_node.findall("image:image/image:loc", SITEMAP_NS)
+                if node.text
+            }
+            if image_urls != expected_saint_images:
+                missing = sorted(expected_saint_images - image_urls)
+                extra = sorted(image_urls - expected_saint_images)
+                fail(errors, sitemap_path, f"imágenes de San Nicolás desincronizadas; faltan={missing}, sobran={extra}")
 
     hreflang_reference: dict[str, dict[str, str]] = {}
     titles: dict[str, list[str]] = {}
@@ -495,8 +556,12 @@ def main() -> int:
             fail(errors, target, f"idioma HTML inválido o ausente: {page.language!r}")
         if not page.title:
             fail(errors, target, "falta title")
+        elif not 30 <= len(page.title) <= 65:
+            fail(errors, target, f"title fuera del intervalo SEO de 30–65 caracteres: {len(page.title)}")
         if not page.description:
             fail(errors, target, "falta meta description")
+        elif not 100 <= len(page.description) <= 170:
+            fail(errors, target, f"meta description fuera del intervalo SEO de 100–170 caracteres: {len(page.description)}")
         if not page.stylesheets:
             fail(errors, target, "falta la hoja de estilos")
         if page.title:
@@ -532,6 +597,10 @@ def main() -> int:
             other = hreflang_reference.get(alternate, {})
             if other != alternates:
                 errors.append(f"sitemap.xml: clúster hreflang no recíproco entre {loc} y {alternate}")
+
+    for relative_path in OBSOLETE_PUBLIC_FILES:
+        if (ROOT / relative_path).exists():
+            errors.append(f"publicación: permanece el archivo técnico obsoleto {relative_path}")
 
     if errors:
         print("VALIDACIÓN FALLIDA")

@@ -4,8 +4,11 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     const seasonalCampaign=document.querySelector("[data-seasonal-campaign]");
     if(seasonalCampaign){
-        const month=new Date().getMonth();
-        seasonalCampaign.hidden=!(month>=9||month===0);
+        const today=new Date();
+        const month=today.getMonth();
+        const day=today.getDate();
+        const isChristmasSeason=month>=9||(month===0&&day<=6);
+        seasonalCampaign.hidden=!isChristmasSeason;
     }
 
     const hero=document.querySelector(".hero-content");

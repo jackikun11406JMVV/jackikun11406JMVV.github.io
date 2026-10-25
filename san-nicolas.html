@@ -41,8 +41,47 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "BookPage",
+      "@id": "https://jackikun11406jmvv.github.io/san-nicolas.html#webpage",
+      "url": "https://jackikun11406jmvv.github.io/san-nicolas.html",
+      "name": "El origen de Papá Noel: San Nicolás",
+      "headline": "El origen de Papá Noel: San Nicolás",
+      "abstract": "Cuento infantil ilustrado sobre San Nicolás y la tradición que dio forma a Papá Noel.",
+      "inLanguage": "es",
+      "dateModified": "2026-10-25",
+      "about": {
+        "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work"
+      },
+      "mainEntity": {
+        "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work"
+      }
+    },
+    {
+      "@type": "Book",
+      "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work",
+      "name": "El origen de Papá Noel: San Nicolás",
+      "description": "Cuento infantil ilustrado sobre San Nicolás, la generosidad y el origen de la figura moderna de Papá Noel.",
+      "url": "https://jackikun11406jmvv.github.io/san-nicolas.html",
+      "image": "https://jackikun11406jmvv.github.io/images/es/san-nicolas-cover.webp",
+      "inLanguage": "es",
+      "genre": ["Literatura infantil", "Cuento ilustrado", "Tradición navideña"],
+      "isFamilyFriendly": true,
+      "author": {
+        "@id": "https://jackikun11406jmvv.github.io/#author"
+      },
+      "workExample": [
+        {"@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-es/hardcover"},
+        {"@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-es/kindle"}
+      ],
+      "subjectOf": {
+        "@id": "https://jackikun11406jmvv.github.io/origen-san-nicolas-papa-noel.html#article"
+      },
+      "relatedLink": "https://jackikun11406jmvv.github.io/origen-san-nicolas-papa-noel.html"
+    },
+    {
       "@type": "Book",
       "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-es/hardcover",
+      "exampleOfWork": {"@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work"},
       "name": "El origen de Papá Noel: San Nicolás",
       "alternateName": "El origen de Papá Noel: San Nicolás",
       "description": "Cuento infantil ilustrado sobre San Nicolás y el origen de Papá Noel, disponible en tapa dura de 91 páginas y Kindle de 46 páginas en español.",
@@ -65,7 +104,7 @@
       "bookFormat": "https://schema.org/Hardcover",
       "numberOfPages": 91,
       "datePublished": "2026-09-29",
-      "dateModified": "2026-10-23",
+      "dateModified": "2026-10-25",
       "creativeWorkStatus": "Published",
       "offers": {
         "@type": "Offer",
@@ -82,6 +121,7 @@
     {
       "@type": "Book",
       "@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work/lang-es/kindle",
+      "exampleOfWork": {"@id": "https://jackikun11406jmvv.github.io/#san-nicolas-work"},
       "name": "El origen de Papá Noel: San Nicolás",
       "description": "Edición Kindle en español del cuento ilustrado sobre San Nicolás y el origen de Papá Noel.",
       "url": "https://jackikun11406jmvv.github.io/san-nicolas.html",
@@ -95,7 +135,7 @@
       "bookFormat": "https://schema.org/EBook",
       "numberOfPages": 46,
       "datePublished": "2026-09-29",
-      "dateModified": "2026-10-23",
+      "dateModified": "2026-10-25",
       "creativeWorkStatus": "Published",
       "offers": {
         "@type": "Offer",
