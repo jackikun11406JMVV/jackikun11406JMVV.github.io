@@ -1,5 +1,5 @@
 (() => {
-  const images = [...document.querySelectorAll(".inside-card img, .saint-journey-media img, .jara-gallery-card img")];
+  const images = [...document.querySelectorAll(".inside-card img, .saint-journey-media img, .jara-gallery-card img"), ...document.querySelectorAll(".real-book-thumbs img")];
   if (!images.length) return;
 
   const lang = document.documentElement.lang || "es";
@@ -28,7 +28,7 @@
   const showImage = index => {
     currentIndex = (index + images.length) % images.length;
     const image = images[currentIndex];
-    largeImage.src = image.currentSrc || image.src;
+    largeImage.src = image.dataset.fullSrc || image.currentSrc || image.src;
     largeImage.alt = image.alt;
     caption.textContent = image.closest("figure, .inside-card")?.querySelector("figcaption, p")?.textContent || image.alt;
     count.textContent = `${labels.count} ${currentIndex + 1} / ${images.length}`;
@@ -57,6 +57,12 @@
   });
 
   images.forEach((image, index) => {
+    const link = image.closest(".real-book-thumbs a");
+    if (link) {
+      link.setAttribute("aria-label", `${labels.open}: ${image.alt}`);
+      link.addEventListener("click", event => { event.preventDefault(); openAt(index, link); });
+      return;
+    }
     image.classList.add("is-zoomable");
     image.tabIndex = 0;
     image.setAttribute("role", "button");
