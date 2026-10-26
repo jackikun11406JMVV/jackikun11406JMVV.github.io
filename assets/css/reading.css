@@ -15,3 +15,5 @@
 @media(max-width:650px){.reading-guide{padding:20px 0}.reading-compact{grid-template-columns:1fr;gap:17px}.reading-guide .reading-summary h2{font-size:19px}.reading-guide .reading-summary p{font-size:14px;line-height:1.5}.real-book-thumbs{max-width:360px}.real-book-thumbs img{height:85px}.real-book-heading{gap:8px;margin-bottom:8px}}
 
 .reading-guide .reading-summary .book-print-size{font-size:12px;margin-top:8px;color:#655447}.book-print-size span{white-space:nowrap}
+
+.reading-guide .reading-summary .book-gift-note{font-size:13px;line-height:1.5;margin-top:8px;font-style:italic;color:#703421}

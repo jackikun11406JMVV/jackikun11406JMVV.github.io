@@ -1,6 +1,9 @@
 (() => {
-  const images = [...document.querySelectorAll(".inside-card img, .saint-journey-media img, .jara-gallery-card img"), ...document.querySelectorAll(".real-book-thumbs img")];
-  if (!images.length) return;
+  const samples = [...document.querySelectorAll(".inside-card img, .saint-journey-media img, .jara-gallery-card img")];
+  const photos = [...document.querySelectorAll(".real-book-thumbs img")];
+  const allImages = [...samples, ...photos];
+  let images = samples;
+  if (!allImages.length) return;
 
   const lang = document.documentElement.lang || "es";
   const labels = {
@@ -34,7 +37,9 @@
     count.textContent = `${labels.count} ${currentIndex + 1} / ${images.length}`;
   };
 
-  const openAt = (index, source) => {
+  const openAt = (index, source, group = samples) => {
+    if (!group.length) return;
+    images = group;
     trigger = source;
     showImage(index);
     dialog.showModal();
@@ -56,18 +61,20 @@
     trigger = null;
   });
 
-  images.forEach((image, index) => {
+  allImages.forEach((image) => {
+    const group = photos.includes(image) ? photos : samples;
+    const index = group.indexOf(image);
     const link = image.closest(".real-book-thumbs a");
     if (link) {
       link.setAttribute("aria-label", `${labels.open}: ${image.alt}`);
-      link.addEventListener("click", event => { event.preventDefault(); openAt(index, link); });
+      link.addEventListener("click", event => { event.preventDefault(); openAt(index, link, group); });
       return;
     }
     image.classList.add("is-zoomable");
     image.tabIndex = 0;
     image.setAttribute("role", "button");
     image.setAttribute("aria-label", `${labels.open}: ${image.alt}`);
-    const open = () => openAt(index, image);
+    const open = () => openAt(index, image, group);
     image.addEventListener("click", open);
     image.addEventListener("keydown", event => {
       if (event.key === "Enter" || event.key === " ") {
