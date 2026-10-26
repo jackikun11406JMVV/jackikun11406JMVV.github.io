@@ -1274,3 +1274,9 @@ body.jara-page .jara-gallery-card img {
     margin-top: 17px;
   }
 }
+
+/* Compact floating purchase control; reading and downloads take precedence. */
+.mobile-buy-bar.is-visible{width:auto;max-width:calc(100vw - 32px);gap:9px;padding:5px;border-radius:12px;bottom:16px;right:16px;box-shadow:0 5px 18px #0003}
+.mobile-buy-bar span{max-width:190px;font-size:11px;padding-left:8px}
+.mobile-buy-bar a{min-height:44px;padding:8px 13px}
+@media(max-width:560px){.mobile-buy-bar.is-visible{left:auto;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));width:auto;padding:3px}.mobile-buy-bar span{display:none}.mobile-buy-bar a{font-size:11px;padding:8px 14px}}

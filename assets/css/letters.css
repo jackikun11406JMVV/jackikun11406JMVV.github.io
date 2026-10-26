@@ -12,3 +12,13 @@
 .letter-preview:focus-visible,.letter-download .btn:focus-visible{outline:3px solid #745025;outline-offset:6px}
 @media(max-width:650px){.letter-download{padding:46px 0}.letter-download-grid{grid-template-columns:1fr;gap:30px}.letter-preview{max-width:260px}.letter-download-copy{text-align:center}.letter-download-copy p{margin-left:auto;margin-right:auto}}
 @media(prefers-reduced-motion:reduce){.letter-preview{transition:none}}
+
+.home-letter-links{background:#fff7e7;border-block:1px solid #e7d7b9;padding:16px 0;color:#392b21}
+.home-letter-links .container{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 24px;font-size:14px}
+.home-letter-links a,.letter-share{color:#703421;text-decoration:underline;text-underline-offset:4px}
+.home-letter-links a{padding:7px 0}
+.letter-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:12px}
+.letter-actions .btn{margin-top:0}
+.letter-share{font-size:14px;line-height:1.4;padding:12px 0}
+.letter-share:focus-visible,.home-letter-links a:focus-visible{outline:3px solid #805a25;outline-offset:4px}
+@media(max-width:650px){.home-letter-links strong{flex-basis:100%;text-align:center}.letter-actions{justify-content:center}}
