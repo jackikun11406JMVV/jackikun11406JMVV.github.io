@@ -2687,3 +2687,16 @@ html[lang="fr"] .related-stories li a::before{content:"Voir le livre"}
  .site-menu summary{min-height:44px}
  .crumb a,.breadcrumb a{display:inline-flex;align-items:center;min-height:44px}
 }
+
+/* Keep the author's name readable alongside full-size mobile controls. */
+@media(max-width:560px){
+ .topbar .nav{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 8px;height:auto;min-height:96px;padding:6px 0}
+ .topbar .brand{grid-column:1;grid-row:1;gap:8px;font-size:16px}
+ .topbar .brand-text{max-width:none;line-height:1.2}
+ .topbar .brand-logo{flex-shrink:0}
+ .topbar .lang-switch{grid-column:1;grid-row:2;justify-self:start;margin-left:46px}
+ .topbar .lang-switch a,.topbar .lang-switch strong{min-height:36px;min-width:44px}
+ .topbar .site-menu{grid-column:2;grid-row:1 / 3}
+ .site-menu-panel{top:108px;max-height:calc(100dvh - 124px)}
+ .reading-guide,.letter-download{scroll-margin-top:115px}
+}

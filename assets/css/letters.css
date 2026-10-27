@@ -22,3 +22,16 @@
 .letter-share{font-size:14px;line-height:1.4;padding:12px 0}
 .letter-share:focus-visible,.home-letter-links a:focus-visible{outline:3px solid #805a25;outline-offset:4px}
 @media(max-width:650px){.home-letter-links strong{flex-basis:100%;text-align:center}.letter-actions{justify-content:center}}
+
+/* Compact, keyboard-accessible optional extras. */
+.letter-download{padding:18px 0}
+.book-disclosure{border:1px solid #d9c8ab;border-radius:12px;background:#fffaf1;color:#392b21;min-width:0}
+.book-disclosure>summary{cursor:pointer;padding:16px 20px;font-size:16px;font-weight:700;line-height:1.4;min-height:24px}
+.book-disclosure>summary::marker{color:#805a25}
+.book-disclosure>summary:focus-visible{outline:3px solid #805a25;outline-offset:3px;border-radius:12px}
+.book-disclosure[open]>summary{border-bottom:1px solid #e7d7b9}
+.letter-disclosure .letter-download-grid{padding:24px;grid-template-columns:minmax(160px,230px) minmax(0,1fr);gap:28px;margin:auto}
+.letter-disclosure .letter-preview{max-width:230px}
+.letter-disclosure h2{font-size:clamp(24px,3vw,32px);margin:10px 0 16px;line-height:1.2}
+.letter-disclosure p{line-height:1.6}
+@media(max-width:650px){.letter-disclosure .letter-download-grid{grid-template-columns:1fr;padding:20px;gap:20px}.letter-disclosure .letter-preview{max-width:190px}.book-disclosure>summary{font-size:15px;padding:14px 16px}}
