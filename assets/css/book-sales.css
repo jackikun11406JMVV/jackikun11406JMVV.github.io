@@ -1280,3 +1280,6 @@ body.jara-page .jara-gallery-card img {
 .mobile-buy-bar span{max-width:190px;font-size:11px;padding-left:8px}
 .mobile-buy-bar a{min-height:44px;padding:8px 13px}
 @media(max-width:560px){.mobile-buy-bar.is-visible{left:auto;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));width:auto;padding:3px}.mobile-buy-bar span{display:none}.mobile-buy-bar a{font-size:11px;padding:8px 14px}}
+.saint-page .saint-cinematic-content h1{line-height:1.04}
+.saint-page .saint-cinematic-content .saint-hero-actions{margin-top:16px}
+@media(max-width:560px){.saint-page .saint-cinematic-content h1{font-size:clamp(36px,11.5vw,52px)}}
