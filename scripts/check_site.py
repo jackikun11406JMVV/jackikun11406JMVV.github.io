@@ -68,6 +68,8 @@ class PageParser(HTMLParser):
         self.blank_links: list[dict[str, str]] = []
         self.generic_aria_labels: list[str] = []
         self.structure: list[str] = []
+        self._inside_topbar = False
+        self.navigation_outside_header = False
         self._in_title = False
         self._in_json_ld = False
         self._json_buffer: list[str] = []
@@ -75,6 +77,10 @@ class PageParser(HTMLParser):
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         data = {key.lower(): (value or "") for key, value in attrs}
         tag = tag.lower()
+        if tag == "header" and "topbar" in data.get("class", "").split():
+            self._inside_topbar = True
+        if tag == "nav" and "desktop-book-nav" in data.get("class", "").split() and not self._inside_topbar:
+            self.navigation_outside_header = True
         if tag == "html":
             self.language = data.get("lang", "")
         if tag == "div" and data.get("aria-label") and not data.get("role"):
@@ -118,6 +124,8 @@ class PageParser(HTMLParser):
 
     def handle_endtag(self, tag: str) -> None:
         tag = tag.lower()
+        if tag == "header":
+            self._inside_topbar = False
         if tag == "title":
             self._in_title = False
         if tag == "script" and self._in_json_ld:
@@ -222,6 +230,8 @@ def main() -> int:
     legal_deposit_records: list[tuple[Path, str, str]] = []
 
     for path, page in pages.items():
+        if page.navigation_outside_header:
+            fail(errors, path, "navegación de escritorio fuera de la cabecera")
         duplicates = sorted({item for item in page.ids if page.ids.count(item) > 1})
         if duplicates:
             fail(errors, path, f"identificadores duplicados: {', '.join(duplicates)}")

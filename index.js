@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
             if(entry.isIntersecting){
 
-                entry.target.animate([
+                if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) entry.target.animate([
 
                     {
                         opacity:0,

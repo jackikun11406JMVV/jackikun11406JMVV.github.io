@@ -74,6 +74,7 @@ if ("IntersectionObserver" in window) {
         let raf = null;
 
         cover.addEventListener("mousemove", e => {
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
             if (raf) cancelAnimationFrame(raf);
 
@@ -113,6 +114,7 @@ if ("IntersectionObserver" in window) {
     =========================================== */
 
     function animateCards(details) {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
         const cards = details.querySelectorAll(".buy-card");
 
@@ -158,7 +160,7 @@ if ("IntersectionObserver" in window) {
 
                 const accordion = document.querySelector(".buy-accordion");
 
-                if (!accordion) return;
+                if (!accordion || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
                 accordion.animate(
 

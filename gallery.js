@@ -21,6 +21,21 @@
   dialog.innerHTML = `<button class="image-lightbox-close" type="button" aria-label="${labels.close}">×</button><figure><img alt=""/><figcaption></figcaption></figure><div class="image-lightbox-controls"><button type="button" class="image-lightbox-previous" aria-label="${labels.previous}">←</button><span class="image-lightbox-count" aria-live="polite"></span><button type="button" class="image-lightbox-next" aria-label="${labels.next}">→</button><a class="image-lightbox-buy" href="${purchaseHref}">${labels.buy} →</a></div>`;
   document.body.append(dialog);
 
+  const transcript = document.getElementById("sample-transcript");
+  const transcriptLink = document.createElement("a");
+  transcriptLink.className = "image-lightbox-transcript";
+  transcriptLink.href = "#sample-transcript";
+  transcriptLink.textContent = {es:"Leer el texto de la muestra",en:"Read the sample text (Spanish)",fr:"Lire le texte de l’extrait (espagnol)"}[lang] || "Leer el texto de la muestra";
+  if (transcript) dialog.append(transcriptLink);
+  transcriptLink.addEventListener("click", event => {
+    event.preventDefault();
+    dialog.close();
+    transcript.open = true;
+    requestAnimationFrame(() => {
+      transcript.querySelector("summary").focus();
+      transcript.scrollIntoView({block:"start",behavior:"instant"});
+    });
+  });
   const largeImage = dialog.querySelector("img");
   const caption = dialog.querySelector("figcaption");
   const count = dialog.querySelector(".image-lightbox-count");
@@ -33,7 +48,9 @@
     const image = images[currentIndex];
     largeImage.src = image.dataset.fullSrc || image.currentSrc || image.src;
     largeImage.alt = image.alt;
+    transcriptLink.hidden = images !== samples;
     caption.textContent = image.closest("figure, .inside-card")?.querySelector("figcaption, p")?.textContent || image.alt;
+    if (images === samples && lang !== "es") caption.textContent += lang === "fr" ? " · Extrait en espagnol" : " · Spanish sample";
     count.textContent = `${labels.count} ${currentIndex + 1} / ${images.length}`;
   };
 

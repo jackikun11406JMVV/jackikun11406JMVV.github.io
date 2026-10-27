@@ -21,5 +21,4 @@ jobs:
 
       - name: Comprobar JavaScript
         run: |
-          node --check index.js
-          node --check animations.js
+          for script in *.js; do node --check "$script"; done

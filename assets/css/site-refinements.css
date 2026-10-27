@@ -1,0 +1,19 @@
+/* Shared audit fixes; loaded after page-specific styling. */
+.saint-history-hero .eyebrow{color:#efc878}
+.reading-support{max-width:58ch;font-size:14px;line-height:1.55;margin:14px 0 0}
+.guide-index{border:1px solid #cbb48b;border-radius:12px;background:#fff8e8;color:#392b21;scroll-margin-top:115px}
+.guide-index-wrap{padding-top:20px;padding-bottom:20px}
+.guide-index>summary,.sample-transcript>summary{cursor:pointer;font-size:16px;font-weight:700;padding:16px 20px;line-height:1.4}
+.guide-index nav{display:flex;flex-wrap:wrap;gap:8px 20px;padding:0 20px 16px}
+.guide-index nav a,.guide-back{color:#703421;text-underline-offset:4px;line-height:1.5;padding:8px 0}
+.guide-back{display:block;width:fit-content;margin:20px auto;font-size:14px}
+.guide-index summary:focus-visible,.sample-transcript summary:focus-visible{outline:3px solid #805a25;outline-offset:3px;border-radius:12px}
+.sample-transcript{border:1px solid #d9c8ab;border-radius:12px;background:#fffaf1;color:#392b21;margin:18px auto 0;max-width:1050px}
+.sample-transcript-content{padding:0 22px 22px;max-width:75ch;margin:auto;font-size:17px;line-height:1.7}
+.sample-transcript-content h3{font-size:20px;margin:24px 0 10px;line-height:1.4}
+.sample-transcript-content p{font-size:inherit;line-height:inherit;white-space:pre-line}
+.sample-transcript-content .illustration-description{font-size:14px;color:#655447;font-style:italic}
+.image-lightbox-transcript{color:inherit;text-underline-offset:3px;font-size:14px;margin:0 10px 8px;text-align:center}
+@media(max-width:650px){.guide-index nav{flex-direction:column;gap:0}.sample-transcript-content{padding:0 16px 16px}.guide-index>summary,.sample-transcript>summary{padding:14px 16px;font-size:15px}}
+
+.sample-transcript{scroll-margin-top:115px}.image-lightbox-transcript:not([hidden]){display:block;margin-top:14px}
