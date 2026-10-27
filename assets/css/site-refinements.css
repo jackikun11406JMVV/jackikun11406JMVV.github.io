@@ -17,3 +17,5 @@
 @media(max-width:650px){.guide-index nav{flex-direction:column;gap:0}.sample-transcript-content{padding:0 16px 16px}.guide-index>summary,.sample-transcript>summary{padding:14px 16px;font-size:15px}}
 
 .sample-transcript{scroll-margin-top:115px}.image-lightbox-transcript:not([hidden]){display:block;margin-top:14px}
+
+.guide-index>summary,.sample-transcript>summary{list-style-position:inside}.toc-wrap{padding:20px 0}
