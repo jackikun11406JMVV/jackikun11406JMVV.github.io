@@ -50,7 +50,7 @@
     largeImage.alt = image.alt;
     transcriptLink.hidden = images !== samples;
     caption.textContent = image.closest("figure, .inside-card")?.querySelector("figcaption, p")?.textContent || image.alt;
-    if (images === samples && lang !== "es") caption.textContent += lang === "fr" ? " · Extrait en espagnol" : " · Spanish sample";
+    if (images === samples && lang !== "es" && !/Spanish|espagnol/i.test(caption.textContent)) caption.textContent += lang === "fr" ? " · Extrait en espagnol" : " · Spanish sample";
     count.textContent = `${labels.count} ${currentIndex + 1} / ${images.length}`;
   };
 
